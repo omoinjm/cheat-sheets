@@ -1,7 +1,5 @@
 # Useful Links
 
----
-
 ## **LINUX**
 
 - Install the .NET SDK or the .NET Runtime on Ubuntu
