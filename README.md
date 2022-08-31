@@ -8,7 +8,10 @@
 
   link: https://support.atlassian.com/bitbucket-cloud/docs/set-up-an-ssh-key/
 
-- How to make files accessible only by root
+- How to make files accessible only by root?
+  
+  link: https://askubuntu.com/questions/193055/how-to-make-files-accessible-only-by-root
+
   ```bash
   sudo chown root:root /path/to/application
   ```
