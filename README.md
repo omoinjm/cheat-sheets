@@ -4,9 +4,17 @@
 
 ## **LINUX**
 
+- Install the .NET SDK or the .NET Runtime on Ubuntu
+
+  link: https://docs.microsoft.com/en-us/dotnet/core/install/linux-ubuntu?source=recommendations#2004
+
 - Set up an SSH key
 
   link: https://support.atlassian.com/bitbucket-cloud/docs/set-up-an-ssh-key/
+
+- Permanently authenticating with Git repositories
+
+  link: https://confluence.atlassian.com/bitbucketserver/permanently-authenticating-with-git-repositories-776639846.html
 
 - How to make files accessible only by root?
   
@@ -19,3 +27,13 @@
   ```bash
   sudo chmod 700 /path/to/application
   ```
+
+## **SQL**
+
+  - Rename Tables (Database Engine)
+    
+    link: https://docs.microsoft.com/en-us/sql/relational-databases/tables/rename-tables-database-engine?view=sql-server-ver16
+    
+  - DROP TABLE (Transact-SQL)
+
+    link: https://docs.microsoft.com/en-us/sql/t-sql/statements/drop-table-transact-sql?view=sql-server-ver16
