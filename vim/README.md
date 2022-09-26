@@ -9,3 +9,11 @@
 - How to Undo and Redo Changes in Vim?
 
   link: https://phoenixnap.com/kb/vim-undo-redo
+
+- Move entire line up and down in Vim?
+ 
+  link: https://stackoverflow.com/questions/741814/move-entire-line-up-and-down-in-vim
+
+  ```Move a line up: ddkP```
+
+  ```Move a line down: ddp```
