@@ -26,6 +26,10 @@
   sudo chmod 700 /path/to/application
   ```
 
+ - How to Install OpenVPN in Ubuntu 20.04?
+
+   link: https://www.tecmint.com/install-openvpn-in-ubuntu/
+
 ## **SQL**
 
   - Rename Tables (Database Engine)
