@@ -3,10 +3,13 @@
 ### Connecting to different protocols/services
 
   - telnet: 
-    ```telnet <ip address>```
+    - port tcp/22
+    -  ```telnet <ip address>```
     
-  - ftp:
-    ```ftp <ip address>
+  - ftp: 
+    - port tcp/445 
+    - ```ftp <ip address>```
     
   - smb:
-    ```smbclient //ip address/Sharename
+    - port  
+    - ```smbclient //ip address/Sharename```
