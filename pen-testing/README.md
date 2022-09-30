@@ -1,5 +1,9 @@
 # Notes 
 
+### NMAP scan
+
+  -  ```sudo nmap -sS -sV <ip address>```
+
 ### Connecting to different protocols/services
 
   - telnet: 
