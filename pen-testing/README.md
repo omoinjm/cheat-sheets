@@ -8,5 +8,5 @@
   - ftp:
     ```ftp <ip address>
     
-  - smb
+  - smb:
     ```smbclient //ip address/Sharename
