@@ -1,0 +1,7 @@
+# BASH REPOS
+
+## LSD (LSDeluxe)
+  
+  - description: This project is a rewrite of GNU ls with lots of added features like colors, icons, tree-view, more formatting options etc. The project is heavily inspired by the super colorls project.
+  
+  - link: https://github.com/Peltoche/lsd
