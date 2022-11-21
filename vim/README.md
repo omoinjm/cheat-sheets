@@ -17,3 +17,45 @@
   ```Move a line up: ddkP```
 
   ```Move a line down: ddp```
+
+- Fuzzy Finder
+
+  ``sf``
+  
+ - Vertical split
+ 
+   ``sv``
+  
+ - Horizontal split
+ 
+   ``ss``
+  
+ - Close split window
+ 
+   ``CTRL-w CTRL-o``
+  
+ - Select text
+ 
+   ``SHift + v``
+  
+ - Insert new file name
+ 
+   ``Shift + n``
+
+ - Paste
+ 
+   ``p``
+
+ - Hint tsx file
+    
+   ``ctrl + j``
+    
+ - Element tsx file
+   
+   ``shift + k``
+ 
+ - Inside tsx file  
+  
+   ``gd``
+
+    ``gb``
