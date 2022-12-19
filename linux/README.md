@@ -5,7 +5,11 @@
   - [Takuya](https://github.com/craftzdog/dotfiles-public)
   - [ChristianLempa](https://github.com/ChristianLempa/dotfiles)
   - [subho007](https://github.com/subho007/.dotfile)
-  
+
+## Change Hostname
+
+  - https://phoenixnap.com/kb/ubuntu-20-04-change-hostname
+
 ## Install the .NET SDK or the .NET Runtime on Ubuntu
   
   - https://docs.microsoft.com/en-us/dotnet/core/install/linux-ubuntu?source=recommendations#2004
