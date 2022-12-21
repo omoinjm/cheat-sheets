@@ -18,3 +18,9 @@
     ALTER TABLE <table_name>
     ADD <column_name> datatype;
     ```
+  - Delete column in SQL
+    
+    ```SQL
+    ALTER TABLE dbo.doc_exb DROP COLUMN <column_b;
+    GO
+    ```
