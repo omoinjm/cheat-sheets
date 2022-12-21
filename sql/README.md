@@ -12,3 +12,9 @@
 
     link: https://docs.microsoft.com/en-us/sql/t-sql/statements/drop-table-transact-sql?view=sql-server-ver16
 
+  - ADD a column in a table
+    
+    ```SQL
+    ALTER TABLE <table_name>
+    ADD <column_name> datatype;
+    ```
