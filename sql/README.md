@@ -12,3 +12,15 @@
 
     link: https://docs.microsoft.com/en-us/sql/t-sql/statements/drop-table-transact-sql?view=sql-server-ver16
 
+  - ADD a column in a table
+    
+    ```SQL
+    ALTER TABLE <table_name>
+    ADD <column_name> datatype;
+    ```
+  - Delete column in SQL
+    
+    ```SQL
+    ALTER TABLE dbo.doc_exb DROP COLUMN <column_b;
+    GO
+    ```
