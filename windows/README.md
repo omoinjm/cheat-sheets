@@ -3,3 +3,25 @@
 ## Environment Variables
  
  - link: https://www.devdungeon.com/content/set-environment-variables-windows
+
+## Hide files
+ 
+ POWERSHELL
+ 
+ ```powershell
+ # hide file content within another file
+ # delete file after doing this
+ type file > demoFile:file
+ 
+ # view contents
+ cat demoFile:file
+ 
+ # show hidden files in an alternate data stream
+ dir /r
+ 
+ # Another way
+ # this just checks the show/hide hidden files under `view` -> `options` -> `change folder and view options` -> `view`
+ attrib +h file
+ 
+ 
+ ```
