@@ -23,22 +23,45 @@
         listen 80;
         server_name www.my-domain.com my-domain.com;
 
+        # gzip allows us to compress our static files.
+        # it is great for speed and ranking higher on google
         gzip on;
-        gzip_proxied any;
+        
+        # we're using a proxy server so this allows for gzip to be enabled.
+        # we'll use pm2 to run our website as a background service.
+        # this process will proxy our website into the internet.
+        gzip_proxied any; 
+        
+        # this will make sure all our javascript and css files are all compressed.
         gzip_types application/javascript application/x-javascript text/css text/javascript;
+        
+        # sets the compression level. This is a value set bewtween 1 and 9.
+        # each time we compress/decompress out files it'll take some processing power.
+        # we need to find a perfect balance between that processing power and file compression/decompression so that we don't get a large file size.
         gzip_comp_level 6;
+        
+        # need to research
         gzip_buffers 16 8k;
+        
+        # make sure to not compress files that are too small.
+        # the aim is to use less processing power
         gzip_min_length 256;
 
+        # 
         location /_next/static/ {
-                alias /var/www/new-site-nextjs/.next/static;
+                alias /var/www/{name-of-project}/.next/static;
                 expires 365d;
+                
+                # disable access log.
+                # we don't want to keep things like javascript, css and image.
                 access_log off;
         }
         
         location / {
                 proxy_pass http//127.0.0.1:3000;
                 proxy_http_version 1.1;
+                
+                # handle web socket connections.
                 proxy_set_header Upgrade $http_upgrade;
                 proxy_set_header Connection 'upgrade';
                 proxy_set_header Host $host;
