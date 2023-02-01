@@ -14,6 +14,35 @@
     # -R for recursive
     sudo chown -R omoi:omoi /var/www/{name-of-project}
     ```
-3. Create NGINE config file
+3. Create NGINX config file
 
   - We're gonna add configurations to different sites in the `/etc/nginx/sites-available/{name-of-project}` folder then create a symbolic link pointing to `/var/www/{name-of-project}`
+
+```bash
+   server {
+        listen 80;
+        server_name www.my-domain.com my-domain.com;
+
+        gzip on;
+        gzip_proxied any;
+        gzip_types application/javascript application/x-javascript text/css text/javascript;
+        gzip_comp_level 6;
+        gzip_buffers 16 8k;
+        gzip_min_length 256;
+
+        location /_next/static/ {
+                alias /var/www/new-site-nextjs/.next/static;
+                expires 365d;
+                access_log off;
+        }
+        
+        location / {
+                proxy_pass http//127.0.0.1:3000;
+                proxy_http_version 1.1;
+                proxy_set_header Upgrade $http_upgrade;
+                proxy_set_header Connection 'upgrade';
+                proxy_set_header Host $host;
+                proxy_cache_bypass $http_upgrade;
+        }
+   }
+```
