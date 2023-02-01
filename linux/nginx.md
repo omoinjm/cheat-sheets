@@ -69,3 +69,11 @@
         }
    }
 ```
+
+  - Remove `/etc/nginx/sites-enabled/default` to prevent any conflicts.
+  
+  - Create symbolic link
+    
+    ```bash
+     sudo ln -s /etc/nginx/sites-available/{name-of-project} /etc/nginx/sites-enabled/{name-of-project}
+    ```
