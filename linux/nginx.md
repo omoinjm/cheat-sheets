@@ -88,5 +88,5 @@
   - Change permissions to readonly
     ```bash
     sudo chown -R user:user {name-of-project}
-    ``
+    ```
   
