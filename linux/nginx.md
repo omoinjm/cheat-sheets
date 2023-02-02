@@ -77,3 +77,16 @@
     ```bash
      sudo ln -s /etc/nginx/sites-available/{name-of-project} /etc/nginx/sites-enabled/{name-of-project}
     ```
+
+  - Restart `nginx` with `systemctl`
+    ```bash
+    sudo systemctl restart nginx
+    ```
+    
+  - Clone your project under `/var/www/`
+
+  - Change permissions to readonly
+    ```bash
+    sudo chown -R user:user {name-of-project}
+    ``
+  
