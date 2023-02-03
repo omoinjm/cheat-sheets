@@ -89,4 +89,5 @@
     ```bash
     sudo chown -R user:user {name-of-project}
     ```
+  - Allow our firewall to receive connections via port 80 and 433
   
