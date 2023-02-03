@@ -149,3 +149,4 @@
      
      pm2 start yarn --name {name-of-project} -- start
      ```
+10. Encrypt SSL certificate with certbot
