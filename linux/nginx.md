@@ -19,6 +19,7 @@
 3. Create NGINX config file
 
    - We're gonna add configurations to different sites in the `/etc/nginx/sites-available/{name-of-project}` folder then create a symbolic link pointing to `/var/www/{name-of-project}`
+   - Remove `/etc/nginx/sites-enabled/default` to prevent any conflicts.
 
      ```bash
      server {
@@ -72,8 +73,6 @@
      }
      ```
 
-   - Remove `/etc/nginx/sites-enabled/default` to prevent any conflicts.
-
 4. Create symbolic link
     
    ```bash
@@ -96,18 +95,18 @@
    
 6. Allow our firewall to receive connections via port 80 and 433
   
-  - Which are the port we are allowed to connect to with out a `SSL` certificate
-  - We also want to redirect from http to https
+   - Which are the port we are allowed to connect to with out a `SSL` certificate
+   - We also want to redirect from http to https
 
-    ```bash
-    # Enable firewall
-    sudo ufw enable
+     ```bash
+     # Enable firewall
+     sudo ufw enable
 
-    sudo ufw allow "Nginx Full"
+     sudo ufw allow "Nginx Full"
 
-    # View Status
-    sudo ufw status
-    ```
+     # View Status
+     sudo ufw status
+     ```
 
 7. Install node, nvm and pm2
     
