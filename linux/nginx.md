@@ -89,5 +89,17 @@
     ```bash
     sudo chown -R user:user {name-of-project}
     ```
+    
   - Allow our firewall to receive connections via port 80 and 433
-  
+  - Which are the port we are allowed to connect to with out a `SSL` certificate
+  - We also want to redirect from http to https
+    ```bash
+    # Enable firewall
+    sudo ufw enable
+    
+    sudo ufw allow "Nginx Full"
+    
+    # View Status
+    sudo ufw status
+    ```
+  - 
