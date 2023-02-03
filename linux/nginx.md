@@ -1,20 +1,19 @@
 # SETUP NGINX SERVER
 
 1. Install packages:
-  
-  - `nginx` to server application publically
-  - `certbot` to generate free ssl certificate
-  - `python3-cervot-nginx` script that allows us to interact with cerbot let encrpt and nginx. it is going to allow for automatic redirect
+   - `nginx` to server application publically
+   - `certbot` to generate free ssl certificate
+   - `python3-cervot-nginx` script that allows us to interact with cerbot let encrpt and nginx. it is going to allow for automatic redirect
 
 2. Create website folder and set user as owner
 
-  - Create a folder under `/var/www/{name-of-project}`
-  - Change permission of folder so that our user can have access
+   - Create a folder under `/var/www/{name-of-project}`
+   - Change permission of folder so that our user can have access
 
-    ```bash
-    # -R for recursive
-    sudo chown -R omoi:omoi /var/www/{name-of-project}
-    ```
+     ```bash
+     # -R for recursive
+     sudo chown -R omoi:omoi /var/www/{name-of-project}
+     ```
     
 3. Create NGINX config file
 
