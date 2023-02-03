@@ -4,7 +4,11 @@
    - `nginx` to server application publically
    - `certbot` to generate free ssl certificate
    - `python3-cervot-nginx` script that allows us to interact with cerbot let encrpt and nginx. it is going to allow for automatic redirect
-
+     
+     ```bash
+     sudo apt install nginx certbot python3-cervot-nginx
+     ```
+     
 2. Create website folder and set user as owner
 
    - Create a folder under `/var/www/{name-of-project}`
