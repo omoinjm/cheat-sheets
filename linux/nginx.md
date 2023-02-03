@@ -102,4 +102,17 @@
     # View Status
     sudo ufw status
     ```
-  - 
+  
+  - Install node, nvm and pm2
+  - link: https://github.com/nvm-sh/nvm
+    ```bash
+    cd ~
+    
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+    
+    # Refresh shell (allow newly installed packages to be accessable)
+    exec $SHELL
+    
+    # Install latest stable features
+    nvm install -lts
+    ```
