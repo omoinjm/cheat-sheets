@@ -10,10 +10,12 @@
 
   - Create a folder under `/var/www/{name-of-project}`
   - Change permission of folder so that our user can have access
+
     ```bash
     # -R for recursive
     sudo chown -R omoi:omoi /var/www/{name-of-project}
     ```
+    
 3. Create NGINX config file
 
   - We're gonna add configurations to different sites in the `/etc/nginx/sites-available/{name-of-project}` folder then create a symbolic link pointing to `/var/www/{name-of-project}`
@@ -71,14 +73,15 @@
 ```
 
   - Remove `/etc/nginx/sites-enabled/default` to prevent any conflicts.
-  
-  - Create symbolic link
+
+4. Create symbolic link
     
     ```bash
      sudo ln -s /etc/nginx/sites-available/{name-of-project} /etc/nginx/sites-enabled/{name-of-project}
     ```
 
-  - Restart `nginx` with `systemctl`
+5. Restart `nginx` with `systemctl`
+ 
     ```bash
     sudo systemctl restart nginx
     ```
@@ -86,13 +89,16 @@
   - Clone your project under `/var/www/`
 
   - Change permissions to readonly
+
     ```bash
     sudo chown -R user:user {name-of-project}
     ```
     
-  - Allow our firewall to receive connections via port 80 and 433
+6. Allow our firewall to receive connections via port 80 and 433
+  
   - Which are the port we are allowed to connect to with out a `SSL` certificate
   - We also want to redirect from http to https
+
     ```bash
     # Enable firewall
     sudo ufw enable
@@ -102,9 +108,11 @@
     # View Status
     sudo ufw status
     ```
+
+7. Install node, nvm and pm2
   
-  - Install node, nvm and pm2
   - link: https://github.com/nvm-sh/nvm
+
     ```bash
     cd ~
     
@@ -116,3 +124,28 @@
     # Install latest stable features
     nvm install -lts
     ```
+    
+8. Back to `/var/www/{name-of-project}`
+
+    ```bash
+    yarn install
+    
+    yarn build
+    ```
+    
+9. Start project in the background with pm2
+   
+   - Tell pm2 to run our project using yarn
+   
+   ```bash
+    pm2 start yarn --name {name-of-project} -- start
+   ```
+    
+   - Bugs: if pm2 doesn't run
+     ```bash
+     pm2 stop {name-of-project}
+     
+     pm2 delete {name-of-project}
+     
+     pm2 start yarn --name {name-of-project} -- start
+     ```
