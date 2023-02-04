@@ -21,8 +21,14 @@
     
 3. Create NGINX config file
 
-   - We're gonna add configurations to different sites in the `/etc/nginx/sites-available/{name-of-project}` folder then create a symbolic link pointing to `/var/www/{name-of-project}`
    - Remove `/etc/nginx/sites-enabled/default` to prevent any conflicts.
+      
+     ```bash
+     # -f for force, -r for recursively
+     rm -rf /etc/nginx/sites-enabled/default
+     ```
+      
+   - We're gonna add configurations to different sites in the `/etc/nginx/sites-available/{name-of-project}` folder then create a symbolic link pointing to `/var/www/{name-of-project}`
 
      ```bash
      server {
