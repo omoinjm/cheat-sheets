@@ -130,15 +130,22 @@
      exec $SHELL
     
      # Install latest stable features
-     nvm install -lts
+     nvm install --lts
+     
+     # Install yarn and pm2
+     npm i -g yarn pm2
      ```
     
 8. Back to `/var/www/{name-of-project}`
 
    ```bash
    yarn install
+   # OR
+   npm install
     
-   yarn build
+   yarn run build
+   # OR
+   npm run build
    ```
     
 9. Start project in the background with pm2
@@ -152,10 +159,13 @@
    - Bugs: if pm2 doesn't run
    
      ```bash
+     # terminate project as a process
      pm2 stop {name-of-project}
      
+     # deletes project as a process
      pm2 delete {name-of-project}
      
+     # run project as a process
      pm2 start yarn --name {name-of-project} -- start
      ```
 
