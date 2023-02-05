@@ -1,11 +1,102 @@
 # SETUP NGINX SERVER
 
+1. Create new user with root permissions and SSH access.
+   
+   - Doing this for safey precausions
+   - Use sudo commands for root priviledges
+   - Make sure you're running as `root` user for this process
+     
+     ```bash
+     adduser {username}
+     
+     # Enter password
+     # The other options you can ignore
+     # e.g, Full Name, Room Number etc...
+     ```
+   
+   - Give the user root access
+     
+     ```bash
+     usermod -aG sudo {username}
+     ```
+   
+   - Give `ssh` access for this user
+     
+     ```bash
+     # 1. First create a `.ssh` folder in users home directory
+     mkdir /home/{username}/.ssh
+     
+     # 2. Copy the authorized keys into this newly created folder
+     cp /root/.ssh/authorized_keys /home/{username}/.ssh/authorized_keys
+     
+     # 3. Chnage user permissions of .ssh folder from `root` to `{username}`
+     chown -R {usernmae}:{username} .ssh
+     ```
+   
+   - Setup permissions of this file/folder, so as to avoid the file from being tampered with
+
+     ```bash
+     # `cd` to `/home/{username}/`
+     # Read Write and Execute this folder but only for this user
+     
+     chmod 700 .ssh
+     ```
+     
+     ```bash
+     # `cd` into `.ssh`
+     # Do the same thing for the authorized_keys file
+     # 600 means our newly createsd user is going to have Read and Write permissions
+     
+     chmod 600 authorized_keys
+     ```
+   
+   - Allow the firewall to flow through the ssh port
+       
+     ```bash
+     # Enable firewall to make sure hackers don't access our server via other ports
+     ufw allow OpenSSH
+
+     ufw enable
+     ```
+     
+   - Exit server and connect using new user
+     
+     ```bash
+     ssh {username}@{public_ip}
+     ```
+   
+   - Secure server
+   
+     ```bash
+     # We edit this file in order to disable password access to the server.
+     # This is secure because we can only access the server via ssh using a public key.
+     # Hackers won't be able to brute force their way into this server.
+     # Also we have to disable root access to our server.
+     
+     sudo vim /etc/ssh/sshd_config
+     
+     # Change `PermitRootLogin no`
+     # Chnage `PasswordAuthentication no`
+     ```
+     
+   - Restart server services
+     
+     ```bash
+     sudo systemctl restart ssh
+     sudo systemctl restart sshd
+     ```
+
 1. Install packages:
+   
    - `nginx` to server application publically
    - `certbot` to generate free ssl certificate
    - `python3-cervot-nginx` script that allows us to interact with cerbot let encrpt and nginx. it is going to allow for automatic redirect
      
      ```bash
+     # Update and upgrade system with apt
+     sudo apt update && sudo apt upgrade
+     
+     # Install packages
      sudo apt install nginx certbot python3-cervot-nginx
      ```
      
