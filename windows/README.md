@@ -25,3 +25,7 @@
  
  
  ```
+ 
+ ## Setup ssh on personal laptop
+ 
+  - link: https://theitbros.com/ssh-into-windows/
