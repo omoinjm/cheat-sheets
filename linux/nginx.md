@@ -173,7 +173,11 @@ Deploy Node js webapp to ubuntu server
             }
 
             location / {
-                    proxy_pass http//127.0.0.1:3000;
+                    # need to research these
+                    # If find errors follow:
+                    # https://stackoverflow.com/questions/51972426/is-there-a-way-to-make-nginx-terminate-a-websocket-connection-and-pass-only-the
+                    # https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_pass
+                    proxy_pass http://unix:/tmp/backend.socket:/uri/;
                     proxy_http_version 1.1;
 
                     # handle web socket connections.
