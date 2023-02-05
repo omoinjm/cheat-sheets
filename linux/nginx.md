@@ -304,10 +304,66 @@ Deploy Node js webapp to ubuntu server
 sudo apt install nginx
 
 # Change permissions and access
-sudo mkdir /var/www/54.90.76.40
-sudo chmod 755 -R /var/www/54.90.76.40/
-sudo chown -R ubuntu:www-data /var/www/54.90.76.40
+sudo mkdir /var/www/{public-ip-of-server}
+sudo chmod 755 -R /var/www/{public-ip-of-server}
+sudo chown -R ubuntu:www-data /var/www/{public-ip-of-server}
 
 # Nginx config file
-sudo vim /etc/nginx/sites-available/54.90.76.40
+sudo vim /etc/nginx/sites-available/{public-ip-of-server}
 ```
+
+   - `/etc/nginx/sites-available/{public-ip-of-server}` file
+
+     ```bash
+     server {
+         listen 80;
+         listen [::]:80;
+   
+         root /var/www/{public-ip-of-server};
+         index index.html;
+     }
+     ```
+
+   - Test nginx config is successful
+     
+     ```bash
+     sudo nginx -t
+     ```
+     
+     ![image](https://user-images.githubusercontent.com/86345934/216841048-47cae946-d8c3-47cf-a0d1-f9e4c2e95a66.png)
+   
+   - Unlink default config fiile and link the new one
+     
+     ```bash
+     sudo unlink /etc/nginx/sites-enabled/default
+     
+     # Create a symbolic link
+     sudo ln -s /etc/nginx/sites-available/54.90.76.40 /etc/nginx/sites-enabled/54.90.76.40
+     ```
+     
+   - Restart nginx server
+   
+     ```bash
+     sudo systemctl restart nginx
+     ```
+     
+   - Deploy code to server
+     
+     ```bash
+     echo "Switch to main/master branch"
+     git checkout main
+
+     echo "Building app..."
+     npm run build
+
+     echo "Deploying files to server..."
+     scp -r -i C:\Users\nhlan\.ssh\aws-us-east-1.pem .next ubuntu@54.90.76.40:/var/www/54.90.76.40/.next
+     scp -r -i C:\Users\nhlan\.ssh\aws-us-east-1.pem .env ubuntu@54.90.76.40:/var/www/54.90.76.40/.env
+
+     echo "Finished aaannd... Done!"
+     ```
+     
+   - Back to server
+     
+     
+     
