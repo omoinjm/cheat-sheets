@@ -273,4 +273,17 @@ Deploy Node js webapp to ubuntu server
      pm2 start yarn --name {name-of-project} -- start
      ```
 
-### Encrypt SSL certificate with certbot
+### Install Let's Encrypt SSL certificate with certbot
+   
+   ```bash
+   cd /var/www/{name-of-project}
+   
+   # Generates free SSL certificate provided by https://letsencrypt.org
+   sudo certbot --nginx -d {doamin-name}
+   
+   # You'll be prompted to enter email
+   # and Aggree to their terms of service
+   # and recieve newsletter marketing emails
+   # Select 2) Redirect
+   ```
+
