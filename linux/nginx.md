@@ -2,7 +2,7 @@
 
 Deploy Node js webapp to ubuntu server
 
-## 1. Create new user with root permissions and SSH access.
+### 1. Create new user with root permissions and SSH access.
    
    - Doing this for safey precausions
    - Use sudo commands for root priviledges
@@ -88,7 +88,7 @@ Deploy Node js webapp to ubuntu server
      sudo systemctl restart sshd
      ```
 
-## 2. Install packages:
+### 2. Install packages:
    
    - `nginx` to server application publically
    - `certbot` to generate free ssl certificate
@@ -102,7 +102,7 @@ Deploy Node js webapp to ubuntu server
      sudo apt install nginx certbot python3-cervot-nginx
      ```
      
-## 3. Create website folder and set user as owner
+### 3. Create website folder and set user as owner
 
    - Create a folder under `/var/www/{name-of-project}`
    - Change permission of folder so that our user can have access
@@ -112,7 +112,7 @@ Deploy Node js webapp to ubuntu server
      sudo chown -R omoi:omoi /var/www/{name-of-project}
      ```
     
-## 4. Create NGINX config file
+### 4. Create NGINX config file
 
    - Remove `/etc/nginx/sites-enabled/default` to prevent any conflicts.
       
@@ -175,13 +175,13 @@ Deploy Node js webapp to ubuntu server
      }
      ```
 
-## 5. Create symbolic link
+### 5. Create symbolic link
     
    ```bash
    sudo ln -s /etc/nginx/sites-available/{name-of-project} /etc/nginx/sites-enabled/{name-of-project}
    ```
 
-## 6. Restart `nginx` with `systemctl`
+### 6. Restart `nginx` with `systemctl`
  
    ```bash
    sudo systemctl restart nginx
@@ -195,22 +195,19 @@ Deploy Node js webapp to ubuntu server
      sudo chown -R user:user {name-of-project}
      ```
    
-## 7. Allow our firewall to receive connections via port 80 and 433
+### 7. Allow our firewall to receive connections via port 80 and 433
   
    - Which are the port we are allowed to connect to with out a `SSL` certificate
    - We also want to redirect from http to https
 
      ```bash
-     # Enable firewall
-     sudo ufw enable
-
      sudo ufw allow "Nginx Full"
 
      # View Status
      sudo ufw status
      ```
 
-## 8. Install node, nvm and pm2
+### 8. Install node, nvm and pm2
     
    - link: https://github.com/nvm-sh/nvm
 
@@ -229,7 +226,7 @@ Deploy Node js webapp to ubuntu server
      npm i -g yarn pm2
      ```
     
-## 9. Back to `/var/www/{name-of-project}`
+### 9. Back to `/var/www/{name-of-project}`
 
    ```bash
    yarn install
@@ -241,7 +238,7 @@ Deploy Node js webapp to ubuntu server
    npm run build
    ```
     
-## 10. Start project in the background with pm2
+### 10. Start project in the background with pm2
    
    - Tell pm2 to run our project using yarn
    
@@ -262,4 +259,4 @@ Deploy Node js webapp to ubuntu server
      pm2 start yarn --name {name-of-project} -- start
      ```
 
-## 11. Encrypt SSL certificate with certbot
+### 11. Encrypt SSL certificate with certbot
