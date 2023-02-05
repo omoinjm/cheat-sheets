@@ -136,6 +136,13 @@ Deploy Node js webapp to ubuntu server
      
      server {
             listen 80;
+            listen [::]:80;
+            
+            root /var/www/{nameof-project}
+            
+            # If using React
+            # index index.html
+            
             server_name www.my-domain.com my-domain.com;
 
             # gzip allows us to compress our static files.
@@ -177,7 +184,7 @@ Deploy Node js webapp to ubuntu server
                     # If find errors follow:
                     # https://stackoverflow.com/questions/51972426/is-there-a-way-to-make-nginx-terminate-a-websocket-connection-and-pass-only-the
                     # https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_pass
-                    proxy_pass http://unix:/tmp/backend.socket:/uri/;
+                    proxy_pass http://127.0.0.1:3000;
                     proxy_http_version 1.1;
 
                     # handle web socket connections.
@@ -290,4 +297,17 @@ Deploy Node js webapp to ubuntu server
    # and recieve newsletter marketing emails
    # Select 2) Redirect
    ```
+## ELSE
 
+```bash
+# Install nginx
+sudo apt install nginx
+
+# Change permissions and access
+sudo mkdir /var/www/54.90.76.40
+sudo chmod 755 -R /var/www/54.90.76.40/
+sudo chown -R ubuntu:www-data /var/www/54.90.76.40
+
+# Nginx config file
+sudo vim /etc/nginx/sites-available/54.90.76.40
+```
