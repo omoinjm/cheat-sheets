@@ -2,7 +2,7 @@
 
 Deploy Node js webapp to ubuntu server
 
-### 1. Create new user with root permissions and SSH access.
+### Create new user with root permissions and SSH access.
    
    - Doing this for safey precausions
    - Use sudo commands for root priviledges
@@ -16,79 +16,80 @@ Deploy Node js webapp to ubuntu server
      # e.g, Full Name, Room Number etc...
      ```
    
-   - Give the user root access
+   1. Give the user root access
      
-     ```bash
-     usermod -aG sudo {username}
-     ```
+      ```bash
+      usermod -aG sudo {username}
+      ```
    
-   - Give `ssh` access for this user
+   2. Give `ssh` access for this user
      
-     ```bash
-     # 1. First create a `.ssh` folder in users home directory
-     mkdir /home/{username}/.ssh
+      ```bash
+      # 1. First create a `.ssh` folder in users home directory
+      mkdir /home/{username}/.ssh
      
-     # 2. Copy the authorized keys into this newly created folder
-     cp /root/.ssh/authorized_keys /home/{username}/.ssh/authorized_keys
+      # 2. Copy the authorized keys into this newly created folder
+      cp /root/.ssh/authorized_keys /home/{username}/.ssh/authorized_keys
      
-     # 3. Chnage user permissions of .ssh folder from `root` to `{username}`
-     chown -R {usernmae}:{username} .ssh
-     ```
+      # 3. Chnage user permissions of .ssh folder from `root` to `{username}`
+      chown -R {usernmae}:{username} .ssh
+      ```
    
-   - Setup permissions of this file/folder, so as to avoid the file from being tampered with
+   3. Setup permissions of this file/folder, so as to avoid the file from being tampered with
 
-     ```bash
-     # `cd` to `/home/{username}/`
-     # Read Write and Execute this folder but only for this user
+      ```bash
+      cd /home/{username}/
+      
+      # Read Write and Execute this folder but only for this user
+      chmod 700 .ssh
+      ```
      
-     chmod 700 .ssh
-     ```
+      ```bash
+      cd .ssh
+      
+      # Do the same thing for the authorized_keys file
+      # 600 means our newly createsd user is going to have Read and Write permissions
      
-     ```bash
-     # `cd` into `.ssh`
-     # Do the same thing for the authorized_keys file
-     # 600 means our newly createsd user is going to have Read and Write permissions
-     
-     chmod 600 authorized_keys
-     ```
+      chmod 600 authorized_keys
+      ```
    
-   - Allow the firewall to flow through the ssh port
+   4. Allow the firewall to flow through the ssh port
        
-     ```bash
-     # Enable firewall to make sure hackers don't access our server via other ports
-     ufw allow OpenSSH
+      ```bash
+      # Enable firewall to make sure hackers don't access our server via other ports
+      ufw allow OpenSSH
 
-     ufw enable
-     ```
+      ufw enable
+      ```
      
-   - Exit server and connect using new user
+   5. Exit server and connect using new user
      
-     ```bash
-     ssh {username}@{public_ip}
-     ```
+      ```bash
+      ssh {username}@{public_ip}
+      ```
    
-   - Secure server
+   6. Secure server
    
-     ```bash
-     # We edit this file in order to disable password access to the server.
-     # This is secure because we can only access the server via ssh using a public key.
-     # Hackers won't be able to brute force their way into this server.
-     # Also we have to disable root access to our server.
+      ```bash
+      # We edit this file in order to disable password access to the server.
+      # This is secure because we can only access the server via ssh using a public key.
+      # Hackers won't be able to brute force their way into this server.
+      # Also we have to disable root access to our server.
      
-     sudo vim /etc/ssh/sshd_config
+      sudo vim /etc/ssh/sshd_config
      
-     # Change `PermitRootLogin no`
-     # Chnage `PasswordAuthentication no`
-     ```
+      # Change `PermitRootLogin no`
+      # Chnage `PasswordAuthentication no`
+      ```
      
-   - Restart server services
+   7. Restart server services
      
-     ```bash
-     sudo systemctl restart ssh
-     sudo systemctl restart sshd
-     ```
+      ```bash
+      sudo systemctl restart ssh
+      sudo systemctl restart sshd
+      ```
 
-### 2. Install packages:
+### Install packages:
    
    - `nginx` to server application publically
    - `certbot` to generate free ssl certificate
@@ -102,9 +103,14 @@ Deploy Node js webapp to ubuntu server
      sudo apt install nginx certbot python3-cervot-nginx
      ```
      
-### 3. Create website folder and set user as owner
+### Create website folder and set user as owner
 
    - Create a folder under `/var/www/{name-of-project}`
+     
+     ```bash
+     mkdir /var/www/{name-of-project}
+     ```
+      
    - Change permission of folder so that our user can have access
 
      ```bash
@@ -112,7 +118,7 @@ Deploy Node js webapp to ubuntu server
      sudo chown -R omoi:omoi /var/www/{name-of-project}
      ```
     
-### 4. Create NGINX config file
+### Create NGINX config file
 
    - Remove `/etc/nginx/sites-enabled/default` to prevent any conflicts.
       
@@ -121,9 +127,13 @@ Deploy Node js webapp to ubuntu server
      rm -rf /etc/nginx/sites-enabled/default
      ```
       
-   - We're gonna add configurations to different sites in the `/etc/nginx/sites-available/{name-of-project}` folder then create a symbolic link pointing to `/var/www/{name-of-project}`
+   - Add configurations to different sites in the `/etc/nginx/sites-available/{name-of-project}` folder then create a symbolic link pointing to `/var/www/{name-of-project}`
 
      ```bash
+     sudo vim /etc/nginx/sites-available/{name-of-project}
+     
+     # {name-of-project} file
+     
      server {
             listen 80;
             server_name www.my-domain.com my-domain.com;
@@ -174,20 +184,24 @@ Deploy Node js webapp to ubuntu server
             }
      }
      ```
-
-### 5. Create symbolic link
+   
+   - Create a symboic link
     
-   ```bash
-   sudo ln -s /etc/nginx/sites-available/{name-of-project} /etc/nginx/sites-enabled/{name-of-project}
-   ```
+     ```bash
+     sudo ln -s /etc/nginx/sites-available/{name-of-project} /etc/nginx/sites-enabled/{name-of-project}
+     ```
 
-### 6. Restart `nginx` with `systemctl`
+### Restart `nginx` with `systemctl`
  
    ```bash
    sudo systemctl restart nginx
    ```
    
    - Clone your project under `/var/www/`
+      
+     ```bash
+     git clone {project-url}
+     ```
 
    - Change permissions to readonly
 
@@ -195,9 +209,9 @@ Deploy Node js webapp to ubuntu server
      sudo chown -R user:user {name-of-project}
      ```
    
-### 7. Allow our firewall to receive connections via port 80 and 433
+### Allow our firewall to receive connections via port 80 and 433
   
-   - Which are the port we are allowed to connect to with out a `SSL` certificate
+   - Which are the ports we're allowed to connect to with out a `SSL` certificate
    - We also want to redirect from http to https
 
      ```bash
@@ -207,7 +221,7 @@ Deploy Node js webapp to ubuntu server
      sudo ufw status
      ```
 
-### 8. Install node, nvm and pm2
+### Install node, nvm and pm2
     
    - link: https://github.com/nvm-sh/nvm
 
@@ -226,7 +240,7 @@ Deploy Node js webapp to ubuntu server
      npm i -g yarn pm2
      ```
     
-### 9. Back to `/var/www/{name-of-project}`
+### Back to `/var/www/{name-of-project}`
 
    ```bash
    yarn install
@@ -238,12 +252,12 @@ Deploy Node js webapp to ubuntu server
    npm run build
    ```
     
-### 10. Start project in the background with pm2
+### Start project in the background with pm2
    
    - Tell pm2 to run our project using yarn
    
      ```bash
-      pm2 start yarn --name {name-of-project} -- start
+     pm2 start yarn --name {name-of-project} -- start
      ```
     
    - Bugs: if pm2 doesn't run
@@ -259,4 +273,4 @@ Deploy Node js webapp to ubuntu server
      pm2 start yarn --name {name-of-project} -- start
      ```
 
-### 11. Encrypt SSL certificate with certbot
+### Encrypt SSL certificate with certbot
