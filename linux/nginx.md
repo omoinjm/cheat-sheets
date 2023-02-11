@@ -122,55 +122,39 @@ Deploy Node js webapp to ubuntu server
      ```
       
    - Add configurations to different sites in the `/etc/nginx/sites-available/{name-of-project}` folder then create a symbolic link pointing to `/var/www/{name-of-project}`
-
+   
+   - Create config file
      ```bash
      sudo vim /etc/nginx/sites-available/{name-of-project}
-     
-     # {name-of-project} file
-     
+     ```
+   
+     ```bash
      server {
+            
             listen 80;
-            listen [::]:80;
             
-            root /var/www/{nameof-project}
+            # Rename folders/files /var/www/{name-of-prohect}, /etc/nginx/sites-available/{name-of-project} and /etc/nginx/sites-enabled/{name-of-project} to be the same as your `server_name`
+            server_name www.example.com;
             
-            # If using React
-            # index index.html
-            
-            server_name www.my-domain.com my-domain.com;
+            proxy_buffers 8 16k;
+            proxy_buffer_size 32k;
 
-            # gzip allows us to compress our static files.
-            # it is great for speed and ranking higher on google
-            gzip on;
+            client_body_buffer_size 10K;
+            client_header_buffer_size 1K;
+            client_max_body_size 8M;
 
-            # we're using a proxy server so this allows for gzip to be enabled.
-            # we'll use pm2 to run our website as a background service.
-            # this process will proxy our website into the internet.
-            gzip_proxied any; 
+            keepalive_timeout 65;
 
-            # this will make sure all our javascript and css files are all compressed.
-            gzip_types application/javascript application/x-javascript text/css text/javascript;
-
-            # sets the compression level. This is a value set bewtween 1 and 9.
-            # each time we compress/decompress out files it'll take some processing power.
-            # we need to find a perfect balance between that processing power and file compression/decompression so that we don't get a large file size.
-            gzip_comp_level 6;
-
-            # need to research
-            gzip_buffers 16 8k;
-
-            # make sure to not compress files that are too small.
-            # the aim is to use less processing power
-            gzip_min_length 256;
-
-            # 
-            location /_next/static/ {
-                    alias /var/www/{name-of-project}/.next/static;
+            gzip_types text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript;
+             
+            location /_next {
+                    alias /var/www/{name-of-project}/.next;
                     expires 365d;
-
+                    proxy_buffering on;
                     # disable access log.
                     # we don't want to keep things like javascript, css and image.
                     access_log off;
+                    proxy_cache_valid 200 60m;
             }
 
             location / {
