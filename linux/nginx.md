@@ -56,6 +56,13 @@ Deploy Node js webapp to ubuntu server
    4. Allow the firewall to flow through the ssh port
        
       ```bash
+      # Allow access on port 22
+      ufw allow 22
+      
+      # Allow incoming TCP connections on port 22 from IP address {ip-address}
+      sudo ufw allow from {ip-address} to any port 22 proto tcp
+
+
       # Enable firewall to make sure hackers don't access our server via other ports
       ufw allow OpenSSH
 
@@ -102,22 +109,7 @@ Deploy Node js webapp to ubuntu server
      # Install packages
      sudo apt install nginx certbot python3-cervot-nginx
      ```
-     
-### Create website folder and set user as owner
-
-   - Create a folder under `/var/www/{name-of-project}`
-     
-     ```bash
-     mkdir /var/www/{name-of-project}
-     ```
-      
-   - Change permission of folder so that our user can have access
-
-     ```bash
-     # -R for recursive
-     sudo chown -R omoi:omoi /var/www/{name-of-project}
-     ```
-    
+         
 ### Create NGINX config file
 
    - Remove `/etc/nginx/sites-enabled/default` to prevent any conflicts.
@@ -125,6 +117,8 @@ Deploy Node js webapp to ubuntu server
      ```bash
      # -f for force, -r for recursively
      rm -rf /etc/nginx/sites-enabled/default
+     # OR
+     sudo unlink /etc/nginx/sites-enabled/default
      ```
       
    - Add configurations to different sites in the `/etc/nginx/sites-available/{name-of-project}` folder then create a symbolic link pointing to `/var/www/{name-of-project}`
@@ -206,6 +200,8 @@ Deploy Node js webapp to ubuntu server
  
    ```bash
    sudo systemctl restart nginx
+   # Test if nginx config is good
+   sudo nginx -t
    ```
    
    - Clone your project under `/var/www/`
@@ -250,8 +246,23 @@ Deploy Node js webapp to ubuntu server
      # Install yarn and pm2
      npm i -g yarn pm2
      ```
-    
-### Back to `/var/www/{name-of-project}`
+
+### Clone project from repo and set user as owner
+
+   - Clone in `/var/www/`
+     
+     ```bash
+     git clone {name-of-project}
+     ```
+      
+   - Change permission of folder so that our user can have access
+
+     ```bash
+     # -R for recursive
+     sudo chown -R omoi:omoi /var/www/{name-of-project}
+     ```
+     
+### Go to `/var/www/{name-of-project}`
 
    ```bash
    yarn install
@@ -297,73 +308,3 @@ Deploy Node js webapp to ubuntu server
    # and recieve newsletter marketing emails
    # Select 2) Redirect
    ```
-## ELSE
-
-```bash
-# Install nginx
-sudo apt install nginx
-
-# Change permissions and access
-sudo mkdir /var/www/{public-ip-of-server}
-sudo chmod 755 -R /var/www/{public-ip-of-server}
-sudo chown -R ubuntu:www-data /var/www/{public-ip-of-server}
-
-# Nginx config file
-sudo vim /etc/nginx/sites-available/{public-ip-of-server}
-```
-
-   - `/etc/nginx/sites-available/{public-ip-of-server}` file
-
-     ```bash
-     server {
-         listen 80;
-         listen [::]:80;
-   
-         root /var/www/{public-ip-of-server};
-         index index.html;
-     }
-     ```
-
-   - Test nginx config is successful
-     
-     ```bash
-     sudo nginx -t
-     ```
-     
-     ![image](https://user-images.githubusercontent.com/86345934/216841048-47cae946-d8c3-47cf-a0d1-f9e4c2e95a66.png)
-   
-   - Unlink default config fiile and link the new one
-     
-     ```bash
-     sudo unlink /etc/nginx/sites-enabled/default
-     
-     # Create a symbolic link
-     sudo ln -s /etc/nginx/sites-available/54.90.76.40 /etc/nginx/sites-enabled/54.90.76.40
-     ```
-     
-   - Restart nginx server
-   
-     ```bash
-     sudo systemctl restart nginx
-     ```
-     
-   - Deploy code to server
-     
-     ```bash
-     echo "Switch to main/master branch"
-     git checkout main
-
-     echo "Building app..."
-     npm run build
-
-     echo "Deploying files to server..."
-     scp -r -i C:\Users\nhlan\.ssh\aws-us-east-1.pem .next ubuntu@54.90.76.40:/var/www/54.90.76.40/.next
-     scp -r -i C:\Users\nhlan\.ssh\aws-us-east-1.pem .env ubuntu@54.90.76.40:/var/www/54.90.76.40/.env
-
-     echo "Finished aaannd... Done!"
-     ```
-     
-   - Back to server
-     
-     
-     
