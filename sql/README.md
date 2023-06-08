@@ -32,3 +32,29 @@
     ALTER TABLE dbo.doc_exb DROP COLUMN <column_b;
     GO
     ```
+    
+- Create Tables
+
+```SQL
+CREATE TABLE AU_Role (
+    RoleId INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
+    Code VARCHAR(50),
+    Name VARCHAR(100),
+    IsActive BIT,
+    RoleTypeId INT,
+    Description VARCHAR(200)
+);
+
+CREATE TABLE AU_UserRole (
+    UserRoleId INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
+    RoleId INT,
+    UserId INT,
+    CreatedDate DATETIME,
+    CreatedBy INT,
+    EditedDate DATETIME,
+    EditedBy INT,
+    IsActive BIT,
+    FOREIGN KEY (RoleId) REFERENCES AU_Role(RoleId)
+);
+
+```
