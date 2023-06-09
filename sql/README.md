@@ -36,6 +36,40 @@
 - Create Tables
 
 ```SQL
+CREATE TABLE AU_User (
+    UserId INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
+    FirstName VARCHAR(100),
+	Surname	VARCHAR(100),
+	DisplayName AS (FirstName + ' ' + Surname),
+	EmailAddress VARCHAR(100),
+	Password VARCHAR(MAX)	,
+	PasswordUpdateDate DATETIME,
+	AuthToken VARCHAR(MAX),
+	LoginDate DATETIME,
+	CreatedDate	DATETIME,
+	CreatedBy INT,
+	ModifiedDate DATETIME,	
+	ModifiedBy INT,
+	IsActive BIT,
+	ForgotPasswordGuid VARCHAR(MAX),
+	ChangePasswordGuid VARCHAR(MAX),
+	ShortCode AS (LEFT(FirstName, 1) + LEFT(Surname, 1)),
+	ProfileUserImage VARCHAR(MAX),
+	PhoneNumber	VARCHAR(50),
+	
+	INDEX IX_UserId (UserId),
+    INDEX IX_FirstName (FirstName),
+    INDEX IX_Surname (Surname),
+    INDEX IX_DisplayName (DisplayName),
+    INDEX IX_EmailAddress (EmailAddress),
+    INDEX IX_LoginDate (LoginDate),
+    INDEX IX_CreatedDate (CreatedDate),
+    INDEX IX_CreatedBy (CreatedBy),
+    INDEX IX_ModifiedDate (ModifiedDate),
+    INDEX IX_ModifiedBy (ModifiedBy),
+)
+
+
 CREATE TABLE AU_Role (
     RoleId INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
     Code VARCHAR(50),
