@@ -55,29 +55,37 @@ CREATE TABLE AU_User (
 	ChangePasswordGuid VARCHAR(MAX),
 	ShortCode AS (LEFT(FirstName, 1) + LEFT(Surname, 1)),
 	ProfileUserImage VARCHAR(MAX),
-	PhoneNumber	VARCHAR(50),
+	PhoneNumber VARCHAR(50),
 	
 	INDEX IX_UserId (UserId),
-    INDEX IX_FirstName (FirstName),
-    INDEX IX_Surname (Surname),
-    INDEX IX_DisplayName (DisplayName),
-    INDEX IX_EmailAddress (EmailAddress),
-    INDEX IX_LoginDate (LoginDate),
-    INDEX IX_CreatedDate (CreatedDate),
-    INDEX IX_CreatedBy (CreatedBy),
-    INDEX IX_ModifiedDate (ModifiedDate),
-    INDEX IX_ModifiedBy (ModifiedBy),
+	INDEX IX_FirstName (FirstName),
+	INDEX IX_Surname (Surname),
+	INDEX IX_DisplayName (DisplayName),
+	INDEX IX_EmailAddress (EmailAddress),
+	INDEX IX_LoginDate (LoginDate),
+	INDEX IX_CreatedDate (CreatedDate),
+	INDEX IX_CreatedBy (CreatedBy),
+	INDEX IX_ModifiedDate (ModifiedDate),
+	INDEX IX_ModifiedBy (ModifiedBy),
 )
 
 
 CREATE TABLE AU_Role (
-    RoleId INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
-    Code VARCHAR(50),
-    Name VARCHAR(100),
-    IsActive BIT,
-    RoleTypeId INT,
-    Description VARCHAR(200)
-);
+	RoleId INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
+	Code VARCHAR(50),
+	Name VARCHAR(100),
+	IsActive BIT,
+	Description VARCHAR(200),	
+	CreatedBy INT,
+	CreatedDate	DATETIME,
+	ModifiedBy INT,
+	ModifiedDate DATETIME,
+	IsDeleted BIT
+
+	INDEX IX_RoleId(RoleId),
+	INDEX IX_Code (Code),
+	INDEX IX_Name (Name),
+)
 
 CREATE TABLE AU_UserRole (
     UserRoleId INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
