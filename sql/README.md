@@ -57,6 +57,7 @@ CREATE TABLE AU_User (
 	ProfileUserImage VARCHAR(MAX),
 	PhoneNumber VARCHAR(50),
 	
+	-- Indexes
 	INDEX IX_UserId (UserId),
 	INDEX IX_FirstName (FirstName),
 	INDEX IX_Surname (Surname),
@@ -82,21 +83,30 @@ CREATE TABLE AU_Role (
 	ModifiedDate DATETIME,
 	IsDeleted BIT
 
+	-- Indexes
 	INDEX IX_RoleId(RoleId),
 	INDEX IX_Code (Code),
 	INDEX IX_Name (Name),
 )
 
 CREATE TABLE AU_UserRole (
-    UserRoleId INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
-    RoleId INT,
-    UserId INT,
-    CreatedDate DATETIME,
-    CreatedBy INT,
-    EditedDate DATETIME,
-    EditedBy INT,
-    IsActive BIT,
-    FOREIGN KEY (RoleId) REFERENCES AU_Role(RoleId)
-);
+	UserRoleId INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
+	RoleId INT NOT NULL,
+	UserId INT NOT NULL,
+	CreatedDate DATETIME,
+	CreatedBy INT,
+	ModifiedDate DATETIME,
+	ModifiedBy INT,
+	IsActive BIT,
+
+	-- Foreign key constraints
+	FOREIGN KEY (RoleId) REFERENCES AU_Role(RoleId),
+	FOREIGN KEY (UserId) REFERENCES AU_User(UserId),
+
+	-- Indexes
+	INDEX IX_UserRoleId (UserRoleId),
+	INDEX IX_RoleId (RoleId),
+	INDEX IX_UserId (UserId)
+)
 
 ```
