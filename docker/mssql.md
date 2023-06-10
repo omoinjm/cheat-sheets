@@ -3,22 +3,27 @@
 ## Command
 
 ```bash
+# Create a volume
+docker volume create docker-mssql-data
+```
+
+```bash
 docker run -d \
--p 1433:1433 \
--e "ACCPET_EULA=Y" \
+-p 1435:1433 \
+-e "ACCEPT_EULA=Y" \
 -e "SA_PASSWORD=<PASSWORD>" \
--v ~/Documents/SQLMount:/SQLMount \
 --name docker-mssql \
+--mount source=docker-mssql-data,target=/var/opt/mssql \
 mcr.microsoft.com/mssql/server:2019-latest
 ```
 
 ```powershell
 docker run -d `
--p 1433:1433 `
--e "ACCPET_EULA=Y" `
+-p 1435:1433 `
+-e "ACCEPT_EULA=Y" `
 -e "SA_PASSWORD=<PASSWORD>" `
--v ~/Documents/SQLMount:/SQLMount `
 --name docker-mssql `
+--mount source=docker-mssql-data,target=/var/opt/mssql `
 mcr.microsoft.com/mssql/server:2019-latest
 ```
 
