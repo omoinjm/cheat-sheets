@@ -41,8 +41,14 @@ docker build --rm -t omoi/grooovewebapi:dev .
 docker image ls
 
 # Run the image
-docker run --rm -p 5000:5000 -p 5001:5001 `
+docker run --rm -p 5000:5000 -p 5001:5001 ` 
 -e ASPNETCORE_HTTP_PORT=https://+:5001 `
 -e ASPNETCORE_URLS=http://+:5000 `
 omoi/grooovewebapi
 ```
+
+Tags:
+
+  - `-p` is to map the port on the host to the docker container
+  - `-e` is to set Environment Variables
+  - `ASPNETCORE_HTTP_PORT=https://+:5001` and `ASPNETCORE_URLS=http://+:5000` (The base image we use sets the by default to port 443 and 80) we are basically overiding the default port in this case
