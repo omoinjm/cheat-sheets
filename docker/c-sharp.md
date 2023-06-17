@@ -36,4 +36,7 @@ ENTRYPOINT ["dotnet", "Grooove_Web_API.dll"]
 ```bash
 # Build the image from the docker file
 docker build --rm -t grooovewebapi:dev .
+
+# Show/view image
+docker image ls
 ```
