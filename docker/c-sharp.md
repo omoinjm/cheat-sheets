@@ -35,13 +35,13 @@ ENTRYPOINT ["dotnet", "Grooove_Web_API.dll"]
 
 ```bash
 # Build the image from the docker file
-docker build --rm -t omoi/grooovewebapi:dev .
+docker build --rm -it omoi/grooovewebapi:latest .
 
 # Show/view image
 docker image ls
 
 # Run the image
-docker run --rm -d --name groove_web_api `
+docker run --rm -d --name grooove_api `
 -p 5000:5000 -p 5001:5001 `
 -e ASPNETCORE_HTTP_PORT=http://+:5001 `
 -e ASPNETCORE_URLS=http://+:5000 `
