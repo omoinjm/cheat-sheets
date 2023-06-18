@@ -55,10 +55,19 @@ docker run --rm -it --name grooove_api `
 -e ASPNETCORE_HTTP_PORT=https://+:5001 `
 -e ASPNETCORE_URLS=http://+:5000 `
 omoi/grooovewebapi
+
+# With environment file
+docker run --rm -it --name grooove_api `
+-p 5000:5000 -p 5001:5001 `
+--env-file .env `
+-e ASPNETCORE_HTTP_PORT=https://+:5001 `
+-e ASPNETCORE_URLS=http://+:5000 `
+omoi/grooovewebapi
 ```
 
 Tags:
 
+  - `--env-file' adds a file that has our environment variables
   - `-it` run container inline with our terminal so we can see the output
   - `-p` 5000:5000 `-p` 5001:5001 maps the host ports 5000 and 5001 to the container ports 5000 and 5001 respectively.
   - `-e` is to set Environment Variables
