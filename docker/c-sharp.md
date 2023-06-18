@@ -67,7 +67,7 @@ omoi/grooovewebapi
 
 Tags:
 
-  - `--env-file' adds a file that has our environment variables
+  - `--env-file` adds a file that has our environment variables
   - `-it` run container inline with our terminal so we can see the output
   - `-p` 5000:5000 `-p` 5001:5001 maps the host ports 5000 and 5001 to the container ports 5000 and 5001 respectively.
   - `-e` is to set Environment Variables
