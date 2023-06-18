@@ -40,15 +40,16 @@ docker build --rm -t omoi/grooovewebapi:latest .
 # Show/view image
 docker image ls
 
-# Run the image
-docker run --rm -d --name grooove_api `
+# Run the image (detached)
+docker run -d --name grooove_api `
 -p 5000:5000 -p 5001:5001 `
 -e ASPNETCORE_HTTP_PORT=https://+:5001 `
 -e ASPNETCORE_URLS=http://+:5000 `
 omoi/grooovewebapi
 
-# OR
-docker run --rm -p 5000:5000 -p 5001:5001 ` 
+# OR (when closed it will be removed)
+docker run --rm --name grooove_api `
+-p 5000:5000 -p 5001:5001 ` 
 -e ASPNETCORE_HTTP_PORT=https://+:5001 `
 -e ASPNETCORE_URLS=http://+:5000 `
 omoi/grooovewebapi
