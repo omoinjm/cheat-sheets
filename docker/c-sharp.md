@@ -50,7 +50,7 @@ docker run -d --name grooove_api `
 omoi/grooovewebapi
 
 # OR (when closed it will be removed)
-docker run --rm --name grooove_api `
+docker run --rm -it --name grooove_api `
 -p 5000:5000 -p 5001:5001 ` 
 -e ASPNETCORE_HTTP_PORT=https://+:5001 `
 -e ASPNETCORE_URLS=http://+:5000 `
@@ -59,6 +59,7 @@ omoi/grooovewebapi
 
 Tags:
 
+  - `-it` run container inline with our terminal so we can see the output
   - `-p` 5000:5000 `-p` 5001:5001 maps the host ports 5000 and 5001 to the container ports 5000 and 5001 respectively.
   - `-e` is to set Environment Variables
   - `ASPNETCORE_HTTP_PORT=https://+:5001` sets the `ASPNETCORE_HTTP_PORT` environment variable to `https://+:5001` within the container. It indicates that the ASP.NET Core application should listen on HTTPS using port 5001.
