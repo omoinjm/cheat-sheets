@@ -1,5 +1,12 @@
 # **SQL**
 
+
+  - Dark mode SSMS
+
+    navigate to `C:\Program Files (x86)\Microsoft SQL Server Management Studio 18\Common7\IDE`
+    
+    edit the file `ssms.pkgundef`
+      
   - Rename Tables (Database Engine)
     
     link: https://docs.microsoft.com/en-us/sql/relational-databases/tables/rename-tables-database-engine?view=sql-server-ver16
