@@ -12,6 +12,12 @@
 
 ```bash
 sudo pacman -Sy
+
+# I don't know what this did but it worked
+sudo pacman-key --init
+sudo pacman-key --populate archlinux
+sudo pacman -Scc
+sudo pacman -S binutils
 ```
 
 
