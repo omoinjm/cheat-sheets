@@ -1,5 +1,13 @@
 # Windows cheet-sheets
 
+## Load macOs BigSur
+
+- right click install.inf file and install
+
+- 'win + r' and type control mouse
+
+- under the `Poniters` tabs, change scheme to macOSBigSur
+
 ## Environment Variables
  
  - link: https://www.devdungeon.com/content/set-environment-variables-windows
