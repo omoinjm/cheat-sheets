@@ -44,6 +44,12 @@ pacman -Syu
 pacman -Syu sudo vim
 ```
 
+3. Export linux container into a path
+
+```bash
+docker export 188872160bb > /path/to/installation/archlinux.tar
+```
+
 ## Method 2:
 
 1. Basic installtion
