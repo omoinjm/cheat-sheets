@@ -33,6 +33,11 @@ sudo useradd exampleuser
 
 # create the home directory for the user
 sudo mkhomedir_helper exampleuser
+
+# edit to add user to sudoers file
+vim /etc/sudoers
+
+omoi john    ALL=(ALL:ALL) ALL
 ```
  
 5. Direnv Installation
