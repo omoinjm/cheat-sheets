@@ -29,7 +29,7 @@ useradd -m -G wheel omoi
 
 # we also want to make sure that the wheel group has sudo priviledges
 vim /etc/sudoers
-or
+# or
 EDITOR=vim visudo
 # scroll down and uncomment
 # %wheel ALL=(ALL:ALL) ALL
