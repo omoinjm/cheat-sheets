@@ -1,6 +1,38 @@
 # ArchLinux on WSL2
 
-## Method 1
+## Method 
+
+1. Install using docker
+
+```bash
+# pull the image
+docker pull archlinux
+
+# create container
+ docker create -i archlinux bash
+
+# start container
+docker container start 188872160bba4
+
+# interactive shell
+docker exec -it 188872160bba4 /bin/bash
+```
+
+2. Setup a user
+
+```bash
+# setup pacman key
+pacman-key --init
+
+# add a user to the wheel group
+useradd -m -G wheel omoi
+
+# change password for that user
+passwd omoi
+
+# update the system
+pacman -Syu
+```
 
 ## Method 2:
 
