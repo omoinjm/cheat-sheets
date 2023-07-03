@@ -16,10 +16,10 @@
 
   -  edit the `/etc/wsl.conf` file to setup default user
 
-     ```bash
-     [user]
-     default=username
-     ```
+```bash
+[user]
+default=username
+```
 
 ```bash
 sudo useradd exampleuser
@@ -27,8 +27,7 @@ sudo useradd exampleuser
 # create the home directory for the user
 sudo mkhomedir_helper exampleuser
 ```
-
-  
+ 
 5. Direnv Installation
     - https://direnv.net/docs/installation.html
   
