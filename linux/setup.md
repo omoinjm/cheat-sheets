@@ -47,7 +47,26 @@ EDITOR=vim visudo
 3. Export linux container into a path
 
 ```bash
+# exit out of out docker container
+exit
+
+# export to tar file
 docker export 188872160bb > /path/to/installation/archlinux.tar
+# exit
+```
+
+4. Setup profile to login as create user
+
+```json
+# in windows terminal settings
+{
+    "guid": "{a5a97cb8-8961-5535-816d-772efe0c6a3f}",
+    "hidden": false,
+    "icon": "D:\\omoi\\useful-stuff\\linux\\images\\icons\\arch.png",
+    "name": "arch",
+    "source": "Windows.Terminal.Wsl",
+    "commandline": "wsl.exe -u omoi -d Arch"
+}
 ```
 
 ## Method 2:
