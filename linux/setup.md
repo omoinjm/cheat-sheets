@@ -27,18 +27,18 @@ pacman-key --init
 # add a user to the wheel group
 useradd -m -G wheel omoi
 
+# change password for that user
+passwd omoi
+
+# update the system
+pacman -Syu
+
 # we also want to make sure that the wheel group has sudo priviledges
 vim /etc/sudoers
 # or
 EDITOR=vim visudo
 # scroll down and uncomment
 # %wheel ALL=(ALL:ALL) ALL
-
-# change password for that user
-passwd omoi
-
-# update the system
-pacman -Syu
 
 # install sudo and vim
 pacman -Syu sudo vim
