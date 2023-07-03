@@ -92,7 +92,7 @@ omoi ALL=(ALL:ALL) ALL
 passwd omoi
 
 # After the other "Defaults" line, add. This allow sudoers to use root password
-Defaults rootpw
+Defaults rootpw 
 ```
  
 5. Direnv Installation
