@@ -32,6 +32,9 @@ passwd omoi
 
 # update the system
 pacman -Syu
+
+# install sudo and vim
+pacman -Syu sudo vim
 ```
 
 ## Method 2:
