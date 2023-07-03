@@ -57,8 +57,9 @@ docker export 188872160bb > /path/to/installation/archlinux.tar
 
 4. Setup profile to login as create user
 
+in windows terminal settings
+
 ```json
-# in windows terminal settings
 {
     "guid": "{a5a97cb8-8961-5535-816d-772efe0c6a3f}",
     "hidden": false,
