@@ -8,6 +8,13 @@
     - https://github.com/Jguer/yay
     - https://www.tecmint.com/install-yay-aur-helper-in-arch-linux-and-manjaro/ 
 
+## Update linux
+
+```bash
+sudo pacman -Sy
+```
+
+
 3. How to set default user for manually installed WSL distro?
     - https://superuser.com/questions/1566022/how-to-set-default-user-for-manually-installed-wsl-distro
     - https://winaero.com/set-default-user-wsl-windows-10/
