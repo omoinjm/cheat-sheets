@@ -13,10 +13,13 @@
 ```bash
 sudo pacman -Sy
 
-# I don't know what this did but it worked
+# Update your system's keyring by running the following command:
 sudo pacman-key --init
 sudo pacman-key --populate archlinux
+
+# Clear the package cache to remove any corrupted files:
 sudo pacman -Scc
+
 sudo pacman -S binutils
 ```
 
