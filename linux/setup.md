@@ -33,15 +33,15 @@ passwd omoi
 # update the system
 pacman -Syu
 
+# install sudo and vim
+pacman -Syu sudo vim
+
 # we also want to make sure that the wheel group has sudo priviledges
 vim /etc/sudoers
 # or
 EDITOR=vim visudo
 # scroll down and uncomment
 # %wheel ALL=(ALL:ALL) ALL
-
-# install sudo and vim
-pacman -Syu sudo vim
 ```
 
 3. Export linux container into a path
