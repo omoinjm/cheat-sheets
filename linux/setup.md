@@ -38,6 +38,9 @@ sudo mkhomedir_helper exampleuser
 vim /etc/sudoers
 
 omoi john    ALL=(ALL:ALL) ALL
+
+# set up password
+passwd omoi
 ```
  
 5. Direnv Installation
