@@ -41,6 +41,9 @@ omoi john    ALL=(ALL:ALL) ALL
 
 # set up password
 passwd omoi
+
+# After the other "Defaults" line, add. This allow sudoers to use root password
+Defaults rootpw
 ```
  
 5. Direnv Installation
