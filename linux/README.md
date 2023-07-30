@@ -10,6 +10,13 @@
 
 [Link](https://phoenixnap.com/kb/ubuntu-20-04-change-hostname)
 
+```bash
+sudo hostname new-hostname
+
+# Pretty Name
+hostnamectl set-hostname "new-hostname" --pretty
+```
+
 ## Install the .NET SDK or the .NET Runtime on Ubuntu
   
 [Link](https://docs.microsoft.com/en-us/dotnet/core/install/linux-ubuntu?source=recommendations#2004)
