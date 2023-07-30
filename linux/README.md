@@ -8,51 +8,49 @@
 
 ## Change Hostname
 
-  - https://phoenixnap.com/kb/ubuntu-20-04-change-hostname
+[Link](https://phoenixnap.com/kb/ubuntu-20-04-change-hostname)
 
 ## Install the .NET SDK or the .NET Runtime on Ubuntu
   
-  - https://docs.microsoft.com/en-us/dotnet/core/install/linux-ubuntu?source=recommendations#2004
+[Link](https://docs.microsoft.com/en-us/dotnet/core/install/linux-ubuntu?source=recommendations#2004)
 
 ## Set up an SSH key
   
-  - https://support.atlassian.com/bitbucket-cloud/docs/set-up-an-ssh-key/
+[Link](https://support.atlassian.com/bitbucket-cloud/docs/set-up-an-ssh-key/)
 
 ## Permanently authenticating with Git repositories
 
-  - https://confluence.atlassian.com/bitbucketserver/permanently-authenticating-with-git-repositories-776639846.html
+[Link](https://confluence.atlassian.com/bitbucketserver/permanently-authenticating-with-git-repositories-776639846.html)
 
 ## How to make files accessible only by root?
     
-    - https://askubuntu.com/questions/193055/how-to-make-files-accessible-only-by-root
+[Link](https://askubuntu.com/questions/193055/how-to-make-files-accessible-only-by-root)
 
-    ```bash
-    sudo chown root:root /path/to/application
-    ```
+```bash
+sudo chown root:root /path/to/application
 
-    ```bash
-    sudo chmod 700 /path/to/application
-    ```
+sudo chmod 700 /path/to/application
+```
 
 ## How to Install OpenVPN in Ubuntu 20.04?
 
-  - https://www.tecmint.com/install-openvpn-in-ubuntu/
+[Link](https://www.tecmint.com/install-openvpn-in-ubuntu/)
 
 ## How to Create and Use Symbolic Links (aka Symlinks) on linux-ubuntu
     
-  - https://www.howtogeek.com/287014/how-to-create-and-use-symbolic-links-aka-symlinks-on-linux/
+[Link](https://www.howtogeek.com/287014/how-to-create-and-use-symbolic-links-aka-symlinks-on-linux/)
 
-    ```bash
-    ln -s /path/to/original /path/to/link
-    ```
+```bash
+ln -s /path/to/original /path/to/link
+```
 
 ## LSD (LSDeluxe)
     
-    - description: This project is a rewrite of GNU ls with lots of added features like colors, icons, tree-view, more formatting options etc. The project is heavily inspired by the super colorls project.
+Description: This project is a rewrite of GNU ls with lots of added features like colors, icons, tree-view, more formatting options etc. The project is heavily inspired by the super colorls project.
 
-    -  [link](https://github.com/Peltoche/lsd)
+  -  [link](https://github.com/Peltoche/lsd)
 
-    -  [video](https://www.youtube.com/watch?v=8q1NDEKkSf4)
+  -  [video](https://www.youtube.com/watch?v=8q1NDEKkSf4)
 
 ## Fuzzy finder
 
