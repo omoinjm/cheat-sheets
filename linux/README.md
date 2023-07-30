@@ -50,9 +50,9 @@
     
     - description: This project is a rewrite of GNU ls with lots of added features like colors, icons, tree-view, more formatting options etc. The project is heavily inspired by the super colorls project.
 
-    - link: https://github.com/Peltoche/lsd
+    -  [link](https://github.com/Peltoche/lsd)
 
-    - video: https://www.youtube.com/watch?v=8q1NDEKkSf4
+    -  [video](https://www.youtube.com/watch?v=8q1NDEKkSf4)
 
 ## Fuzzy finder
 
