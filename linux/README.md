@@ -11,7 +11,7 @@
 [Link](https://phoenixnap.com/kb/ubuntu-20-04-change-hostname)
 
 ```bash
-sudo hostname new-hostname
+hostnamectl set-hostname new-hostname
 
 # Pretty Name
 hostnamectl set-hostname "new-hostname" --pretty
