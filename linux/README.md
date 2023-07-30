@@ -43,7 +43,7 @@ sudo chmod 700 /path/to/application
 
 [Link](https://www.tecmint.com/install-openvpn-in-ubuntu/)
 
-## How to Create and Use Symbolic Links (aka Symlinks) on linux-ubuntu
+## How to Create and Use Symbolic Links
     
 [Link](https://www.howtogeek.com/287014/how-to-create-and-use-symbolic-links-aka-symlinks-on-linux/)
 
@@ -55,9 +55,7 @@ ln -s /path/to/original /path/to/link
     
 Description: This project is a rewrite of GNU ls with lots of added features like colors, icons, tree-view, more formatting options etc. The project is heavily inspired by the super colorls project.
 
-  -  [link](https://github.com/Peltoche/lsd)
-
-  -  [video](https://www.youtube.com/watch?v=8q1NDEKkSf4)
+[Link](https://github.com/Peltoche/lsd) and [Video](https://www.youtube.com/watch?v=8q1NDEKkSf4)
 
 ## Fuzzy finder
 
