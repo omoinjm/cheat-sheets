@@ -1,6 +1,10 @@
 # How to use Docker and migrate your existing Apps to your Linux Server?
 
-Video reference [youtube](https://www.youtube.com/watch?v=y0GGQ2F2tvs) and blog reference [github](https://github.com/christianlempa/videos/tree/main/docker-tutorial)
+References:
+
+- [networkchuck](https://www.youtube.com/watch?v=iX0HbrfRyvc&t=12s)
+
+- Christian Lempa: Video reference [youtube](https://www.youtube.com/watch?v=y0GGQ2F2tvs) and blog reference [github](https://github.com/christianlempa/videos/tree/main/docker-tutorial)
 
 1. Docker Engine installation
 
