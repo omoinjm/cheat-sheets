@@ -6,7 +6,8 @@ References:
 
 - Christian Lempa: Video reference [youtube](https://www.youtube.com/watch?v=y0GGQ2F2tvs) and blog reference [github](https://github.com/christianlempa/videos/tree/main/docker-tutorial)
 
-1. Docker Engine installation
+
+### STEP 1 - Docker Engine installation
 
 After following instructions from [docs](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository). 
 
@@ -25,7 +26,7 @@ ls -l /var/run/docker.sock
 sudo chown root:docker /var/run/docker.sock
 ```
 
-2. Persistent Storage with Volumes
+### STEP 2 - Persistent Storage with Volumes
 
 ```bash
 # If we run the container with a volume
@@ -41,7 +42,7 @@ docker rm <container id>
 docker volume ls
 ```
 
-3. How to migrate data into Docker Container?
+### STEP 3 - How to migrate data into Docker Container?
 
 ```bash
 # To view data location
@@ -57,5 +58,5 @@ ls /var/lib/docker
 docker run -p 80:80 -v /var/www/html:/var/www/html -d nginx
 ```
 
-4. Manage Docker Resources with Portainer
+### STEP 4 - Manage Docker Resources with Portainer
 
