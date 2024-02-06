@@ -1,5 +1,7 @@
 # Create an EF Core Model from Database First (Scaffold DB Context)
 
+[Install for Linux](https://learn.microsoft.com/en-us/dotnet/core/install/linux-ubuntu-2004)
+
 We want to create a database context with code based models to represent this schema using a tool called `Scaffold DB Context`
 
 ## DotNet Cli
