@@ -1,9 +1,3 @@
----
-title: "Unitrans MTN and Vodacom Reports"
-permalink: /
-layout: default
----
-
 # Unitrans MTN and Vodacom Reports
 
 Ticket Examples:
@@ -68,4 +62,3 @@ WHERE MSISDN = '0833062840' and BillMonth = '01 May 2023'
 ```sql
 select ((select SUM(Amount) from @TempTNET) - (select SUM(Amount) from @TempVisibill)) as diff
 ```
-
