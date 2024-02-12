@@ -1,4 +1,4 @@
-# Populate table on data hub
+# Populate Postgres table on data hub
 
 ### Add Organisation Group into the endpoint table
 
