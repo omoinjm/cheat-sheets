@@ -1,5 +1,15 @@
 # Populate Postgres table on data hub
 
+### Find tables with relevant details
+
+```sql
+select * from provider_organisation_group where provider_id = '37665c53-72a1-4bb9-9870-0b68d1efc04c';
+
+select * from provider_endpoint where provider_id = '37665c53-72a1-4bb9-9870-0b68d1efc04c';
+
+select * from endpoint where user_name = 'ANGL000112';
+```
+
 ### Add Organisation Group into the endpoint table
 
 ```sql
