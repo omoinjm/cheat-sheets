@@ -9,3 +9,7 @@
 [Blog Guide](https://devops4solutions.com/how-to-deploy-containerized-applications-with-amazon-ecs/)
 
 [YT Video](https://www.youtube.com/watch?v=vyznPmkVC9k&t=778s)
+
+## Amazon Elastic Container Service (ECS) with a Load Balancer | AWS Tutorial with New ECS Experience
+
+[YT Video](https://www.youtube.com/watch?v=rUgZNXKbsrY)
