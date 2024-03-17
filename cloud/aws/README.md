@@ -6,4 +6,6 @@
 
 ## Deploy Containerized Applications with Amazon ECS | AWS Fargate in ECS using ECR
 
-[Guide](https://devops4solutions.com/how-to-deploy-containerized-applications-with-amazon-ecs/)
+[Blog Guide](https://devops4solutions.com/how-to-deploy-containerized-applications-with-amazon-ecs/)
+
+[YT Video](https://www.youtube.com/watch?v=vyznPmkVC9k&t=778s)
