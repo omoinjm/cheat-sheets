@@ -1,6 +1,6 @@
 # Cloud Architecture Models
 
-**EXAM TIPS**
+## <mark>EXAM TIPS</mark>
 
 Choose your cloud architecture model wisely.
 

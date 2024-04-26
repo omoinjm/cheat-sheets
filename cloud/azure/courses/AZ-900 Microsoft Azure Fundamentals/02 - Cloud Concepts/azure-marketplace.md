@@ -18,4 +18,4 @@
 
 **BENEFITS**
 
-![alt text](../images/cam.png)
+![alt text](./images/cam.png)

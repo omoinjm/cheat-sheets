@@ -1,6 +1,6 @@
 # The Language of Cloud Economics
 
-### Exam Tips
+## <mark>EXAM TIPS</mark>
 
 **Using the right budget in a company can enable huge change.**
 

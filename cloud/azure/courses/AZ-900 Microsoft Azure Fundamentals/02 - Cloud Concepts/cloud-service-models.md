@@ -1,6 +1,6 @@
 # Cloud Service Models
 
-### Exam Tips
+## <mark>EXAM TIPS</mark>
 
 **Service is the core of Azure, and there are three main ways to go about it.**
 
@@ -81,4 +81,4 @@
 
 ## SHARED RESPONSIBILITY MODEL
 
-![alt text](../images/srm.png)
+![alt text](./images/srm.png)

@@ -1,6 +1,6 @@
 # The Language of Cloud Computing
 
-## Exam Tips
+## <mark>EXAM TIPS</mark>
 
 Cloud computing has terms that are specific and critical to understanding it.
 
