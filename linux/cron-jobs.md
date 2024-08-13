@@ -1,5 +1,9 @@
 # Manage CRON jobs
 
+How to manage cron jobs
+
+[link](https://www.freecodecamp.org/news/cron-jobs-in-linux/)
+
 1. Open the crontab file
 
 ```bash
