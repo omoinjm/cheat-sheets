@@ -12,8 +12,19 @@ docker run -d \
 -p 1435:1433 \
 -e "ACCEPT_EULA=Y" \
 -e "SA_PASSWORD=<PASSWORD>" \
---name docker-mssql \
+--name docker-sqlserver-2019 \
 --mount source=docker-mssql-data,target=/var/opt/mssql \
+mcr.microsoft.com/mssql/server:2019-latest
+
+# Alternatively without creating a volume (keeps data persistent on local machine)
+docker run -d \
+-p 1433:1433 \
+-e 'ACCEPT_EULA=Y' \
+-e 'MSSQL_SA_PASSWORD=<PASSWORD>' \
+-v '/mnt/d/omoi/data/docker/volumes/data':/var/opt/mssql/data \
+-v '/mnt/d/omoi/data/docker/volumes/log':/var/opt/mssql/log \
+-v '/mnt/d/omoi/data/docker/volumes/secrets':/var/opt/mssql/secrets \
+--name sqlserver-2019 \
 mcr.microsoft.com/mssql/server:2019-latest
 ```
 

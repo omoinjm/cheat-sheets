@@ -9,13 +9,13 @@
 docker pull archlinux
 
 # create container
- docker create -i archlinux bash
+docker create -i archlinux bash
 
 # start container
-docker container start 188872160bba4
+docker container start container_id
 
 # interactive shell
-docker exec -it 188872160bba4 /bin/bash
+docker exec -it container_id /bin/bash
 ```
 
 2. Setup a user
@@ -51,7 +51,7 @@ EDITOR=vim visudo
 exit
 
 # export to tar file
-docker export 188872160bb > /path/to/installation/archlinux.tar
+docker export container_id > /path/to/installation/archlinux.tar
 # exit
 ```
 
