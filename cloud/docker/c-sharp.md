@@ -42,26 +42,36 @@ docker build --rm -t omoi/grooovewebapi:latest .
 # Show/view image
 docker image ls
 
+
+docker run -d --name insurance_poc_api \
+    -p 5000:5000 -p 5242:5242 \
+    -e ASPNETCORE_HTTP_PORT=https://+:5000 \
+    -e ASPNETCORE_URLS=http://+:5242 \
+    -e ASPNETCORE_ENVIRONMENT=Development \
+    -e POSTGRES_CONNECTION_STRING="host=ep-restless-art-a4tqr4a4-pooler.us-east-1.aws.neon.tech; Port=5432; Username=default; Password=Z8VkpMit4NPr; Database=verceldb; SslMode=Require;" \
+    omoi/insurance-poc:latest
+
+
 # Run the image (detached)
-docker run -d --name grooove_api `
--p 5000:5000 -p 5001:5001 `
--e ASPNETCORE_HTTP_PORT=https://+:5001 `
--e ASPNETCORE_URLS=http://+:5000 `
+docker run -d --name grooove_api \
+-p 5000:5000 -p 5001:5001 \
+-e ASPNETCORE_HTTP_PORT=https://+:5001 \
+-e ASPNETCORE_URLS=http://+:5000 \
 omoi/grooovewebapi
 
 # OR (when closed it will be removed)
-docker run --rm -it --name grooove_api `
--p 5000:5000 -p 5001:5001 ` 
--e ASPNETCORE_HTTP_PORT=https://+:5001 `
--e ASPNETCORE_URLS=http://+:5000 `
+docker run --rm -it --name grooove_api \
+-p 5000:5000 -p 5001:5001 \
+-e ASPNETCORE_HTTP_PORT=https://+:5001 \
+-e ASPNETCORE_URLS=http://+:5000 \
 omoi/grooovewebapi
 
 # With environment file
-docker run --rm -it --name grooove_api `
--p 5000:5000 -p 5001:5001 `
---env-file .env `
--e ASPNETCORE_HTTP_PORT=https://+:5001 `
--e ASPNETCORE_URLS=http://+:5000 `
+docker run --rm -it --name grooove_api \
+-p 5000:5000 -p 5001:5001 \
+--env-file .env \
+-e ASPNETCORE_HTTP_PORT=https://+:5001 \
+-e ASPNETCORE_URLS=http://+:5000 \
 omoi/grooovewebapi
 ```
 
