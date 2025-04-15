@@ -11,6 +11,8 @@ References:
 
 After following instructions from [docs](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository). 
 
+Additionally you can install [Docker Compose](https://docs.docker.com/compose/install/standalone/)
+
 Run the following commands:
 
 ```bash
