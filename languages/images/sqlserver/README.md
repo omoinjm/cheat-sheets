@@ -1,20 +1,25 @@
+---
+type: directory
+path: languages/images/sqlserver
+parent: languages/images
+tags: [repo, documentation, languages, sqlserver, images]
+---
 # SQL Server Images
 
-[⬆ Back to Parent](../README.md)
-[🏠 Back to Root README (../../../../README.md)
+## 🔗 Navigation
+- [[../README|⬆ Parent]]
+- [[../../../../README|🏠 Root]]
+- [[./|📂 Current Directory]]
 
-## Parent Context
-
-This directory is part of the language-specific images section, specifically containing visual assets for SQL Server documentation.
-
-## Contents Overview
-
+<h2> 📌 Overview</h2>
 This directory stores image files that are used to visually illustrate concepts or procedures within the SQL Server documentation, such as database backup processes.
 
-### Files
+<h2> 📁 Contents</h2>
+- [[backup-script.jpg]]: An image depicting a SQL Server backup script or related visual.
+- [[README.md]]: This file, providing an overview of SQL Server images.
 
--   `backup-script.jpg`: An image depicting a SQL Server backup script or related visual.
+<h2> 🧠 Responsibilities</h2>
+This directory is responsible for providing visual aids that enhance the clarity and user-friendliness of the [[../../../sqlserver.md|sqlserver.md]] documentation, helping users understand complex SQL Server operations.
 
-## Role in System
-
-This image enhances the clarity and user-friendliness of the `sqlserver.md` documentation by providing a visual aid that helps users understand complex SQL Server operations.
+<h2> 🔄 Relationships</h2>
+This directory is a child of the [[../README|images]] directory. Its content directly supports the documentation within the [[../../../sqlserver.md|languages/sqlserver.md]] file by providing visual context for database-related procedures.

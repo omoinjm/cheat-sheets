@@ -1,16 +1,25 @@
+---
+type: directory
+path: cloud/azure/courses
+parent: cloud/azure
+tags: [repo, documentation, cloud, azure, certification, courses]
+---
 # Azure Certification Courses
 
-[⬆ Back to Parent](../README.md)
-[🏠 Back to Root README (../../../README.md)
+## 🔗 Navigation
+- [[../README|⬆ Parent]]
+- [[../../../README|🏠 Root]]
+- [[./|📂 Current Directory]]
 
-## Contents Overview
+<h2> 📌 Overview</h2>
+This directory contains organized notes and learning materials for various Microsoft Azure certification courses. Each subdirectory corresponds to a specific certification exam or learning path, serving as a structured learning resource.
 
-This directory contains organized notes and learning materials for various Microsoft Azure certification courses. Each subdirectory corresponds to a specific certification exam or learning path.
+<h2> 📁 Contents</h2>
+- [[AZ-900 Microsoft Azure Fundamentals/README|AZ-900 Microsoft Azure Fundamentals]]: Comprehensive notes and resources for the AZ-900 Microsoft Azure Fundamentals certification exam.
+- [[README.md]]: This file, providing an overview of Azure certification courses.
 
-### Subdirectories
+<h2> 🧠 Responsibilities</h2>
+This section is responsible for centralizing study materials, making it easier to review key concepts and prepare for exams related to Microsoft Azure cloud services. It supports individuals preparing for Azure certifications.
 
--   [AZ-900 Microsoft Azure Fundamentals](./AZ-900%20Microsoft%20Azure%20Fundamentals/README.md): Comprehensive notes and resources for the AZ-900 Microsoft Azure Fundamentals certification exam.
-
-## Role in System
-
-This section serves as a structured learning resource for individuals preparing for Azure certifications. It centralizes study materials, making it easier to review key concepts and prepare for exams related to Microsoft Azure cloud services.
+<h2> 🔄 Relationships</h2>
+This directory is a child of the [[../README|azure]] directory, providing educational content related to Azure services. It helps in understanding the various [[../../azure-ad.md|Azure AD]] and [[../../azure-container.md|Azure Container]] services documented in the parent directory.

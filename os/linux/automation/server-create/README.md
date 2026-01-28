@@ -1,21 +1,26 @@
+---
+type: directory
+path: os/linux/automation/server-create
+parent: os/linux/automation
+tags: [repo, documentation, os, linux, automation, server, aws, lamp]
+---
 # Server Creation Automation
 
-[⬆ Back to Parent](../README.md)
-[🏠 Back to Root README (../../../../README.md)
+## 🔗 Navigation
+- [[../README|⬆ Parent]]
+- [[../../../../README|🏠 Root]]
+- [[./|📂 Current Directory]]
 
-## Parent Context
+## 📌 Overview
+This directory contains shell scripts designed to automate the creation of virtual machines on cloud platforms and the installation of common server stacks on Linux. These scripts aim for rapid and consistent deployment of new server instances.
 
-This directory is part of the Linux automation section, specifically focusing on scripts for automating the provisioning and initial setup of servers.
+## 📁 Contents
+- [[create_aws_ubuntu_vm.sh]]: A script for automating the creation of an Ubuntu Virtual Machine on Amazon Web Services (AWS).
+- [[setup_lamp_server.sh]]: A script for automating the setup of a LAMP (Linux, Apache, MySQL, PHP) server stack.
+- [[README.md]]: This file, providing an overview of server creation automation scripts.
 
-## Contents Overview
+## 🧠 Responsibilities
+This directory is responsible for providing automated solutions for provisioning and configuring server environments on Linux. It aims to reduce manual configuration errors and accelerate development and deployment workflows.
 
-This directory contains shell scripts designed to automate the creation of virtual machines on cloud platforms and the installation of common server stacks.
-
-### Files
-
--   [create_aws_ubuntu_vm.sh](./create_aws_ubuntu_vm.sh): A script for automating the creation of an Ubuntu Virtual Machine on Amazon Web Services (AWS). (Content needs to be added)
--   [setup_lamp_server.sh](./setup_lamp_server.sh): A script for automating the setup of a LAMP (Linux, Apache, MySQL, PHP) server stack. (Content needs to be added)
-
-## Role in System
-
-These scripts are critical for rapid and consistent deployment of new server instances, reducing manual configuration errors and accelerating development and deployment workflows for Linux-based applications.
+## 🔄 Relationships
+This directory is a child of the [[../README|automation]] directory. The scripts here interact with [[../../../../cloud/aws/README|AWS]] infrastructure and are related to general [[../../../../cloud/README|cloud]] concepts. They can be used to set up environments for applications documented in the [[../../../../languages/README|languages]] section.

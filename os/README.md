@@ -1,16 +1,26 @@
+---
+type: directory
+path: os
+parent: .
+tags: [repo, documentation, os]
+---
 # Operating Systems
 
-[⬆ Back to Parent](../README.md)
+## 🔗 Navigation
+- [[../README|⬆ Parent]]
+- [[../README|🏠 Root]]
+- [[./|📂 Current Directory]]
 
-## Contents Overview
+## 📌 Overview
+This directory contains documentation, configurations, and scripts for various operating systems. It is divided into subdirectories for each OS, serving as a centralized location for OS-specific knowledge.
 
-This directory contains documentation, configurations, and scripts for various operating systems. It is divided into subdirectories for each OS.
+## 📁 Contents
+- [[linux/README|linux]]: Documentation for Linux-based operating systems.
+- [[windows/README|windows]]: Documentation for Windows-based operating systems.
+- [[README.md]]: This file, providing an overview of the `os` directory.
 
-### Subdirectories
+## 🧠 Responsibilities
+This directory is responsible for holding all documentation related to operating systems. It categorizes information by OS to ensure that platform-specific guides, scripts, and configurations are easy to locate and manage.
 
--   [linux](./linux/README.md): Documentation for Linux-based operating systems.
--   [windows](./windows/README.md): Documentation for Windows-based operating systems.
-
-## Role in System
-
-This section serves as a centralized location for OS-specific knowledge, helping to keep information organized and easy to find.
+## 🔄 Relationships
+As a primary category under the root, this directory is a sibling to other major sections like [[../languages/README|languages]] and [[../cloud/README|cloud]]. The information contained here may be referenced by scripts or documentation in other parts of the repository, particularly where setup or execution is OS-dependent.

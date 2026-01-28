@@ -1,22 +1,31 @@
+---
+type: directory
+path: cloud/docker
+parent: cloud
+tags: [repo, documentation, cloud, docker, containerization]
+---
 # Docker Containerization
 
-[⬆ Back to Parent](../README.md)
-[🏠 Back to Root README (../../README.md)
+## 🔗 Navigation
+- [[../README|⬆ Parent]]
+- [[../../README|🏠 Root]]
+- [[./|📂 Current Directory]]
 
-## Contents Overview
+## 📌 Overview
+This directory contains documentation, notes, and configurations related to Docker containerization technology, including its integration with various programming languages, databases, and tools. It provides practical guidance for leveraging Docker for consistent and scalable solutions.
 
-This directory contains documentation, notes, and configurations related to Docker containerization technology, including its integration with various programming languages, databases, and tools.
+<h2> 📁 Contents</h2>
+- [[c-sharp.md]]: Dockerization strategies and notes for C# applications.
+- [[mssql.md]]: Running Microsoft SQL Server in Docker containers.
+- [[mysql.md]]: Setting up and managing MySQL in Docker.
+- [[npm.md]]: Using Docker with Node.js and npm-based projects.
+- [[osint.md]]: Notes on using Docker for OSINT (Open-Source Intelligence) tools and environments.
+- [[portainer.md]]: Documentation on using Portainer for Docker environment management.
+- [[postgresql.md]]: Running PostgreSQL in Docker containers.
+- [[README.md]]: This file, providing an overview of Docker containerization.
 
-### Files
-
--   [c-sharp.md](./c-sharp.md): Dockerization strategies and notes for C# applications.
--   [mssql.md](./mssql.md): Running Microsoft SQL Server in Docker containers.
--   [mysql.md](./mysql.md): Setting up and managing MySQL in Docker.
--   [npm.md](./npm.md): Using Docker with Node.js and npm-based projects.
--   [osint.md](./osint.md): Notes on using Docker for OSINT (Open-Source Intelligence) tools and environments.
--   [portainer.md](./portainer.md): Documentation on using Portainer for Docker environment management.
--   [postgresql.md](./postgresql.md): Running PostgreSQL in Docker containers.
-
-## Role in System
-
+<h2> 🧠 Responsibilities</h2>
 This section is vital for understanding and implementing containerized solutions. It provides practical guidance for developers and operations teams on leveraging Docker for consistent development environments, scalable deployments, and efficient management of various services and applications.
+
+<h2> 🔄 Relationships</h2>
+This directory is a child of the [[../README|cloud]] directory. Its contents are highly relevant for deploying applications developed in the [[../../../languages/README|languages]] section (e.g., [[../../../languages/c-sharp.md|C#]], [[../../../languages/python/README|Python]]) and databases like [[../../../languages/sqlserver.md|SQL Server]] or [[../azure/courses/AZ-900 Microsoft Azure Fundamentals/04 - Compute/azure-container-instances.md|Azure Container Instances]]. It also integrates with cloud providers like [[../aws/README|AWS]] and [[../azure/README|Azure]].
