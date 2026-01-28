@@ -1,9 +1,9 @@
----
+<!-- ---
 type: directory
 path: .
 parent: null
 tags: [repo, documentation, moc]
----
+--- -->
 
 # Project Knowledge Map
 
