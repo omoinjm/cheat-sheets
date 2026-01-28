@@ -1,31 +1,41 @@
-# Functions
+# Azure Functions (Serverless Compute)
 
-![Azure Functions](./images/azure-functions.png)
+[⬆ Back to Parent](../04%20-%20Compute/README.md)
+[🏠 Back to Root README (../../../../../../../README.md)
+
+## Parent Context
+
+This document is part of the "Compute Services" module within the AZ-900 Microsoft Azure Fundamentals course.
+
+## Contents Overview
+
+This file introduces Azure Functions, Azure's serverless compute offering. It explains the underlying architecture, illustrates a practical use case for image processing, and highlights the key benefits of using Functions for event-driven, scalable workloads.
+
+## Role in System
+
+Azure Functions enable developers to execute small pieces of code (functions) in the cloud without needing to provision or manage infrastructure. This document helps in understanding how Functions support a serverless architecture, reducing operational overhead and optimizing costs for specific, event-driven tasks.
+
+## Key Concepts and Features
 
 ### Architecture
 
-- They use a virtual machine to run on in order to compute.
+-   Azure Functions run on virtual machines in the background for computation.
+-   Users experience **no maintenance**, **no processes**, and **nothing VM-related** to manage.
+-   The focus is entirely on your application's functionality.
 
-- No maintenance.
+    ![Azure Functions Architecture](./images/azure-functions.png)
 
-- No processes
+### Use Case: Image Processing
 
-- Nothing VM related
+Imagine a business that allows users to upload pictures of their pets:
 
-- Just focus on your functionality.
-
-### Use Case
-
-- Your business let's users upload pictures of their pets.
-
-- These images need processing to both optimize them for web display and storage.
-
-- When a user uploads an image through to your website, an `Azure Function` recieves that image.
-
-- The `Function`'s job is to process the image to compress it and change it to the correct file format.
-
-- The `Function` the stores the image in a database for future use in your online application.
+1.  These images need processing to optimize them for web display and storage.
+2.  When a user uploads an image to your website, an `Azure Function` receives that image.
+3.  The `Function`'s job is to process the image: compress it and change it to the correct file format.
+4.  The `Function` then stores the processed image in a database for future use in your online application.
 
 ### Benefits
 
-![Benefits](./images/function-benefits.png)
+Azure Functions provide several significant advantages for modern application development:
+
+-   ![Functions Benefits](./images/function-benefits.png)

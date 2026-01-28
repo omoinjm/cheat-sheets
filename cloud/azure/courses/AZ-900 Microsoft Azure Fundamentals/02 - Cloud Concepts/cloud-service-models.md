@@ -1,84 +1,61 @@
-# Cloud Service Models
+# Cloud Service Models (IaaS, PaaS, SaaS, Serverless)
 
-## <mark>EXAM TIPS</mark>
+[⬆ Back to Parent](../02%20-%20Cloud%20Concepts/README.md)
+[🏠 Back to Root README (../../../../../../README.md)
+
+## Parent Context
+
+This document is part of the "Cloud Concepts" module within the AZ-900 Microsoft Azure Fundamentals course.
+
+## Contents Overview
+
+This file provides a detailed explanation of the primary cloud service models: Infrastructure-as-a-Service (IaaS), Platform-as-a-Service (PaaS), Software-as-a-Service (SaaS), and Serverless computing. It includes key characteristics, benefits, examples, and the critical concept of the Shared Responsibility Model in cloud environments.
+
+## Role in System
+
+Understanding these service models is fundamental for choosing the right cloud services for specific application and business needs. This document helps in differentiating between models, comprehending their implications for management and responsibility, and making informed decisions about cloud adoption strategies.
+
+## Key Cloud Service Models
+
+### EXAM TIPS
 
 **Service is the core of Azure, and there are three main ways to go about it.**
 
-- laaS provides servers, storage and networking as a service.
+-   **IaaS**: Provides servers, storage, and networking as a service.
+-   **PaaS**: A superset of IaaS, also including middleware such as database management tools.
+-   **SaaS**: When a service is built on top of PaaS, like Office 365.
+-   **Serverless**: You don't manage any servers; it allows a single function to be hosted, deployed, run, and managed on its own.
 
-- PaaS is a superset of laaS and also includes middleware, such as database management tools.
+### Infrastructure-as-a-Service (IaaS)
 
-- SaaS is when a service is built on top of PaaS, like Office 365.
+-   Provides actual servers, storage, and networking as a service.
+-   Scaling is fast.
+-   No ownership of hardware.
+-   **Model Characteristics**: Organization has complete control of the infrastructure, dynamic and flexible, cost varies depending on consumption, services are highly scalable, multiple users share a single piece of hardware.
+-   **Examples**: VMs, VNets, Storage.
 
-- Serverless means that you don't have any servers. Let's a single function be hosted, deployed, run and managed on its own.
+### Platform-as-a-Service (PaaS)
 
-### Infrastructure-as-a-Service
+-   A superset of IaaS, including middleware such as database management tools.
+-   Supports the web application life cycle.
+-   Avoids software license management complexities.
+-   **Model Characteristics**: Resources are virtualized and can easily be scaled up or down, services often assist with development, testing, and deployment of apps, multi-user access via the same development application, integrates web services and databases.
+-   **Examples**: App Services, Azure CDN, Cosmos DB.
 
-- Actual servers
+### Software-as-a-Service (SaaS)
 
-- Scaling is fast
+-   Provides a fully managed service, accessible over the internet.
+-   Users pay an access fee and are not responsible for hardware or software updates.
+-   **Model Characteristics**: Managed from a central location, hosted on a remote server, accessible over the internet, users not responsible for hardware or software updates, often includes rate limiting/QoS.
+-   **Examples**: Microsoft 365, Stripe (credit card payments), Gmail, QuickBooks.
 
-- No ownership of hardware
+### Serverless Computing
 
-### Platform-as-a Service
+-   **Azure Functions** is an example of a serverless service.
+-   Extreme PaaS: code is hosted, deployed, run, and managed without having to maintain a full application infrastructure.
 
-- Superset of IaaS
+## Shared Responsibility Model
 
-- Support web application life cycle
+A critical concept that clarifies who (Microsoft or the customer) is responsible for managing different aspects of the cloud environment depending on the cloud service model used.
 
-- Business Intelligence, database management system
-
-- Avoids software license hell
-
-### Software-as-a-Service
-
-- Providing a managed service
-
-    - Stripe (credit card payments)
-
-    - Gmail
-    
-    - QuickBooks (Accounting)
-    
-    - Office 365
-    
-    - App Services
-    
-    - Azure Active Directory
-
-- Pay an access fee to use
-
-- No maintenance and latest features
-
-### Serverless
-
-- Azure Functions is a serverless service
-
-- Extreme PaaS
-
-- Hosted, Deployed, Run and Managed without having to maintain a full application.
-
-## HOW TO IDENTIFY CLOUD SERVICE MODELS
-
-| Model | Characteristics                                                                                   |  Examples                          |
-| ----- | ------------------------------------------------------------------------------------------------- | ---------------------------------- |
-| laaS  | Organization has complete control of the infrastructure.                                          | VM, VNet, Storage                  |
-|       | Dynamic and flexible. You can do almost anything.                                                 |                                    |
-|       | Cost varies depending on consumption.                                                             |                                    |
-|       | Services are highly scalable.                                                                     |                                    |
-|       | Multiple users share a single piece of hardware.                                                  |                                    |
-| PaaS  | Resources are virtualized and can easily be scaled up or down as needed.                          | App Services, Azure CDN, Cosmos DB |
-|       | Services often assist with the development, testing and deployment of apps.                       |                                    |        
-|       | Multi-user access via the same development application.                                           |                                    |
-|       | Integrates web services and databases.                                                            |                                    |
-| SaaS  | Managed from a central location.                                                                  | Microsoft 365                      |
-|       | Hosted on a remote server.                                                                        |                                    |
-|       | Accessible over the internet.                                                                     |                                    |
-|       | Users not responsible for hardware or software updates.                                           |                                    |
-|       | Rate limiting/QoS.                                                                                |                                    |
-|       |                                                                                                   |                                    |
-
-
-## SHARED RESPONSIBILITY MODEL
-
-![alt text](./images/srm.png)
+-   ![Shared Responsibility Model](./images/srm.png)

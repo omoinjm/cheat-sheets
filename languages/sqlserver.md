@@ -1,43 +1,58 @@
-# **SQL**
+# SQL Server Notes and Commands
+
+[⬆ Back to Parent](../README.md)
+[🏠 Back to Root README (../../README.md)
+
+## Parent Context
+
+This document is part of the programming languages knowledge base, specifically for SQL and SQL Server.
+
+## Contents Overview
+
+This file provides a collection of tips, commands, and references for working with SQL Server, including backup scripts, UI customizations for SSMS, and common SQL operations for managing tables and columns.
+
+## Role in System
+
+This resource serves as a quick reference for developers and database administrators working with Microsoft SQL Server. It helps in performing routine tasks, troubleshooting, and understanding fundamental SQL operations within the SQL Server environment.
+
+## Key Information and SQL Operations
 
 ### Backup Script
 
-![DB Backup](./images/sqlserver/backup-script.jpg)
+-   A visual reference for a database backup script.
+    -   ![DB Backup Image](../images/sqlserver/backup-script.jpg)
 
-### Dark Mode in SSMS
+### Dark Mode in SSMS (SQL Server Management Studio)
 
-To enable dark mode in SQL Server Management Studio (SSMS):
-
-1. Navigate to `C:\Program Files (x86)\Microsoft SQL Server Management Studio 18\Common7\IDE`.
-2. Edit the file `ssms.pkgundef`.
+Instructions to enable dark mode:
+1.  Navigate to `C:\Program Files (x86)\Microsoft SQL Server Management Studio 18\Common7\IDE`.
+2.  Edit the file `ssms.pkgundef`. (Specific changes to the file are not detailed here but are implied).
 
 ### SQL Operations
 
-#### Rename Tables (Database Engine)
+#### Rename Tables
 
-For more information, refer to the [documentation on renaming tables](https://docs.microsoft.com/en-us/sql/relational-databases/tables/rename-tables-database-engine?view=sql-server-ver16).
+-   For more details, refer to the [Microsoft documentation on renaming tables](https://docs.microsoft.com/en-us/sql/relational-databases/tables/rename-tables-database-engine?view=sql-server-ver16).
 
 #### Rename Column
-
-To rename a column in a table:
 
 ```sql
 EXEC sp_rename 'dbo.<table_name>.<old_column_name>', '<new_column_name>', 'COLUMN';
 GO
 ```
 
-### DROP TABLE (Transact-SQL)
+#### DROP TABLE (Transact-SQL)
 
-To drop a table, see the [DROP TABLE documentation.](https://docs.microsoft.com/en-us/sql/t-sql/statements/drop-table-transact-sql?view=sql-server-ver16).
+-   For more details, refer to the [Microsoft documentation on DROP TABLE](https://docs.microsoft.com/en-us/sql/t-sql/statements/drop-table-transact-sql?view=sql-server-ver16).
 
-### ADD a column in a table
+#### Add a Column to a Table
 
 ```sql
 ALTER TABLE <table_name>
 ADD <column_name> datatype;
 ```
 
-### Delete column in SQL
+#### Delete Column in SQL
 
 ```sql
 ALTER TABLE dbo.doc_exb DROP COLUMN <column_b>;

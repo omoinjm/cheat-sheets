@@ -1,40 +1,49 @@
-# App Services
+# Azure App Services
 
-- Fully Managed Platform
+[⬆ Back to Parent](../04%20-%20Compute/README.md)
+[🏠 Back to Root README (../../../../../../../README.md)
 
-- Server, Network, Storage and other fundamental infrustructure is managed/handled by Azure.
+## Parent Context
 
-- You just have to focus on `Business Value` and `Logic`
+This document is part of the "Compute Services" module within the AZ-900 Microsoft Azure Fundamentals course.
 
-## <mark>EXAM TIPS</mark>
+## Contents Overview
 
-App services is an easy way to host and manage your web application.
+This file provides a comprehensive overview of Azure App Services, highlighting its nature as a fully managed platform. It details the three main categories: Web Apps, Web Apps for Containers, and API Apps, and explains their respective purposes for hosting various types of applications. Relevant images are included to illustrate these concepts.
 
-- App services are a `PaaS` offering on Azure
+## Role in System
 
-- Web Apps are used to host web sites and web applications.
+Azure App Services is a Platform-as-a-Service (PaaS) offering that allows developers to easily host web applications, APIs, and mobile backends without managing the underlying infrastructure. This document helps in understanding how App Services streamline application deployment and management on Azure, enabling developers to focus on business logic.
 
-- Web Apps for Containers can host your exisiting container images.
+## Key Concepts and Features
 
-- API Apps can host your data backend services.
+### Fully Managed Platform
 
+-   Azure manages the server, network, storage, and other fundamental infrastructure components.
+-   Users can focus solely on `Business Value` and `Logic`.
 
-## Three nain Categories
+### EXAM TIPS
 
-### Web Apps
+App Services is an easy way to host and manage your web application.
 
-Website and online applications hosted on Azure's managed platform.
+-   App Services are a `PaaS` offering on Azure.
+-   **Web Apps** are used to host websites and web applications.
+-   **Web Apps for Containers** can host your existing container images.
+-   **API Apps** can host your data backend services.
 
-![Web Apps](./images/web-apps.png)
+### Three Main Categories
 
-### Web Apps for Containers
+#### 1. Web Apps
 
-Deploy and run containerized applications in Azure.
+-   Dedicated to hosting websites and online applications on Azure's managed platform.
+    -   ![Web Apps](./images/web-apps.png)
 
-![Web Apps for Containers](./images/web-apps-containers.png)
+#### 2. Web Apps for Containers
 
-### API Apps
+-   Enables deploying and running containerized applications directly within Azure App Services.
+    -   ![Web Apps for Containers](./images/web-apps-containers.png)
 
-Expose and connect your data backend.
+#### 3. API Apps
 
-![API Apps](./images/api-apps.png)
+-   Specifically designed to host and expose your data backend services, facilitating integration with other applications.
+    -   ![API Apps](./images/api-apps.png)

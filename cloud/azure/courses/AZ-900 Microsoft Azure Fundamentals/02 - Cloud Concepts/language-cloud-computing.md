@@ -1,110 +1,57 @@
-# The Language of Cloud Computing
+# Language of Cloud Computing
 
-## <mark>EXAM TIPS</mark>
+[⬆ Back to Parent](../02%20-%20Cloud%20Concepts/README.md)
+[🏠 Back to Root README (../../../../../../README.md)
 
-Cloud computing has terms that are specific and critical to understanding it.
+## Parent Context
 
-- High availability means systems are always available - even automatically!
-- Reliability describes how Azure can tolerate failures or even disasters.
-- Scalability refers to scaling out or scaling up while automatically providing resources as needed.
-- Predictability is knowing your application will always perform as expected and knowing what it will cost.
-- Security is having full control of your cloud security posture.
-- Governance is standardizing cloud deployments to meet requirements/company standards
-- Manageability is management of cloud resources and how we interact with them.
+This document is part of the "Cloud Concepts" module within the AZ-900 Microsoft Azure Fundamentals course.
 
-##  Resilience
+## Contents Overview
 
-The ability of a system to recover from failures and continue to function
+This file defines and explains key terminology used in cloud computing, such as High Availability, Reliability (Fault Tolerance/Disaster Recovery), Scalability (Horizontal vs. Vertical), Predictability (Performance and Costs), Security, Governance, and Manageability. These concepts are fundamental to understanding the benefits and operational aspects of cloud environments.
 
-### ✅ High Availability
+## Role in System
 
-| Traditional                    | Cloud                                        |
-| ------------------------------ | -------------------------------------------- |
-| You own the hardware.          | You don't own the hardware.                  |
-| You have physical access.      | Add more servers with a click.               |
-| You can't 'just add servers.'  | If the hardware fails, replace it instantly. |
-|                                | Use clusters to ensure high availability.    |
+A clear understanding of these terms is essential for anyone working with cloud technologies. This document clarifies the core language of cloud computing, enabling effective communication, design, and management of cloud resources within Azure and other platforms.
 
-### ✅ Reliability
+## Key Concepts and Terms
 
-(a.k.a. Fault Tolerance/Disaster Recovery)
+### EXAM TIPS
 
-**Deploy in Multiple Locations**:
+Cloud computing has specific and critical terms for understanding its principles.
 
-- Global-scale computing
+### Resilience
 
-- Protects against regional failure/disaster
+The ability of a system to recover from failures and continue to function.
 
-**No Single Point of Failure**:
+-   **High Availability**: Systems are always available, often with automatic failover.
+    -   *Traditional vs. Cloud*: Cloud environments offer significant advantages in quickly replacing failed hardware and using clusters for continuous availability.
+-   **Reliability (a.k.a. Fault Tolerance/Disaster Recovery)**: Azure's capability to tolerate failures or even disasters.
+    -   Achieved by deploying resources in multiple locations (global-scale computing) and ensuring no single point of failure.
 
-- Resources in multiple locations
+### Scalability
 
-- If one computer goes down, others pick up the load
+Automatically adjust resources (horizontally or vertically) to meet demand.
 
-### ✅ Scalability
+-   **Horizontal vs. Vertical Scaling**:
+    | Horizontal                           | Vertical                                          |
+    | :----------------------------------- | :------------------------------------------------ |
+    | Adding additional VMs/containers.    | Increasing power (e.g., CPU/RAM) of existing VMs. |
+    | Scaling out.                         | Scaling up.                                       |
+    -   Emphasis on not overpaying for services and automatically reducing resources when demand drops.
 
-Automatically adjust resources (**horizontally** or **vertically**) to meet demand.
+### Predictability
 
-**Example**: Increase the number of VMs to handle peak traffic.
+Ensuring consistent performance for users and predictable costs.
 
-Don’t overpay for services
+-   **Performance**: Consistent user experience regardless of traffic, supported by autoscaling, load balancing, and high availability.
+-   **Costs**: Tracking and forecasting resource usage in real-time to avoid unexpected expenses.
 
-Automatically reduce resources when demand drops.
+### Management
 
-**Horizontal vs. Vertical Scaling**
-
-Horizontal Scaling is a typical cloud model
-
-| Horizontal                           | Vertical                                          |
-| ------------------------------------ | ------------------------------------------------- |
-| Adding additional VMs/containers.    | Increasing power (e.g., CPU/RAM) of existing VMs. |
-| Scaling out.                         | Scaling up.                                       |
-
-### ✅ Predictability
-
-Predictable Performance and Costs
-
-**Performance**
-
-- Consistent experience for users regardless of traffic.
-
-- Autoscaling, load balancing, and high availability provide a consistent experience.
-
-**Costs**
-
-- No unexpected surprises.
-
-- Track and forecast resource usage in real time.
-
-## Management
-
-### ✅ Security
-
-Full control of the security of your cloud environment. Patches, maintenance,
-network control, and more!
-
-### ✅ Governance
-
-- Standardized environments
-
-- Regulatory requirements
-
-- Audit for compliance
-
-### ✅ Manageability
-
-Management of the cloud:
-
-- Autoscaling
-
-- Monitoring
-
-- Template-based deployments 
-
-Management in the cloud:
-
-- Portal
-
-- CLI
-
-- APIs
+-   **Security**: Full control over your cloud security posture, including patches, maintenance, and network control.
+-   **Governance**: Standardizing cloud deployments to meet regulatory requirements and company standards.
+-   **Manageability**: Efficient management of cloud resources through various tools and approaches.
+    -   *Management of the cloud*: Autoscaling, Monitoring, Template-based deployments.
+    -   *Management in the cloud*: Portal, CLI, APIs.

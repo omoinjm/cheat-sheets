@@ -1,37 +1,58 @@
-# Windows cheet-sheets
+# Windows Operating System
 
-## Load macOs BigSur
+[⬆ Back to Parent](../os/README.md)
+[🏠 Back to Root README](../../README.md)
 
-- Right Click `install.inf` file and install
+## Contents Overview
 
-- `win + r` and type control mouse
+This directory contains documentation and tips specific to the Windows operating system.
 
-- under the `Poniters` tabs, change scheme to macOSBigSur
+### Subdirectories
 
-## Environment Variables
- 
-[Set Environment Variables](https://www.devdungeon.com/content/set-environment-variables-windows)
+-   [macOSBigSur-Windows](./macOSBigSur-Windows/README.md): Information and files related to customizing Windows with macOS Big Sur aesthetics.
 
-## Hide files
- 
-POWERSHELL
- 
+### Files
+
+-   `README.md`: This file, providing an overview of Windows-related documentation.
+
+## Role in System
+
+This section serves as a centralized location for Windows-specific knowledge, configurations, and useful command-line snippets. It helps in quickly referencing solutions for common Windows tasks and customization.
+
+## Useful Information
+
+### Load macOS Big Sur Cursors
+
+To load the macOS Big Sur cursors:
+1.  Right-click the `install.inf` file within the `macOSBigSur-Windows` directory and select "Install".
+2.  Open "Control Panel" -> "Mouse" (or type `control mouse` in `Win + R`).
+3.  Under the "Pointers" tab, change the scheme to "macOSBigSur".
+
+### Environment Variables
+
+Refer to the external resource for setting environment variables: [Set Environment Variables](https://www.devdungeon.com/content/set-environment-variables-windows)
+
+### Hide Files (PowerShell)
+
+To hide file content within another file using PowerShell:
+
 ```powershell
-# hide file content within another file
-# delete file after doing this
+# Hide file content within another file; delete original file after
 type file > demoFile:file
 
-# view contents
+# View contents
 cat demoFile:file
 
-# show hidden files in an alternate data stream
+# Show hidden files in an alternate data stream
 dir /r
+```
 
-# Another way
-# this just checks the show/hide hidden files under `view` -> `options` -> `change folder and view options` -> `view`
+Another method (checks "show/hide hidden files" option in Folder Options):
+
+```powershell
 attrib +h file
 ```
- 
-## Setup ssh on personal laptop
- 
-[Setup for windows](https://theitbros.com/ssh-into-windows/) 
+
+### Setup SSH on Personal Laptop
+
+Refer to the external resource for setting up SSH on Windows: [Setup for Windows](https://theitbros.com/ssh-into-windows/)

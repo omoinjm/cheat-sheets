@@ -1,161 +1,82 @@
-# Secure Linux Server
+# Secure Linux Server Hardening
 
-EVERYTHING IS HACKABLE, WE JUST WANT TO BE MORE SECURE
+[⬆ Back to Parent](../README.md)
+[🏠 Back to Root README (../../../README.md)
 
-1. Enable Automatic Updates
-2. Create a Limited User Account
-3. Passwords are too weak
-4. Lockdown Logins (harden ssh)
-5. FIREWALLS
+## Parent Context
 
-## Get a linux Server
+This document is part of the Linux operating system documentation, focusing on best practices for securing Linux servers.
 
-Options:
-  - Linode (100$ free credit for a year)
-  - AWS Lightsail (first 3 months free, 3$ after that)
+## Contents Overview
 
-Connect to Lightsail instance via ssh:
-  - https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-ssh-using-terminal
-  
-## STEP 1 - Enable Automatic Updates
-  
-Manual Updates:
+This file outlines a 5-step process to secure a Linux server: enabling automatic updates, creating limited user accounts, using SSH keys for authentication (disabling passwords), hardening SSH configurations, and setting up a firewall. It includes practical commands and references to external resources.
 
+## Role in System
+
+This guide is essential for establishing a robust security posture for any Linux server, minimizing vulnerabilities and protecting against unauthorized access. It emphasizes a defense-in-depth approach, combining different security measures.
+
+## 5 Steps to a Secure Linux Server
+
+### 1. Enable Automatic Updates
+
+Ensure your server is always running with the latest security patches.
+
+**Manual Updates:**
 ```bash
 apt update
 apt dist-upgrade
 ```
 
-Automatic Updates:
-
+**Automatic Updates:**
 ```bash
 apt install unattended-upgrades
 dpkg-reconfigure --priority=low unattended-upgrades
 ```
 
-![configure unattended-upgrades](./images/secure-linux-server/enable-updates.png)
+### 2. Create a Limited User Account
 
-Pick `<Yes>`
+Operate with a non-root user account with `sudo` privileges for daily tasks.
 
-## STEP 2 - Create a Limited User Account
-
-Create a user:
-
+**Commands:**
 ```bash
 adduser <user>
-```
-
-Add user to the sudo group:
-
-```bash
 usermod -aG sudo <user>
 ```
 
-## STEP 3 - Get rid of Password
+### 3. Get Rid of Password-Based Logins (Use SSH Keys)
 
-Create the Public Key Directory on your Linux Server:
+Strengthen authentication by using SSH key pairs instead of passwords.
 
-```bash
-mdkir ~/.ssh && chmod 700 ~/.ssh
+**Commands:**
+-   `mkdir ~/.ssh && chmod 700 ~/.ssh`: Create `.ssh` directory.
+-   `ssh-keygen -b 4096`: Generate SSH key pair on your local machine.
+-   `scp` or `ssh-copy-id` to transfer your public key to the server's `~/.ssh/authorized_keys`.
+
+### 4. Lockdown Logins (Harden SSH)
+
+Further secure SSH by disabling root login and password authentication, and changing the default SSH port.
+
+**Configuration (`/etc/ssh/sshd_config`):**
 ```
-
-Create Public/Private keys on your computer:
-
-```bash
-ssh-keygen -b 4096
-```
-    
-![ssh screenshot](./images/secure-linux-server/generate-ssh.png)
-
-Upload your Public key to the your Linux Server (Windows):
-
-```bash
-scp $ENV:USERPROFILE/.ssh/id_rsa.pub {username}@{public-ip-address}:~/.ssh/authorized_keys
-```
-
-Upload your Public key to the your Linux Server (MAC):
-```bash
-scp ~/.ssh/id_rsa.pub {username}@{public-ip-address}:~/.ssh/authorized_keys
-```
-
-Upload your Public key to the your Linux Server (LINUX):
-
-```bash
-ssh-copy-id {username}@{public-ip-address}
-```
-
-## STEP 4 - Lockdown Logins
-  
-Edit the SSH config file:
-
-```bash
-sudo nano /etc/ssh/sshd_config
-```
-
-Allow private/public key pair login only
-
-```txt
 Port <pick different number>
 AddressFamily inet
-
 PermitRootLogin no
-
 PasswordAuthentication no
 ```
+**Restart SSH service:** `sudo systemctl restart sshd`
 
-Restart Service
+### 5. FIREWALL IT UP (UFW)
 
-```bash
-sudo systemctl restart sshd
-```
+Configure a firewall (UFW) to control incoming and outgoing traffic.
 
-## STEP 5 - FIREWALL IT UP
+**Commands:**
+-   `sudo apt install ufw`: Install UFW.
+-   `sudo ufw status`: Check firewall status.
+-   `sudo ufw allow {port number}`: Allow specific ports.
+-   `sudo ufw enable`: Enable the firewall.
+-   `sudo ufw reload`: Reload firewall rules.
+-   Drop pings: Edit `/etc/ufw/before.rules` and add `-A ufw-before-input -p icmp --icmp-type echo-request -j DROP`.
 
-See open ports
+## References
 
-```bash
-sudo ss -tupln
-```
-
-Install UFW
-
-```bash
-sudo apt install ufw
-```
-
-See UFW status
-
-```bash
-sudo ufw status
-```
-
-Allow port through firewall
-
-```bash
-sudo ufw allow {port number}
-```
-
-Enable Firewall
-
-```bash
-sudo ufw enable
-```
-
-Reload Firewall
-
-```bash
-sudo ufw reload
-```
-
-## Drop pings
-
-Edit the UFW config file
-
-```bash
-sudo nano /etc/ufw/before.rules
-
-# Add this line of config (at # ok icmp codes for INPUT):
--A ufw-before-input -p icmp --icmp-type echo-request -j DROP
-```
-
-Docs from [networkchuck](https://learn.networkchuck.com/courses/take/ad-free-youtube-videos/lessons/22626695-protect-your-linux-server-from-hackers-5-steps)
+-   Detailed guide from [networkchuck](https://learn.networkchuck.com/courses/take/ad-free-youtube-videos/lessons/22626695-protect-your-linux-server-from-hackers-5-steps)

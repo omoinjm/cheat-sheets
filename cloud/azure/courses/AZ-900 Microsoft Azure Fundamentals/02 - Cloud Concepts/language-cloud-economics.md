@@ -1,32 +1,40 @@
 # The Language of Cloud Economics
 
-## <mark>EXAM TIPS</mark>
+[⬆ Back to Parent](../02%20-%20Cloud%20Concepts/README.md)
+[🏠 Back to Root README (../../../../../../README.md)
+
+## Parent Context
+
+This document is part of the "Cloud Concepts" module within the AZ-900 Microsoft Azure Fundamentals course.
+
+## Contents Overview
+
+This file introduces key economic concepts relevant to cloud computing, specifically focusing on Capital Expenditure (CapEx) versus Operational Expenditure (OpEx) and various cloud pricing models. It explains how cloud computing shifts costs to a consumption-based, pay-as-you-go model.
+
+## Role in System
+
+Understanding cloud economics is vital for businesses making financial decisions about cloud adoption and resource allocation. This document helps in evaluating the cost implications of cloud services, optimizing spending, and leveraging the financial benefits of the cloud model.
+
+## Key Concepts and Terms
+
+### EXAM TIPS
 
 **Using the right budget in a company can enable huge change.**
 
-- Capital Expenditure (CapEx) is buying hardware outright, paid upfront as a one time purchase.
+### Capital Expenditure (CapEx)
 
-- Operational Expenditure (OpEx) is ongoing costs needed to run your business.
+-   Buying hardware outright, paid upfront as a one-time purchase.
+-   Money spent by a business or organization on acquiring or maintaining fixed assets, such as land, buildings, and equipment.
+-   Involves large upfront investments.
 
-- Consumption-based pricing let's you pay only for what you use.
+### Operational Expenditure (OpEx)
 
-### Capital and Operational Expenditure
-
-| Capital Expenditure                                                                                                         | Operational Expenditure                                                                                   |
-| --------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
-| Buying more VMs                                                                                                             | domain registration or power to run servers                                                               |
-| Money spent by a business or organization on acquiring or maintaining fixed assets, such as land, buildings, and equipment. | An ongoing cost for running a product, business, or system on a day-to-day basis, including annual costs. |
-| Large upfront investments.                                                                                                  | Pay-as-you-go.                                                                                            |
+-   Ongoing costs needed to run your business.
+-   Includes domain registration, power to run servers, and other annual costs.
+-   Characterized by a pay-as-you-go model, common in cloud computing.
 
 ### Cloud Pricing Models
 
-| Hourly Pricing      | Consunption                                                              |
-| ------------------- | ------------------------------------------------------------------------ |
-| (VMs, App Services) | you pay for resources used not the time that it’s on                     |
-|                     | Per Execution, Per Second, Combination                                   |
-|                     | `Azure Functions`                                                        |
-
-
-
-
-
+-   **Consumption-based pricing**: You pay only for the resources you use, not for the time they are turned on (e.g., per execution, per second, or a combination).
+    -   *Example*: Azure Functions often use a consumption-based model.
+-   **Hourly Pricing**: Common for resources like Virtual Machines (VMs) and App Services, where you pay for the time the resource is provisioned and running.

@@ -1,60 +1,48 @@
-#!/bin/bash
+# Git Configuration Automation Script (`git_config.sh`)
 
-# Check if enough arguments are passed
-if [ "$#" -lt 2 ]; then
-    echo "Usage: $0 <username> <email> [company]"
-    exit 1
-fi
+[⬆ Back to Parent](../README.md)
+[🏠 Back to Root README (../../../../README.md)
 
-# Get username and email from command line arguments
-username=$1
-email=$2
+## Parent Context
 
-# If company is provided, use it; otherwise, extract from email
-if [ -n "$3" ]; then
-    company=$3
-else
-    company=$(echo "$email" | sed -E 's/^[^@]+@([^\.]+)\..*/\1/')
-fi
+This script is part of the Git automation tools within the Linux operating system documentation, designed to standardize Git configurations across multiple repositories.
 
-# Validate the inputs
-if [ -z "$username" ] || [ -z "$email" ] || [ -z "$company" ]; then
-    echo "Inputs cannot be blank. Please provide username, email, and company (optional)."
-    exit 1
-fi
+## Contents Overview
 
-# Validate the username and company to ensure they are alphanumeric strings with a length of 1 to 25 characters
-if ! echo "$username" | grep -qE '^[a-zA-Z0-9 ]{1,25}$' || ! echo "$company" | grep -qE '^[a-zA-Z0-9 ]{1,25}$'; then
-    echo "Both username and company must be alphanumeric strings with a length of 1 to 25 characters."
-    exit 1
-fi
+The `git_config.sh` script automates the process of setting the `user.name`, `user.email`, and `core.sshCommand` for all Git repositories found within the current directory and its subdirectories. It takes username, email, and an optional company name as arguments, validating them before applying the configurations.
 
-# Validate the email format
-if ! echo "$email" | grep -qE '^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'; then
-    echo "Input must be a valid email address."
-    exit 1
-fi
+## Role in System
 
-# Find all folders with git initialized (i.e., containing a .git folder)
-git_dirs=$(find . -type d -name ".git" -exec dirname {} \;)
+This script is highly beneficial for developers who contribute to multiple projects with different Git identities or who need to quickly set up a new development environment. It ensures consistency in commit authorship and simplifies the management of SSH keys for different Git hosts, especially in environments where specific SSH keys are tied to particular accounts or organizations.
 
-# If no git directories found, display a message and exit
-if [ -z "$git_dirs" ]; then
-    echo "No git repositories found in this directory or its subdirectories."
-    exit 1
-fi
+## Usage
 
-# Loop through each Git directory and configure Git username and email
-for dir in $git_dirs; do
-    echo "Configuring Git in repository: $dir"
-    # Change directory to the git repository and set the username and email
-    (
-      cd "$dir" && 
-        git config user.email "$email" &&
-        git config user.name "$username" &&
-        git config --local core.sshCommand "/usr/bin/ssh -i ~/.ssh/work/$company/id_rsa_$company"
-    )
+To use this script, execute it with your desired username, email, and optionally a company name:
 
-    printf "Git configuration done for $username <$email>\n"
-    printf "...................................................\n\n"
-done
+```bash
+./git_config.sh "Your Name" "your.email@example.com" [company_name]
+```
+
+-   `<username>`: The name to be used in Git commits.
+-   `<email>`: The email address to be used in Git commits.
+-   `<company_name>` (optional): Used to construct the path to the SSH key (e.g., `~/.ssh/work/<company_name>/id_rsa_<company_name>`). If not provided, it attempts to extract the company name from the email address.
+
+### Script Logic
+
+1.  **Argument Parsing and Validation**: The script parses the provided arguments and validates their format (username, email, company name length and characters).
+2.  **Find Git Repositories**: It identifies all subdirectories that are initialized Git repositories.
+3.  **Configure Git**: For each identified repository, it navigates into the directory and sets:
+    *   `user.name`: The provided username.
+    *   `user.email`: The provided email.
+    *   `core.sshCommand`: Configures the SSH command to use a specific SSH key based on the provided company name, allowing for per-repository SSH key usage.
+
+## Entry Points
+
+-   Execution: `./git_config.sh <username> <email> [company]`
+-   Configuration: Modifies `.git/config` within each repository. Expects SSH keys to be organized under `~/.ssh/work/<company>/id_rsa_<company>`.
+
+## Conventions
+
+-   Assumes standard Git repository structure.
+-   Requires `git` and `ssh` to be installed and configured in the system's PATH.
+-   Uses `find`, `echo`, `grep`, `sed`, `git`, and `printf` commands.

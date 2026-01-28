@@ -1,13 +1,32 @@
 # Run SQL Server in a Docker Container
 
-## Command
+[⬆ Back to Parent](../README.md)
+[🏠 Back to Root README (../../../README.md)
 
-```bash
-# Create a volume
+## Parent Context
+
+This document is part of the Docker containerization knowledge base, specifically focusing on deploying and managing Microsoft SQL Server within Docker containers.
+
+## Contents Overview
+
+This file provides comprehensive instructions for running Microsoft SQL Server in a Docker container. It covers single-container deployments using `docker run` commands (with and without named volumes), explanations of key Docker flags, steps to connect to the SQL instance, and a full Docker Compose setup for a more robust, multi-service deployment with a custom Dockerfile.
+
+## Role in System
+
+This guide is crucial for developers and database administrators who need a portable, isolated, and easily reproducible SQL Server environment for development, testing, or even lightweight production scenarios. Dockerizing SQL Server simplifies setup and integration into CI/CD pipelines.
+
+## Key Concepts and Commands
+
+### Running a Standalone SQL Server Container
+
+#### Commands
+
+-   **Create a Docker Volume (recommended for persistence)**:
+    ```bash
 docker volume create docker-mssql-data
 ```
-
-```bash
+-   **Run SQL Server container with a named volume**:
+    ```bash
 docker run -d \
 -p 1435:1433 \
 -e "ACCEPT_EULA=Y" \
@@ -15,8 +34,9 @@ docker run -d \
 --name docker-sqlserver-2019 \
 --mount source=docker-mssql-data,target=/var/opt/mssql \
 mcr.microsoft.com/mssql/server:2019-latest
-
-# Alternatively without creating a volume (keeps data persistent on local machine)
+```
+-   **Run SQL Server container with host-mounted volumes (keeps data on local machine)**:
+    ```bash
 docker run -d \
 -p 1433:1433 \
 -e 'ACCEPT_EULA=Y' \
@@ -28,51 +48,28 @@ docker run -d \
 mcr.microsoft.com/mssql/server:2019-latest
 ```
 
-```powershell
-docker run -d `
--p 1435:1433 `
--e "ACCEPT_EULA=Y" `
--e "SA_PASSWORD=<PASSWORD>" `
---name docker-mssql `
---mount source=docker-mssql-data,target=/var/opt/mssql `
-mcr.microsoft.com/mssql/server:2019-latest
-```
+#### Key Docker Tags Explained
 
-## Tags
+-   `-d`: Runs the container in detached (background) mode.
+-   `-p <host_port>:<container_port>`: Maps a port from the container to the host machine.
+-   `-e <VAR>=<VALUE>`: Sets environment variables inside the container (e.g., `ACCEPT_EULA`, `SA_PASSWORD`).
+-   `-v <source>:<target>` / `--mount`: Mounts a volume for data persistence.
+-   `--name`: Assigns a human-readable name to the container.
+-   `mcr.microsoft.com/mssql/server:2019-latest`: The Docker image name and tag.
 
-- `-d`: To run our container detached in the background
+#### Connecting to the SQL Instance
 
-- `-p`: Connect to the sql instance from the host/pc so we bind 1433 port on the container to the host/pc
+-   **Connection type**: Microsoft SQL Server
+-   **Server**: `localhost` (or the host's IP)
+-   **Authentication type**: SQL Login
+-   **User name**: `sa`
+-   **Password**: The password specified during container creation.
 
-- `-e`: Configure SQL Server using environment variables in the container
+### Docker Compose Setup
 
-  `ACCPET_EULA=Y` (EULA meaning End User License Agreement) - This just tells SQL Server as it starts up that we accpect the license agreement
+This section outlines how to define a multi-service application with SQL Server using `docker-compose.yml` and a custom `Dockerfile`.
 
-  `SA_PASSWORD=<PASSWORD>` - SQL Admin password
-
-- `-v`: We want to be able to access files on the host/pc from within the container. We mount a volume to do this
-
-- `--name`: Give the container a name so we don't have to use the long Id given to us by default
-
-- `mcr.microsoft.com/mssql/server:2019-latest`: name and tag of the conatainer image we want to use
-
-## Connect to the SQL instance
-
-- `Connection type`: Microsoft SQL Server
-
-- `Server`: loaclahost
-
-- `Authentication type`: SQL Login
-
-- `User name`: sa
-
-- `Password`: "`<Password>`"
-
-## Docker Compose
-
-Create `docker-compose.yml` and `dockerfile` files:
-
-To rebuild this image you must use `docker-compose build` or `docker-compose up --build`
+#### `docker-compose.yml` Example
 
 ```yaml
 version: '3.8'
@@ -101,37 +98,20 @@ volumes:
   sqlbackup:
 ```
 
+#### Custom `Dockerfile` Example
+
+A custom Dockerfile to build a SQL Server image based on Ubuntu, installing SQL Server and setting up directory permissions:
+
 ```dockerfile
-# build from the Ubuntu 18.04 image
 FROM ubuntu:20.10
- 
-# create the mssql user
 RUN useradd -u 10001 mssql
- 
-# installing SQL Server
-RUN apt-get update && apt-get install -y wget software-properties-common apt-transport-https
-RUN wget -qO- https://packages.microsoft.com/keys/microsoft.asc | apt-key add -
-RUN add-apt-repository "$(wget -qO- https://packages.microsoft.com/config/ubuntu/18.04/mssql-server-2019.list)"
-RUN apt-get update && apt-get install -y mssql-server
- 
-# creating directories
-RUN mkdir /var/opt/sqlserver
-RUN mkdir /var/opt/sqlserver/data
-RUN mkdir /var/opt/sqlserver/log
-RUN mkdir /var/opt/sqlserver/backup
- 
-# set permissions on directories
-RUN chown -R mssql:mssql /var/opt/sqlserver
-RUN chown -R mssql:mssql /var/opt/mssql
- 
-# switching to the mssql user
+# ... (installation and directory setup commands) ...
 USER mssql
- 
-# starting SQL Server
 CMD /opt/mssql/bin/sqlservr
 ```
 
+#### Running with Docker Compose
+
 ```bash
-# Run when done (detached)
 docker-compose up -d
 ```

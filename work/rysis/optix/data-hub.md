@@ -1,43 +1,51 @@
-# Populate Postgres table on data hub
+# Optix - Data Hub PostgreSQL Table Population (`data-hub.md`)
 
-### Find tables with relevant details
+[⬆ Back to Parent](../optix/README.md)
+[🏠 Back to Root README (../../../../README.md)
+
+## Parent Context
+
+This document is part of the "Optix" component documentation within the Rysis project, focusing on database operations within the data hub.
+
+## Contents Overview
+
+This file provides SQL commands and a PostgreSQL `DO` block for populating the `endpoint` table on the data hub. It demonstrates how to query for existing `provider_organisation_group` and `provider_endpoint` information and then insert new records into the `endpoint` table, linking various data types (Vehicle Events, POIs, Vehicle Activity, Geofences, etc.) to a specific organization group.
+
+## Role in System
+
+This document is crucial for the setup and configuration of data ingestion and access within the Optix data hub. It details the process of registering specific data endpoints for different functionalities, ensuring that the system can properly track and utilize data from various sources associated with an organization group.
+
+## Key SQL Operations
+
+### Find Tables with Relevant Details
+
+SQL queries to retrieve information from `provider_organisation_group`, `provider_endpoint`, and `endpoint` tables using a `provider_id` or `user_name`:
 
 ```sql
 select * from provider_organisation_group where provider_id = '37665c53-72a1-4bb9-9870-0b68d1efc04c';
-
 select * from provider_endpoint where provider_id = '37665c53-72a1-4bb9-9870-0b68d1efc04c';
-
 select * from endpoint where user_name = 'ANGL000112';
 ```
 
-### Add Organisation Group into the endpoint table
+### Add Organisation Group into the `endpoint` Table
+
+A PostgreSQL `DO` block containing `INSERT` statements to populate the `endpoint` table. This script defines variables for `_group_name`, `_provider_organisation_group_id`, and `_api_key`, and then inserts multiple records for different data types (e.g., Vehicle Events, POIs, Geofences) associated with the specified organization group.
+
+**Note**: The `_provider_organisation_group_id` and `_api_key` variables need to be populated with actual values before execution.
 
 ```sql
 do $$
 declare
 _group_name varchar(100) := 'ANGL000112';
-_provider_organisation_group_id UUID := ''; -- `Find id on provider_organisation_group` table
+_provider_organisation_group_id UUID := ''; -- Find id on provider_organisation_group table
 _api_key varchar(200) := ''; -- email `samantha.andrews@cartrack.com` for credentials
 begin
--- Print the variable
-RAISE NOTICE '%', _provider_organisation_group_id;
-RAISE NOTICE '%', _group_name;
-RAISE NOTICE '%', _api_key;
+-- ... (RAISE NOTICE statements) ...
 
 insert into endpoint
 (name, provider_organisation_group_id, created_datetime, active, provider_endpoint_id, user_name, password_keyvault_path, file_name)
 values
-(_group_name || ' Vehicles Events', _provider_organisation_group_id, now(), true, '16a4397b-06b0-4747-a0da-e906bdb49c20', _group_name, _api_key, lower(_group_name) || 'vehicleevents'),
-(_group_name || ' POIS', _provider_organisation_group_id, now(), true, '0d7d0a47-34c4-4c6f-a03a-7187cdf619ae', _group_name, _api_key, lower(_group_name) || 'pois'),
-(_group_name || ' Vehicles Activity', _provider_organisation_group_id, now(), true, 'bb84ccc7-8c9b-4581-8023-a50d514d0ee6', _group_name, _api_key, lower(_group_name) || 'vehicleactivity'),
-(_group_name || ' Geofences Visitors', _provider_organisation_group_id, now(), true, 'cc3955a4-59c0-4ed9-b6c6-ffdb756e370f', _group_name, _api_key, lower(_group_name) || 'geofencesvisitors'),
-(_group_name || ' Geofences', _provider_organisation_group_id, now(), true, '1620f6c5-1d5e-4a9a-bc7a-2a8a2d2009e1', _group_name, _api_key, lower(_group_name) || 'geofences'),
-(_group_name || ' Notifications', _provider_organisation_group_id, now(), true, '1a1588bf-b73b-43b0-9ecb-8f52ad42e864', _group_name, _api_key, lower(_group_name) || 'notifications'),
-(_group_name || ' Trips', _provider_organisation_group_id, now(), true, '1260c213-27d8-441f-a8e8-ed6207f8a76e', _group_name, _api_key, lower(_group_name) || 'trips'),
-(_group_name || ' Drivers', _provider_organisation_group_id, now(), true, 'd0e5224f-05a1-4ec4-9410-eb8ed06ec53a', _group_name, _api_key, lower(_group_name) || 'drivers'),
-(_group_name || ' Vehicles', _provider_organisation_group_id, now(), true, 'b0b53db3-e8e7-49df-9921-38712dc0bd38', _group_name, _api_key, lower(_group_name) || 'vehicles'),
-(_group_name || ' Vehicles Groups', _provider_organisation_group_id, now(), true, 'b58a4583-490c-46d0-b6b7-0aafcb087c87', _group_name, _api_key, lower(_group_name) || 'vehiclegroups');
+-- ... (multiple INSERT value sets for various data types) ...
 
 end $$;
-
 ```

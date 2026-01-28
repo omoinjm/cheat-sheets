@@ -1,25 +1,25 @@
 # Azure Portal Features
 
-- **Personalize:** 
+[⬆ Back to Parent](../01%20-%20Introduction/README.md)
+[🏠 Back to Root README (../../../../../../README.md)
 
-    Create your own dashboards, layouts, workflows, and colors to tailor your experience.
+## Parent Context
 
-- **One Stop Shop:** 
-    
-    Enjoy the convenience of a single portal and login for all your Azure assets.
+This document is part of the "Introduction to Azure" module within the AZ-900 Microsoft Azure Fundamentals course.
 
-- **Access Control:** 
-    
-    Benefit from fine-grained access control to all your resources, simplifying management and governance.
+## Contents Overview
 
-- **Constantly Updated:** 
-    
-    Stay up-to-date with the latest features and products, although this may sometimes lead to confusion.
+This file details the key features and benefits of the Azure Portal, highlighting its role as a centralized, personalized, and robust platform for managing Azure resources.
 
-- **Cost Management:** 
-    
-    Utilize powerful tools to track current and projected spending for your Azure resources.
+## Role in System
 
-- **Multi-Platform:** 
+The Azure Portal is the primary graphical interface for interacting with Microsoft Azure. This document explains its advantages, making it easier for users to understand its capabilities for resource management, cost control, and access management.
 
-    Access Azure portal functions through the web and on various mobile devices for flexibility and convenience.
+## Key Features
+
+-   **Personalize**: Create your own dashboards, layouts, workflows, and colors to tailor your experience.
+-   **One Stop Shop**: Enjoy the convenience of a single portal and login for all your Azure assets.
+-   **Access Control**: Benefit from fine-grained access control to all your resources, simplifying management and governance.
+-   **Constantly Updated**: Stay up-to-date with the latest features and products, although this may sometimes lead to confusion.
+-   **Cost Management**: Utilize powerful tools to track current and projected spending for your Azure resources.
+-   **Multi-Platform**: Access Azure portal functions through the web and on various mobile devices for flexibility and convenience.
