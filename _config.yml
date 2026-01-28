@@ -1,0 +1,47 @@
+# GitHub Pages Jekyll Configuration
+
+title: Useful Stuff
+description: A collection of notes, guides, and miscellaneous technical information.
+author: Omoinm
+
+url: https://omoinjm.github.io/useful-stuff
+
+# Keep favicons in build
+include:
+  - assets/favicons/
+
+# Theme
+theme: jekyll-theme-hacker
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Markdown
+markdown: kramdown
+
+# Navigation
+nav_links:
+  - text: Home
+    url: /
+  - text: Cloud
+    url: /cloud/
+  - text: IDE
+    url: /ide/
+  - text: Languages
+    url: /languages/
+  - text: OS
+    url: /os/
+  - text: Pen Testing
+    url: /pen-testing/
+  - text: Systems
+    url: /systems/
+  - text: Work
+    url: /work/
+
+# SEO
+google_site_verification: ""
+
+# Analytics (optional)
+# google_analytics: ""

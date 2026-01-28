@@ -1,20 +1,25 @@
+---
+type: directory
+path: pen-testing/htb/fawn
+parent: pen-testing/htb
+tags: [repo, documentation, pen-testing, htb, fawn]
+---
 # Hack The Box - Fawn Machine Notes
 
-[⬆ Back to Parent](../README.md)
-[🏠 Back to Root README (../../../../README.md)
+## 🔗 Navigation
+- [[../README|⬆ Parent]]
+- [[../../../../README|🏠 Root]]
+- [[./|📂 Current Directory]]
 
-## Parent Context
+## 📌 Overview
+This directory contains files and notes related to the "Fawn" Hack The Box machine. It serves as a record and proof of completion for this specific HTB machine.
 
-This directory is part of the Hack The Box (HTB) notes, specifically documenting a machine named "Fawn".
+## 📁 Contents
+- `flag.txt`: Contains the user or root flag obtained from the "Fawn" machine. (Content is sensitive and not displayed here).
+- [[README.md]]: This file, providing an overview of the Fawn HTB machine.
 
-## Contents Overview
+## 🧠 Responsibilities
+This directory is responsible for documenting the successful compromise of the "Fawn" HTB machine, contributing to the overall penetration testing knowledge base by providing a record of the challenge.
 
-This directory contains files related to the "Fawn" Hack The Box machine, primarily the captured flag.
-
-### Files
-
--   `flag.txt`: Contains the user or root flag obtained from the "Fawn" machine. (Content is sensitive and not displayed here).
-
-## Role in System
-
-This collection serves as a record and proof of completion for the "Fawn" HTB machine, contributing to the overall penetration testing knowledge base by documenting a specific machine's successful compromise.
+## 🔄 Relationships
+This directory is a child of the [[../README|htb]] directory. It is a specific machine walkthrough, alongside other machine notes like [[../dancing/README|dancing]], and uses VPN keys from the [[../keys/README|keys]] directory to access the HTB platform.

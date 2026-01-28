@@ -1,18 +1,27 @@
+---
+type: directory
+path: pen-testing/htb
+parent: pen-testing
+tags: [repo, documentation, pen-testing, htb, cybersecurity]
+---
 # Hack The Box (HTB) Notes
 
-[⬆ Back to Parent](../README.md)
-[🏠 Back to Root README (../../../README.md)
+## 🔗 Navigation
+- [[../README|⬆ Parent]]
+- [[../../../README|🏠 Root]]
+- [[./|📂 Current Directory]]
 
-## Contents Overview
+## 📌 Overview
+This directory contains notes, write-ups, and related files from various Hack The Box (HTB) machines and challenges. HTB is an online platform for practicing penetration testing skills, and this section serves as a personal archive and learning resource.
 
-This directory contains notes, write-ups, and related files from various Hack The Box (HTB) machines and challenges. HTB is an online platform allowing individuals, universities, and companies to practice penetration testing skills.
+## 📁 Contents
+- [[dancing/README|dancing]]: Notes and flags related to the "Dancing" HTB machine.
+- [[fawn/README|fawn]]: Notes and flags related to the "Fawn" HTB machine.
+- [[keys/README|keys]]: Contains VPN configuration files or other keys used for HTB labs.
+- [[README.md]]: This file, providing an overview of Hack The Box notes.
 
-### Subdirectories
+## 🧠 Responsibilities
+This directory is responsible for archiving methodologies, exploits, and flags discovered during HTB challenges. It aids in skill development and provides future reference for penetration testing practices.
 
--   [dancing](./dancing/README.md): Notes and flags related to the "Dancing" HTB machine.
--   [fawn](./fawn/README.md): Notes and flags related to the "Fawn" HTB machine.
--   [keys](./keys/README.md): Contains VPN configuration files or other keys used for HTB labs.
-
-## Role in System
-
-This section serves as a personal archive and learning resource for penetration testing practice. It documents the methodologies, exploits, and flags discovered during HTB challenges, aiding in skill development and future reference.
+## 🔄 Relationships
+This directory is a child of the [[../README|pen-testing]] directory. It specifically focuses on practical exercises, complementing the theoretical knowledge found in the parent directory and potentially utilizing tools or techniques documented in the [[../../../os/linux/README|os/linux]] section for setting up attacking machines.

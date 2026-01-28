@@ -1,25 +1,30 @@
+---
+type: directory
+path: os/windows
+parent: os
+tags: [repo, documentation, os, windows]
+---
 # Windows Operating System
 
-[⬆ Back to Parent](../os/README.md)
-[🏠 Back to Root README](../../README.md)
+## 🔗 Navigation
+- [[../README|⬆ Parent]]
+- [[../../README|🏠 Root]]
+- [[./|📂 Current Directory]]
 
-## Contents Overview
+## 📌 Overview
+This directory contains documentation, configurations, and scripts specific to the Windows operating system. It serves as a centralized location for Windows-specific knowledge, helping to keep information organized and easy to find.
 
-This directory contains documentation and tips specific to the Windows operating system.
+## 📁 Contents
+- [[macOSBigSur-Windows/README|macOSBigSur-Windows]]: Information and files related to customizing Windows with macOS Big Sur aesthetics.
+- [[README.md]]: This file, providing an overview of the `windows` directory.
 
-### Subdirectories
+## 🧠 Responsibilities
+This directory is responsible for holding all documentation related to the Windows operating system. It categorizes information to ensure that platform-specific guides, scripts, and configurations are easy to locate and manage.
 
--   [macOSBigSur-Windows](./macOSBigSur-Windows/README.md): Information and files related to customizing Windows with macOS Big Sur aesthetics.
+## 🔄 Relationships
+This directory is a child of the [[../README|os]] directory and a sibling to [[../linux/README|linux]]. The information here is specific to Windows and may be referenced by other parts of the repository for Windows-specific instructions.
 
-### Files
-
--   `README.md`: This file, providing an overview of Windows-related documentation.
-
-## Role in System
-
-This section serves as a centralized location for Windows-specific knowledge, configurations, and useful command-line snippets. It helps in quickly referencing solutions for common Windows tasks and customization.
-
-## Useful Information
+## ✨ Useful Information
 
 ### Load macOS Big Sur Cursors
 
