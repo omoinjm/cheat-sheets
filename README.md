@@ -12,7 +12,7 @@ This repository serves as a comprehensive, Obsidian-ready knowledge base. It con
 - [[./|📂 Current Directory]]
 
 ## 📌 Overview
-This repository is a personal knowledge base containing code snippets, technical documentation, and command references for a variety of tools and technologies. It is structured to be explored both on GitHub and within an Obsidian vault, with a focus on clear, linked, and discoverable information.
+This repository serves as my personal knowledge base and collection of cheatsheets, encompassing everything I know about technology. It contains curated code snippets, technical documentation, and command references for a wide variety of tools and technologies. The content is structured for easy exploration on both GitHub and within an Obsidian vault, with a focus on clear, linked, and discoverable information.
 
 ## 📁 Contents
 - [[cloud/README|cloud]]: Cloud computing platforms, including AWS, Azure, and Docker.
