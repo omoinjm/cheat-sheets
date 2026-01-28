@@ -1,12 +1,9 @@
-# GitHub Pages Jekyll Configuration
-
 title: Cheat Sheets
 description: A collection of notes, guides, and miscellaneous technical information.
 author: Omoinm
 
 url: https://omoinjm.github.io/cheat-sheets
 
-# Keep favicons in build
 include:
   - assets/favicons/
 
