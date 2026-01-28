@@ -1,11 +1,3 @@
-<!--
-title: Project Knowledge Map
-tags: [repo, documentation, moc]
-type: directory
-path: .
-parent: null
--->
-
 # Project Knowledge Map
 
 This repository serves as a comprehensive, Obsidian-ready knowledge base. It contains a collection of curated code snippets, technical documentation, command references, and architectural notes across various technology domains. This root document acts as the primary Map of Content (MOC) for navigating the entire vault.

@@ -1,6 +1,10 @@
 title: Cheat Sheets
 description: A collection of notes, guides, and miscellaneous technical information.
-author: Omoinm
+author: Nhlanhla Malaza
+tags: [repo, documentation, moc]
+type: directory
+path: .
+parent: null
 
 url: https://omoinjm.github.io/cheat-sheets
 
