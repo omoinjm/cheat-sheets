@@ -1,15 +1,13 @@
+---
+title: Project Knowledge Map
+tags: [repo, documentation, moc]
+---
+
 <!--
 type: directory
 path: .
 parent: null
 -->
-
----
-
-title: Project Knowledge Map
-tags: [repo, documentation, moc]
-
----
 
 # Project Knowledge Map
 
