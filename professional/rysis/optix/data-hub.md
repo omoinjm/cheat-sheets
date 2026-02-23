@@ -1,7 +1,15 @@
-# Optix - Data Hub PostgreSQL Table Population (`data-hub.md`)
+---
+title: Optix - Data Hub PostgreSQL Table Population
+description: SQL commands and a PostgreSQL DO block for populating the endpoint table on the Optix data hub, including data linking for organization groups.
+type: content
+path: professional/rysis/optix/data-hub.md
+tags: [professional, rysis, optix, postgresql, data-hub, sql]
+---
+# Optix - Data Hub PostgreSQL Table Population
 
-[⬆ Back to Parent](../optix/README.md)
-[🏠 Back to Root README (../../../../README.md)
+## 🔗 Navigation
+- [⬆ Parent](./README.md)
+- [🏠 Root](../../../README.md)
 
 ## Parent Context
 
@@ -9,7 +17,7 @@ This document is part of the "Optix" component documentation within the Rysis pr
 
 ## Contents Overview
 
-This file provides SQL commands and a PostgreSQL `DO` block for populating the `endpoint` table on the data hub. It demonstrates how to query for existing `provider_organisation_group` and `provider_endpoint` information and then insert new records into the `endpoint` table, linking various data types (Vehicle Events, POIs, Vehicle Activity, Geofences, etc.) to a specific organization group.
+This file provides SQL commands and a [PostgreSQL](../../../development/databases/postgres-linux.md) `DO` block for populating the `endpoint` table on the data hub. It demonstrates how to query for existing `provider_organisation_group` and `provider_endpoint` information and then insert new records into the `endpoint` table, linking various data types (Vehicle Events, POIs, Vehicle Activity, Geofences, etc.) to a specific organization group.
 
 ## Role in System
 
@@ -29,7 +37,7 @@ select * from endpoint where user_name = 'ANGL000112';
 
 ### Add Organisation Group into the `endpoint` Table
 
-A PostgreSQL `DO` block containing `INSERT` statements to populate the `endpoint` table. This script defines variables for `_group_name`, `_provider_organisation_group_id`, and `_api_key`, and then inserts multiple records for different data types (e.g., Vehicle Events, POIs, Geofences) associated with the specified organization group.
+A [PostgreSQL](../../../development/databases/postgres-linux.md) `DO` block containing `INSERT` statements to populate the `endpoint` table. This script defines variables for `_group_name`, `_provider_organisation_group_id`, and `_api_key`, and then inserts multiple records for different data types (e.g., Vehicle Events, POIs, Geofences) associated with the specified organization group.
 
 **Note**: The `_provider_organisation_group_id` and `_api_key` variables need to be populated with actual values before execution.
 

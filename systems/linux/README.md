@@ -1,6 +1,31 @@
+---
+type: directory
+path: systems/linux
+parent: systems
+tags: [repo, documentation, systems, linux]
+---
 # Linux Systems
 
-This directory contains documentation, configurations, and scripts tailored for Linux-based operating systems.
+## 🔗 Navigation
+- [⬆ Parent](./../README.md)
+- [🏠 Root](./../../README.md)
+- [📂 Current Directory](././)
+
+## 📌 Overview
+This directory contains documentation, configurations, and scripts tailored for Linux-based operating systems. It provides practical guides for system administration, software installation, and performance optimization.
+
+## 📁 Contents
+- [cron-jobs.md](./cron-jobs.md): Guide to setting up and managing scheduled tasks with cron.
+- [password-store.md](./password-store.md): Best practices and tools for secure password management in Linux.
+- [setup.md](./setup.md): Initial setup procedures and essential configurations for new Linux installations.
+
+## 🧠 Responsibilities
+This section is responsible for providing technical guidance on Linux system setup, management, and optimization. It ensures a consistent approach to configuring Linux environments.
+
+## 🔄 Relationships
+This directory is a child of [systems](./../README.md). Its concepts are used for setting up [infrastructure](../../infrastructure/README.md) and managing development workflows in [workspace](../../workspace/README.md).
+
+---
 
 ## ✨ Useful Information
 
@@ -23,10 +48,10 @@ Reference: [Change Hostname](https://phoenixnap.com/kb/ubuntu-20-04-change-hostn
 ### Install .NET SDK or Runtime on Ubuntu
 Refer to the official Microsoft documentation: [Install .NET on Ubuntu](https://docs.microsoft.com/en-us/dotnet/core/install/linux-ubuntu?source=recommendations#2004)
 
-### Set up an SSH key
+### Set up an [SSH](../../workspace/networking/secure-shell.md) key
 Refer to Atlassian documentation: [Set up an SSH key](https://support.atlassian.com/bitbucket-cloud/docs/set-up-an-ssh-key/)
 
-### Permanently authenticating with Git repositories
+### Permanently authenticating with [Git](../../workspace/vcs/README.md) repositories
 Refer to Atlassian documentation: [Permanently authenticating with Git repositories](https://confluence.atlassian.com/bitbucketserver/permanently-authenticating-with-git-repositories-776639846.html)
 
 ### How to make files accessible only by root?

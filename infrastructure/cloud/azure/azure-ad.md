@@ -1,7 +1,15 @@
+---
+title: Azure Active Directory (Azure AD)
+description: A guide for managing Azure Active Directory, including finding client IDs and secrets and retrieving lists of users.
+type: content
+path: infrastructure/cloud/azure/azure-ad.md
+tags: [infrastructure, cloud, azure, azure-ad, identity-management]
+---
 # Azure Active Directory (Azure AD)
 
-[⬆ Back to Parent](../README.md)
-[🏠 Back to Root README (../../../README.md)
+## 🔗 Navigation
+- [⬆ Parent](./README.md)
+- [🏠 Root](../../../README.md)
 
 ## Parent Context
 

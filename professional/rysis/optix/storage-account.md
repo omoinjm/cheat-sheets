@@ -1,7 +1,15 @@
-# Optix - Azure Storage Account Access Script (`storage-account.md`)
+---
+title: Optix - Azure Storage Account Access Script
+description: A PowerShell script for mounting an Azure File Share as a network drive, including connectivity testing and credential persistence.
+type: content
+path: professional/rysis/optix/storage-account.md
+tags: [professional, rysis, optix, azure, storage, powershell, smb]
+---
+# Optix - Azure Storage Account Access Script
 
-[⬆ Back to Parent](../optix/README.md)
-[🏠 Back to Root README (../../../../README.md)
+## 🔗 Navigation
+- [⬆ Parent](./README.md)
+- [🏠 Root](../../../README.md)
 
 ## Parent Context
 

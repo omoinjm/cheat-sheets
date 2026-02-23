@@ -1,19 +1,27 @@
+---
+title: Docker - Portainer Community Edition Setup
+description: A guide for setting up Portainer CE using Docker Compose, including service definitions, networking, and volume configuration.
+type: content
+path: infrastructure/containers/portainer.md
+tags: [infrastructure, containers, docker, portainer, management]
+---
 # Docker - Portainer Community Edition Setup
 
-[⬆ Back to Parent](../README.md)
-[🏠 Back to Root README (../../../README.md)
+## 🔗 Navigation
+- [⬆ Parent](./README.md)
+- [🏠 Root](../../README.md)
 
 ## Parent Context
 
-This document is part of the Docker containerization knowledge base, specifically focusing on deploying Portainer using Docker Compose.
+This document is part of the [Docker](./linux-docker.md) containerization knowledge base, specifically focusing on deploying Portainer using Docker Compose.
 
 ## Contents Overview
 
-This file provides a Docker Compose configuration example for deploying Portainer Community Edition (CE), a powerful web-based UI for managing Docker environments. It outlines the service definition, port mappings, network configuration, volume mounts, and restart policy.
+This file provides a [Docker](./linux-docker.md) Compose configuration example for deploying Portainer Community Edition (CE), a powerful web-based UI for managing [Docker](./linux-docker.md) environments. It outlines the service definition, port mappings, network configuration, volume mounts, and restart policy.
 
 ## Role in System
 
-Portainer simplifies the management of Docker containers, images, volumes, and networks through an intuitive graphical interface. This document helps users quickly deploy Portainer to gain better visibility and control over their Docker deployments, especially when running multiple containers or managing complex setups.
+Portainer simplifies the management of [Docker](./linux-docker.md) containers, images, volumes, and networks through an intuitive graphical interface. This document helps users quickly deploy Portainer to gain better visibility and control over their [Docker](./linux-docker.md) deployments, especially when running multiple containers or managing complex setups.
 
 ## Docker Compose Configuration for Portainer CE
 

@@ -1,7 +1,15 @@
+---
+title: JSON Web Tokens (JWT) and Authentication Standards
+description: A comprehensive guide to JSON Web Tokens (JWT), OAuth2, and OpenID Connect, including links to specifications, libraries, and debugging tools.
+type: content
+path: development/standards/jwt.md
+tags: [development, standards, jwt, auth, oauth2, openid-connect]
+---
 # JSON Web Tokens (JWT) and Authentication Standards
 
-[⬆ Back to Parent](../README.md)
-[🏠 Back to Root README (../../README.md)
+## 🔗 Navigation
+- [⬆ Parent](./README.md)
+- [🏠 Root](../../README.md)
 
 ## Parent Context
 

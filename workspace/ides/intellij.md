@@ -1,7 +1,15 @@
+---
+title: IntelliJ IDEA Notes
+description: Quick notes for IntelliJ IDEA, including JetBrains License Server addresses for product activation.
+type: content
+path: workspace/ides/intellij.md
+tags: [workspace, ides, intellij, jetbrains, licensing]
+---
 # IntelliJ IDEA Notes
 
-[⬆ Back to Parent](../README.md)
-[🏠 Back to Root README (../../README.md)
+## 🔗 Navigation
+- [⬆ Parent](./README.md)
+- [🏠 Root](../../README.md)
 
 ## Parent Context
 

@@ -2,7 +2,7 @@
 type: directory
 path: systems
 parent: .
-tags: [repo, documentation, systems, architecture]
+tags: [repo, documentation, systems, linux, windows, automation]
 ---
 # Systems
 
@@ -12,14 +12,15 @@ tags: [repo, documentation, systems, architecture]
 - [📂 Current Directory](././)
 
 ## 📌 Overview
-This directory contains documentation related to system design, architecture, and version control practices. It provides quick access to commands and best practices for tools like Git.
+This directory serves as the hub for all system-level documentation, including operating systems (Linux, Windows) and automation scripts. It provides quick access to system configuration and administration knowledge.
 
 ## 📁 Contents
-- [git_tags.md](./git_tags.md): A guide on how to use Git tags to mark specific points in a repository's history, such as releases.
-- [README.md](./README.md): This file, providing an overview of the `systems` directory.
+- [automation](./automation/README.md): Documentation and scripts for infrastructure automation and server setup.
+- [linux](./linux/README.md): Detailed guides, cheat sheets, and configuration for various Linux distributions.
+- [windows](./windows/README.md): Resources and customization for Microsoft Windows environments.
 
 ## 🧠 Responsibilities
-This section serves as a knowledge base for various system-level concepts and practices. It is responsible for holding documentation about version control, system architecture patterns, and other related topics.
+This section is responsible for maintaining a repository of knowledge for system administration, configuration, and automation. It ensures that system setups are documented and reproducible.
 
 ## 🔄 Relationships
-This directory is a direct child of the root. It is related to all other directories as the concepts within it (like version control) are applicable system-wide.
+This directory is a direct child of the root. Its concepts and scripts are used for setting up [infrastructure](./../infrastructure/README.md) and managing local development environments in [workspace](./../workspace/README.md).

@@ -1,7 +1,15 @@
+---
+title: Docker - OSINT with PhoneInfoga
+description: A quick guide for using PhoneInfoga within a Docker container for phone number intelligence gathering.
+type: content
+path: security/osint.md
+tags: [security, osint, docker, phoneinfoga]
+---
 # Docker - OSINT with PhoneInfoga
 
-[⬆ Back to Parent](../README.md)
-[🏠 Back to Root README (../../../README.md)
+## 🔗 Navigation
+- [⬆ Parent](./README.md)
+- [🏠 Root](../../README.md)
 
 ## Parent Context
 

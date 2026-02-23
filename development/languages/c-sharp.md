@@ -1,7 +1,15 @@
+---
+title: C# - EF Core Model from Database First
+description: A comprehensive guide on generating an Entity Framework Core model from an existing database using both the .NET CLI and Visual Studio.
+type: content
+path: development/languages/c-sharp.md
+tags: [development, languages, c-sharp, dotnet, ef-core, database-first]
+---
 # C# - EF Core Model from Database First
 
-[⬆ Back to Parent](../README.md)
-[🏠 Back to Root README (../../README.md)
+## 🔗 Navigation
+- [⬆ Parent](./README.md)
+- [🏠 Root](../../README.md)
 
 ## Parent Context
 

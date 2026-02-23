@@ -1,7 +1,15 @@
+---
+title: PostgreSQL on Linux
+description: A quick reference for installing and setting up PostgreSQL on a Linux server, with a focus on Ubuntu 20.04.
+type: content
+path: development/databases/postgres-linux.md
+tags: [development, databases, postgresql, linux, setup]
+---
 # PostgreSQL on Linux
 
-[⬆ Back to Parent](../README.md)
-[🏠 Back to Root README (../../../README.md)
+## 🔗 Navigation
+- [⬆ Parent](./README.md)
+- [🏠 Root](../../README.md)
 
 ## Parent Context
 
@@ -13,7 +21,7 @@ This file provides a reference for installing and setting up PostgreSQL on a Lin
 
 ## Role in System
 
-PostgreSQL is a powerful, open-source relational database system. This document serves as a quick entry point for users looking to deploy and configure PostgreSQL on their Linux-based environments, often in conjunction with web servers like Nginx.
+PostgreSQL is a powerful, open-source relational database system. This document serves as a quick entry point for users looking to deploy and configure PostgreSQL on their Linux-based environments, often in conjunction with web servers like [Nginx](../../infrastructure/web-servers/nginx.md).
 
 ## Installation Guide
 

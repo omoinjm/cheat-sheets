@@ -1,7 +1,15 @@
+---
+title: Run SQL Server in a Docker Container
+description: A comprehensive guide for running Microsoft SQL Server in a Docker container, including standalone and Docker Compose setups.
+type: content
+path: development/databases/mssql-docker.md
+tags: [development, databases, mssql, docker, containerization, sql-server]
+---
 # Run SQL Server in a Docker Container
 
-[⬆ Back to Parent](../README.md)
-[🏠 Back to Root README (../../../README.md)
+## 🔗 Navigation
+- [⬆ Parent](./README.md)
+- [🏠 Root](../../README.md)
 
 ## Parent Context
 

@@ -1,7 +1,15 @@
+---
+title: ArchLinux on WSL2 Setup Guide
+description: A comprehensive guide for installing and configuring ArchLinux on WSL2, covering both Docker-based and basic installation methods, user setup, and essential tool installation.
+type: content
+path: systems/linux/setup.md
+tags: [systems, linux, archlinux, wsl2, installation, setup]
+---
 # ArchLinux on WSL2 Setup Guide
 
-[⬆ Back to Parent](../README.md)
-[🏠 Back to Root README (../../../README.md)
+## 🔗 Navigation
+- [⬆ Parent](./README.md)
+- [🏠 Root](../../README.md)
 
 ## Parent Context
 

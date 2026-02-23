@@ -1,7 +1,15 @@
+---
+title: Vim Commands and Tips
+description: A collection of essential Vim commands for basics, window management, and language-specific operations.
+type: content
+path: workspace/ides/vim.md
+tags: [workspace, ides, vim, text-editing, productivity]
+---
 # Vim Commands and Tips
 
-[⬆ Back to Parent](../README.md)
-[🏠 Back to Root README (../../README.md)
+## 🔗 Navigation
+- [⬆ Parent](./README.md)
+- [🏠 Root](../../README.md)
 
 ## Parent Context
 

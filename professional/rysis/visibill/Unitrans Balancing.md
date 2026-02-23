@@ -1,7 +1,15 @@
+---
+title: Rysis - Visibill: Unitrans Balancing
+description: Detailed procedures, Excel functions, and SQL queries for reconciling Unitrans MTN and Vodacom reports within the Visibill system.
+type: content
+path: professional/rysis/visibill/Unitrans Balancing.md
+tags: [professional, rysis, visibill, unitrans, data-reconciliation, sql, excel]
+---
 # Rysis - Visibill: Unitrans Balancing
 
-[⬆ Back to Parent](../visibill/README.md)
-[🏠 Back to Root README (../../../README.md)
+## 🔗 Navigation
+- [⬆ Parent](./README.md)
+- [🏠 Root](../../../README.md)
 
 ## Parent Context
 

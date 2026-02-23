@@ -1,7 +1,15 @@
+---
+title: Dockerizing ASP.NET Web API (C#)
+description: A comprehensive guide to containerizing an ASP.NET Web API application using Docker, including multi-stage Dockerfiles and deployment commands.
+type: content
+path: development/languages/c-sharp-docker.md
+tags: [development, languages, c-sharp, dotnet, docker, aspnet-core, containerization]
+---
 # Dockerizing ASP.NET Web API (C#)
 
-[⬆ Back to Parent](../README.md)
-[🏠 Back to Root README (../../../README.md)
+## 🔗 Navigation
+- [⬆ Parent](./README.md)
+- [🏠 Root](../../README.md)
 
 ## Parent Context
 

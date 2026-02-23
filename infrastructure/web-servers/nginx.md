@@ -1,7 +1,15 @@
+---
+title: Nginx Server Setup and Node.js Deployment
+description: A comprehensive guide for deploying Node.js applications using Nginx on Ubuntu, covering server setup, SSH configuration, and SSL with Certbot.
+type: content
+path: infrastructure/web-servers/nginx.md
+tags: [infrastructure, web-servers, nginx, nodejs, linux, ssl, certbot]
+---
 # Nginx Server Setup and Node.js Deployment
 
-[⬆ Back to Parent](../README.md)
-[🏠 Back to Root README (../../../README.md)
+## 🔗 Navigation
+- [⬆ Parent](./README.md)
+- [🏠 Root](../../README.md)
 
 ## Parent Context
 

@@ -1,7 +1,15 @@
+---
+title: Docker on Linux
+description: A comprehensive guide to installing and using Docker on Linux, covering engine installation, volumes, and data migration.
+type: content
+path: infrastructure/containers/linux-docker.md
+tags: [infrastructure, containers, docker, linux, installation, volumes]
+---
 # Docker on Linux
 
-[⬆ Back to Parent](../README.md)
-[🏠 Back to Root README (../../../README.md)
+## 🔗 Navigation
+- [⬆ Parent](./README.md)
+- [🏠 Root](../../README.md)
 
 ## Parent Context
 

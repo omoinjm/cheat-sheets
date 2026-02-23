@@ -1,7 +1,15 @@
+---
+title: Cron Jobs
+description: A quick guide to managing cron jobs in Linux, including editing, listing, and troubleshooting.
+type: content
+path: systems/linux/cron-jobs.md
+tags: [systems, linux, cron, automation]
+---
 # Cron Jobs
 
-[⬆ Back to Parent](../README.md)
-[🏠 Back to Root README (../../../README.md)
+## 🔗 Navigation
+- [⬆ Parent](./README.md)
+- [🏠 Root](../../README.md)
 
 ## Parent Context
 

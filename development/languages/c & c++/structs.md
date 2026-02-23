@@ -1,7 +1,15 @@
+---
+title: Understanding Struct Size and Memory Alignment in C
+description: A detailed explanation of C struct size, memory alignment, padding, and the impact of packing directives.
+type: content
+path: development/languages/c & c++/structs.md
+tags: [development, languages, c, c++, memory-management, structs]
+---
 # Understanding Struct Size and Memory Alignment in C
 
-[⬆ Back to Parent](../c%20&%20c++/README.md)
-[🏠 Back to Root README (../../../../README.md)
+## 🔗 Navigation
+- [⬆ Parent](./README.md)
+- [🏠 Root](../../../README.md)
 
 ## Parent Context
 

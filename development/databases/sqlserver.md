@@ -1,7 +1,15 @@
+---
+title: SQL Server Notes and Commands
+description: A collection of tips, commands, and references for SQL Server, including backup scripts, SSMS customization, and common SQL operations.
+type: content
+path: development/databases/sqlserver.md
+tags: [development, databases, sql-server, ssms, sql]
+---
 # SQL Server Notes and Commands
 
-[⬆ Back to Parent](../README.md)
-[🏠 Back to Root README (../../README.md)
+## 🔗 Navigation
+- [⬆ Parent](./README.md)
+- [🏠 Root](../../README.md)
 
 ## Parent Context
 

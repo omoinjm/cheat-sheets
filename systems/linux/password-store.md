@@ -1,7 +1,15 @@
+---
+title: Terminal Password Manager (pass)
+description: A comprehensive guide to pass, the standard Unix password manager, covering GPG key management, password store initialization, and Git integration.
+type: content
+path: systems/linux/password-store.md
+tags: [systems, linux, pass, gpg, security]
+---
 # Terminal Password Manager (pass)
 
-[⬆ Back to Parent](../README.md)
-[🏠 Back to Root README (../../../README.md)
+## 🔗 Navigation
+- [⬆ Parent](./README.md)
+- [🏠 Root](../../README.md)
 
 ## Parent Context
 

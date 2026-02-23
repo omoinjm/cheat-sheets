@@ -1,7 +1,15 @@
+---
+title: Secure Linux Server Hardening
+description: A 5-step guide to securing a Linux server, including automatic updates, limited user accounts, SSH key authentication, SSH hardening, and firewall setup.
+type: content
+path: workspace/networking/secure-shell.md
+tags: [workspace, networking, linux, security, ssh, hardening, ufw]
+---
 # Secure Linux Server Hardening
 
-[⬆ Back to Parent](../README.md)
-[🏠 Back to Root README (../../../README.md)
+## 🔗 Navigation
+- [⬆ Parent](./README.md)
+- [🏠 Root](../../README.md)
 
 ## Parent Context
 

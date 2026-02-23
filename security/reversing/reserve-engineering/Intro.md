@@ -1,5 +1,15 @@
+---
+title: Introduction to Reverse Engineering and Debugging
+description: An introductory guide to x86 64-bit reverse engineering on Linux, covering assembly syntax, GDB usage, and binary analysis.
+type: content
+path: security/reversing/reserve-engineering/Intro.md
+tags: [security, reversing, x86, assembly, gdb, linux, debugging]
+---
 # Introduction to Reverse Engineering and Debugging
 
+## 🔗 Navigation
+- [⬆ Parent](./README.md)
+- [🏠 Root](../../../README.md)
 
 [yt page](https://www.youtube.com/@OffByOneSecurity)
 

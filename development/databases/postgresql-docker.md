@@ -1,7 +1,15 @@
+---
+title: Run PostgreSQL in a Docker Container
+description: A comprehensive guide for running PostgreSQL in a Docker container, including standalone and Docker Compose setups with pgAdmin.
+type: content
+path: development/databases/postgresql-docker.md
+tags: [development, databases, postgresql, docker, containerization, pgadmin]
+---
 # Run PostgreSQL in a Docker Container
 
-[⬆ Back to Parent](../README.md)
-[🏠 Back to Root README (../../../README.md)
+## 🔗 Navigation
+- [⬆ Parent](./README.md)
+- [🏠 Root](../../README.md)
 
 ## Parent Context
 

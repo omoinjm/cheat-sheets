@@ -1,7 +1,15 @@
+---
+title: Azure Container Services and Azure DevOps Pipelines
+description: Resources and references for setting up pipelines and integrating Azure DevOps with Azure Container services.
+type: content
+path: infrastructure/cloud/azure/azure-container.md
+tags: [infrastructure, cloud, azure, containers, devops, pipelines]
+---
 # Azure Container Services and Azure DevOps Pipelines
 
-[⬆ Back to Parent](../README.md)
-[🏠 Back to Root README (../../../README.md)
+## 🔗 Navigation
+- [⬆ Parent](./README.md)
+- [🏠 Root](../../../README.md)
 
 ## Parent Context
 

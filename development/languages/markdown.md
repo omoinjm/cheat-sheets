@@ -1,7 +1,15 @@
+---
+title: Markdown Cheat Sheet
+description: A quick reference for Markdown syntax, focusing on keyboard symbols and GitHub-flavored Markdown.
+type: content
+path: development/languages/markdown.md
+tags: [development, languages, markdown, documentation, cheat-sheet]
+---
 # Markdown Cheat Sheet
 
-[⬆ Back to Parent](../README.md)
-[🏠 Back to Root README (../../README.md)
+## 🔗 Navigation
+- [⬆ Parent](./README.md)
+- [🏠 Root](../../README.md)
 
 ## Parent Context
 

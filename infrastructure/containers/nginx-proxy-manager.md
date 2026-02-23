@@ -1,7 +1,15 @@
+---
+title: Docker - Nginx Proxy Manager Setup
+description: A guide for setting up Nginx Proxy Manager using Docker Compose, including port mapping and volume configuration for SSL management.
+type: content
+path: infrastructure/containers/nginx-proxy-manager.md
+tags: [infrastructure, containers, docker, nginx, proxy-manager, ssl]
+---
 # Docker - Nginx Proxy Manager Setup
 
-[⬆ Back to Parent](../README.md)
-[🏠 Back to Root README (../../../README.md)
+## 🔗 Navigation
+- [⬆ Parent](./README.md)
+- [🏠 Root](../../README.md)
 
 ## Parent Context
 

@@ -1,8 +1,8 @@
 ---
 type: directory
-path: os/windows
-parent: os
-tags: [repo, documentation, os, windows]
+path: systems/windows
+parent: systems
+tags: [repo, documentation, systems, windows]
 ---
 # Windows Operating System
 
@@ -12,17 +12,16 @@ tags: [repo, documentation, os, windows]
 - [📂 Current Directory](././)
 
 ## 📌 Overview
-This directory contains documentation, configurations, and scripts specific to the Windows operating system. It serves as a centralized location for Windows-specific knowledge, helping to keep information organized and easy to find.
+This directory contains documentation, configurations, and scripts specific to the Windows operating system. It serves as a centralized location for Windows-specific knowledge.
 
 ## 📁 Contents
 - [macOSBigSur-Windows](./macOSBigSur-Windows/README.md): Information and files related to customizing Windows with macOS Big Sur aesthetics.
-- [README.md](./README.md): This file, providing an overview of the `windows` directory.
 
 ## 🧠 Responsibilities
-This directory is responsible for holding all documentation related to the Windows operating system. It categorizes information to ensure that platform-specific guides, scripts, and configurations are easy to locate and manage.
+This directory is responsible for holding all documentation related to the Windows operating system. It categorizes information to ensure that platform-specific guides, scripts, and configurations are easy to locate.
 
 ## 🔄 Relationships
-This directory is a child of the [os](./../README.md) directory and a sibling to [linux](./../linux/README.md). The information here is specific to Windows and may be referenced by other parts of the repository for Windows-specific instructions.
+This directory is a child of the [systems](./../README.md) directory. Its content provides Windows-specific instructions for developers and administrators.
 
 ## ✨ Useful Information
 

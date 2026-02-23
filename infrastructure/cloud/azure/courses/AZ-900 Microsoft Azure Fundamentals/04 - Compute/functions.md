@@ -1,7 +1,15 @@
+---
+title: Azure Functions (Serverless Compute)
+description: An introduction to Azure Functions, covering serverless architecture, image processing use cases, and key benefits.
+type: content
+path: infrastructure/cloud/azure/courses/AZ-900 Microsoft Azure Fundamentals/04 - Compute/functions.md
+tags: [infrastructure, cloud, azure, az-900, compute, serverless, functions]
+---
 # Azure Functions (Serverless Compute)
 
-[⬆ Back to Parent](../04%20-%20Compute/README.md)
-[🏠 Back to Root README (../../../../../../../README.md)
+## 🔗 Navigation
+- [⬆ Parent](./README.md)
+- [🏠 Root](../../../../../../../README.md)
 
 ## Parent Context
 

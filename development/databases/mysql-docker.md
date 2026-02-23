@@ -1,7 +1,15 @@
+---
+title: Setting up MySQL in a Docker Container
+description: A guide for setting up a MySQL database server within a Docker container, including installation and connection commands.
+type: content
+path: development/databases/mysql-docker.md
+tags: [development, databases, mysql, docker, containerization]
+---
 # Setting up MySQL in a Docker Container
 
-[⬆ Back to Parent](../README.md)
-[🏠 Back to Root README (../../../README.md)
+## 🔗 Navigation
+- [⬆ Parent](./README.md)
+- [🏠 Root](../../README.md)
 
 ## Parent Context
 

@@ -1,7 +1,15 @@
-# Optix - Data Analytics Statistics (`da-stats.md`)
+---
+title: Optix - Data Analytics Statistics
+description: Details the database tables, stored procedures, and API configurations for data analytics and reporting within the Optix system.
+type: content
+path: professional/rysis/optix/da-stats.md
+tags: [professional, rysis, optix, analytics, reporting, sql]
+---
+# Optix - Data Analytics Statistics
 
-[⬆ Back to Parent](../optix/README.md)
-[🏠 Back to Root README (../../../../README.md)
+## 🔗 Navigation
+- [⬆ Parent](./README.md)
+- [🏠 Root](../../../README.md)
 
 ## Parent Context
 
