@@ -1,34 +1,6 @@
----
-type: directory
-path: os/linux
-parent: os
-tags: [repo, documentation, os, linux]
----
-# Linux Operating System
+# Linux Systems
 
-## 🔗 Navigation
-- [[../README|⬆ Parent]]
-- [[../../README|🏠 Root]]
-- [[./|📂 Current Directory]]
-
-## 📌 Overview
-This directory contains documentation, configurations, and scripts tailored for Linux-based operating systems. It covers a range of topics from basic setup to advanced configurations, automation, and security.
-
-## 📁 Contents
-- [[automation/README|automation]]: Scripts and notes for automating various tasks on Linux.
-- [[images/README|images]]: Images and diagrams related to Linux configurations and concepts.
-- [[cron-jobs.md]]: Documentation on scheduling tasks using cron jobs.
-- [[docker.md]]: Notes and commands related to Docker on Linux.
-- [[mssql.md]]: Information about Microsoft SQL Server on Linux.
-- [[nginx.md]]: Configuration and usage of Nginx web server.
-- [[password-store.md]]: Documentation for managing passwords securely.
-- [[postgres.md]]: Notes on PostgreSQL database setup and management.
-- [[secure-shell.md]]: Guides for securing SSH access.
-- [[setup.md]]: General Linux setup procedures.
-- [[README.md]]: This file, providing an overview of Linux-related documentation.
-
-## 🧠 Responsibilities
-This section serves as a comprehensive knowledge base for Linux users and administrators. It provides quick access to configurations, troubleshooting steps, and best practices for common Linux tools and services.
+This directory contains documentation, configurations, and scripts tailored for Linux-based operating systems.
 
 ## ✨ Useful Information
 

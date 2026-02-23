@@ -12,13 +12,12 @@ This repository serves as my personal knowledge base and collection of cheatshee
 
 ## 📁 Contents
 
-- [cloud](./cloud/README.md): Cloud computing platforms, including AWS, Azure, and Docker.
-- [ide](./ide/README.md): Configuration and usage of Integrated Development Environments.
-- [languages](./languages/README.md): Programming language syntax, snippets, and best practices.
-- [os](./os/README.md): Operating system configurations and commands.
-- [pen-testing](./pen-testing/README.md): Tools and notes on penetration testing.
-- [systems](./systems/README.md): System design and architecture notes.
-- [work](./work/README.md): Work-related documentation.
+- [development](./development/README.md): Languages, databases, and standards.
+- [infrastructure](./infrastructure/README.md): Cloud platforms, containers, and web servers.
+- [systems](./systems/README.md): Operating systems (Linux, Windows) and automation.
+- [security](./security/README.md): Pentesting, reverse engineering, and general security.
+- [workspace](./workspace/README.md): IDEs, version control, and networking tools.
+- [professional](./professional/README.md): Work-specific documentation.
 
 ## 🧠 Responsibilities
 
