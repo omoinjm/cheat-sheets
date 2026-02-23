@@ -7,21 +7,21 @@ tags: [repo, documentation, cloud, aws, infra, deployment]
 # Amazon Web Services (AWS)
 
 ## 🔗 Navigation
-- [[../README|⬆ Parent]]
-- [[../../README|🏠 Root]]
-- [[./|📂 Current Directory]]
+- [Parent](./../README.md)
+- [Root](./../../README.md)
+- [Current Directory](././)
 
 ## 📌 Overview
 This directory contains resources, tips, and guides related to various Amazon Web Services (AWS). It focuses on practical applications such as S3 bucket management and deploying containerized applications with ECS and Fargate, serving as a knowledge base for AWS cloud services.
 
 <h2> 📁 Contents</h2>
-- [[README.md]]: This file, providing an overview of Amazon Web Services documentation.
+- [README.md](./README.md): This file, providing an overview of Amazon Web Services documentation.
 
 <h2> 🧠 Responsibilities</h2>
 This section serves as a knowledge base for AWS cloud services, providing quick access to tutorials and best practices for leveraging AWS infrastructure. It's particularly useful for developers and operations teams working with AWS deployments.
 
 <h2> 🔄 Relationships</h2>
-This directory is a child of the [[../README|cloud]] directory, specializing in AWS services. It relates to [[../azure/README|Azure]] as a competing cloud provider and to [[../docker/README|Docker]] for containerization within AWS. Documentation here may also link to [[../../../os/README|operating system]] specific configurations for deploying applications to AWS.
+This directory is a child of the [cloud](./../README.md) directory, specializing in AWS services. It relates to [Azure](./../azure/README.md) as a competing cloud provider and to [Docker](./../docker/README.md) for containerization within AWS. Documentation here may also link to [operating system](./../../../os/README.md) specific configurations for deploying applications to AWS.
 
 <h2> ✨ Services and Deployment Guides</h2>
 

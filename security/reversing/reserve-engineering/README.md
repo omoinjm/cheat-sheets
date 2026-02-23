@@ -7,9 +7,9 @@ tags: [repo, documentation, pen-testing, reverse-engineering, security, debuggin
 # Introduction to Reverse Engineering and Debugging
 
 ## 🔗 Navigation
-- [[../README|⬆ Parent]]
-- [[../../../README|🏠 Root]]
-- [[./|📂 Current Directory]]
+- [Parent](./../README.md)
+- [Root](./../../../README.md)
+- [Current Directory](././)
 
 ## 📌 Overview
 This directory provides an introductory guide to reverse engineering and debugging, with a focus on x86-64 bit architecture. It covers fundamental concepts crucial for vulnerability research, malware analysis, and understanding low-level software interaction.
@@ -18,14 +18,14 @@ This directory provides an introductory guide to reverse engineering and debuggi
 - `image-1.png`: Visual aid for address main.
 - `image-2.png`: Visual aid for instructions.
 - `image.png`: Visual aid for stripped example.
-- [[Intro.md]]: Detailed introductory guide to reverse engineering concepts.
-- [[README.md]]: This file, providing an overview of reverse engineering and debugging.
+- [Intro.md](./Intro.md): Detailed introductory guide to reverse engineering concepts.
+- [README.md](./README.md): This file, providing an overview of reverse engineering and debugging.
 
 <h2> 🧠 Responsibilities</h2>
 This section is responsible for providing foundational knowledge and resources in reverse engineering and debugging. It aims to equip users with the understanding necessary to analyze compiled programs and assess their internal workings.
 
 <h2> 🔄 Relationships</h2>
-This directory is a child of the [[../README|pen-testing]] directory, providing a fundamental skill set crucial for advanced penetration testing techniques. Concepts learned here are applicable to analyzing binaries encountered in [[../htb/README|Hack The Box challenges]] and understanding low-level [[../../../os/linux/README|operating system]] interactions.
+This directory is a child of the [pen-testing](./../README.md) directory, providing a fundamental skill set crucial for advanced penetration testing techniques. Concepts learned here are applicable to analyzing binaries encountered in [Hack The Box challenges](./../htb/README.md) and understanding low-level [operating system](./../../../os/linux/README.md) interactions.
 
 <h2> 💡 Key Concepts</h2>
 
@@ -65,9 +65,9 @@ An overview of the 16 general-purpose registers on a 64-bit x86 Intel AMD proces
     - **Stack**: Stores local variables, function arguments, and return addresses; grows from high to low memory.
 
 <h2> 🖼️ Visual Aids</h2>
-- [[image.png|stripped example]]
-- [[image-1.png|address main]]
-- [[image-2.png|instructions image]]
+- [stripped example](./image.png)
+- [address main](./image-1.png)
+- [instructions image](./image-2.png)
 
 <h2> 🔗 Resources</h2>
 - **YouTube Channel**: [OffByOneSecurity](https://www.youtube.com/@OffByOneSecurity)

@@ -7,9 +7,9 @@ tags: [repo, documentation, os, windows, theme]
 # macOS Big Sur Cursors for Windows
 
 ## 🔗 Navigation
-- [[../README|⬆ Parent]]
-- [[../../../README|🏠 Root]]
-- [[./|📂 Current Directory]]
+- [Parent](./../README.md)
+- [Root](./../../../README.md)
+- [Current Directory](././)
 
 ## 📌 Overview
 This directory contains a collection of cursor files (`.cur`, `.ani`) designed to replicate the macOS Big Sur cursor theme on Windows operating systems. It includes an `install.inf` file for easy installation, allowing users to customize their Windows desktop experience.
@@ -37,7 +37,7 @@ This directory contains a collection of cursor files (`.cur`, `.ani`) designed t
 This directory is responsible for storing all assets and instructions required to install and use the macOS Big Sur cursor theme on Windows.
 
 ## 🔄 Relationships
-This directory is a child of the [[../README|windows]] directory. It provides a cosmetic enhancement for the Windows OS and has no functional relationship with other parts of the repository.
+This directory is a child of the [windows](./../README.md) directory. It provides a cosmetic enhancement for the Windows OS and has no functional relationship with other parts of the repository.
 
 ## 🛠️ Installation
 To install these cursors, right-click on the `install.inf` file and select "Install". After installation, you can select the "macOSBigSur" cursor scheme from the Mouse Pointers settings in the Control Panel.
