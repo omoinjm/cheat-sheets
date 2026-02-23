@@ -7,9 +7,9 @@ tags: [repo, documentation, cloud, azure, az-900, concepts, images]
 # AZ-900 Module 02 - Cloud Concepts Images
 
 ## 🔗 Navigation
-- [Parent](./../README.md)
-- [Root](./../../../../../../../README.md)
-- [Current Directory](././)
+- [⬆ Parent](./../README.md)
+- [🏠 Root](./../../../../../../../README.md)
+- [📂 Current Directory](././)
 
 <h2> 📌 Overview</h2>
 This directory stores image files that are used to visually illustrate concepts and models discussed in the `02 - Cloud Concepts` module. These images enhance understanding of complex topics such as the Azure Marketplace benefits and the Shared Responsibility Model.

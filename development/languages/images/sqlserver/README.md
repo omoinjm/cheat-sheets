@@ -7,9 +7,9 @@ tags: [repo, documentation, languages, sqlserver, images]
 # SQL Server Images
 
 ## 🔗 Navigation
-- [Parent](./../README.md)
-- [Root](./../../../../README.md)
-- [Current Directory](././)
+- [⬆ Parent](./../README.md)
+- [🏠 Root](./../../../../README.md)
+- [📂 Current Directory](././)
 
 <h2> 📌 Overview</h2>
 This directory stores image files that are used to visually illustrate concepts or procedures within the SQL Server documentation, such as database backup processes.

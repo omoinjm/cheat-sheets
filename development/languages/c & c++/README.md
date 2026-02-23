@@ -7,9 +7,9 @@ tags: [repo, documentation, languages, c, c++, programming]
 # C & C++ Programming Language Notes
 
 ## 🔗 Navigation
-- [Parent](./../README.md)
-- [Root](./../../../README.md)
-- [Current Directory](././)
+- [⬆ Parent](./../README.md)
+- [🏠 Root](./../../../README.md)
+- [📂 Current Directory](././)
 
 ## 📌 Overview
 This directory contains notes and detailed explanations of core concepts in C and C++ programming, with a specific focus on memory management and data structures. It provides foundational knowledge for writing efficient and correct C/C++ code.

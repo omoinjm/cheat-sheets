@@ -7,9 +7,9 @@ tags: [repo, documentation, cloud, azure, az-900, compute, images]
 # AZ-900 Module 04 - Compute Services Images
 
 ## 🔗 Navigation
-- [Parent](./../README.md)
-- [Root](./../../../../../../README.md)
-- [Current Directory](././)
+- [⬆ Parent](./../README.md)
+- [🏠 Root](./../../../../../../README.md)
+- [📂 Current Directory](././)
 
 <h2> 📌 Overview</h2>
 This directory stores various image files that are used to visually illustrate concepts and features discussed in the `04 - Compute` module of the AZ-900 course. These images enhance understanding of Azure's compute services such as Virtual Machines, App Services, Container Instances, Kubernetes, and Functions.

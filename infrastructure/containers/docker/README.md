@@ -7,9 +7,9 @@ tags: [repo, documentation, cloud, docker, containerization]
 # Docker Containerization
 
 ## 🔗 Navigation
-- [Parent](./../README.md)
-- [Root](./../../README.md)
-- [Current Directory](././)
+- [⬆ Parent](./../README.md)
+- [🏠 Root](./../../README.md)
+- [📂 Current Directory](././)
 
 ## 📌 Overview
 This directory contains documentation, notes, and configurations related to Docker containerization technology, including its integration with various programming languages, databases, and tools. It provides practical guidance for leveraging Docker for consistent and scalable solutions.

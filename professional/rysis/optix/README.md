@@ -7,9 +7,9 @@ tags: [repo, documentation, work, projects, rysis, optix]
 # Rysis - Optix Component Documentation
 
 ## 🔗 Navigation
-- [Parent](./../README.md)
-- [Root](./../../../README.md)
-- [Current Directory](././)
+- [⬆ Parent](./../README.md)
+- [🏠 Root](./../../../README.md)
+- [📂 Current Directory](././)
 
 ## 📌 Overview
 This directory contains documentation and notes specifically related to the "Optix" component or sub-project within the broader Rysis project. It covers various aspects, including data statistics, data integration, and storage solutions, providing essential insights into its design.

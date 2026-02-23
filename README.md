@@ -4,7 +4,7 @@ This repository serves as a comprehensive, Obsidian-ready knowledge base. It con
 
 ## 🔗 Navigation
 
-- [Current Directory](././)
+- [📂 Current Directory](././)
 
 ## 📌 Overview
 

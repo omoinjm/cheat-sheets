@@ -7,9 +7,9 @@ tags: [repo, documentation, os, windows]
 # Windows Operating System
 
 ## 🔗 Navigation
-- [Parent](./../README.md)
-- [Root](./../../README.md)
-- [Current Directory](././)
+- [⬆ Parent](./../README.md)
+- [🏠 Root](./../../README.md)
+- [📂 Current Directory](././)
 
 ## 📌 Overview
 This directory contains documentation, configurations, and scripts specific to the Windows operating system. It serves as a centralized location for Windows-specific knowledge, helping to keep information organized and easy to find.

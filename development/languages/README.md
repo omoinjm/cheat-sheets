@@ -7,9 +7,9 @@ tags: [repo, documentation, languages, programming]
 # Programming Languages Knowledge Base
 
 ## 🔗 Navigation
-- [Parent](./../README.md)
-- [Root](./../README.md)
-- [Current Directory](././)
+- [⬆ Parent](./../README.md)
+- [🏠 Root](./../README.md)
+- [📂 Current Directory](././)
 
 ## 📌 Overview
 This directory serves as a centralized knowledge base for various programming languages, their syntax, features, common patterns, and related technologies. It includes specific documentation for different languages and associated images, vital for developers.

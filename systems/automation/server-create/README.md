@@ -7,9 +7,9 @@ tags: [repo, documentation, os, linux, automation, server, aws, lamp]
 # Server Creation Automation
 
 ## 🔗 Navigation
-- [Parent](./../README.md)
-- [Root](./../../../../README.md)
-- [Current Directory](././)
+- [⬆ Parent](./../README.md)
+- [🏠 Root](./../../../../README.md)
+- [📂 Current Directory](././)
 
 ## 📌 Overview
 This directory contains shell scripts designed to automate the creation of virtual machines on cloud platforms and the installation of common server stacks on Linux. These scripts aim for rapid and consistent deployment of new server instances.

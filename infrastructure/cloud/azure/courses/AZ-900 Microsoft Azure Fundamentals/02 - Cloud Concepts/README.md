@@ -7,9 +7,9 @@ tags: [repo, documentation, cloud, azure, az-900, concepts, economics]
 # AZ-900 Module 02 - Cloud Concepts
 
 ## 🔗 Navigation
-- [Parent](./../README.md)
-- [Root](./../../../../../README.md)
-- [Current Directory](././)
+- [⬆ Parent](./../README.md)
+- [🏠 Root](./../../../../../README.md)
+- [📂 Current Directory](././)
 
 <h2> 📌 Overview</h2>
 This module introduces fundamental cloud computing concepts, including terminology, economic models, service models (IaaS, PaaS, SaaS), cloud deployment models (public, private, hybrid), and the Azure Marketplace. It also touches on the shared responsibility model, building a solid theoretical foundation for Azure.

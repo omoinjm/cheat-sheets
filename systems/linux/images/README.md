@@ -7,9 +7,9 @@ tags: [repo, documentation, os, linux, images]
 # Linux Images and Visual Assets
 
 ## 🔗 Navigation
-- [Parent](./../README.md)
-- [Root](./../../../README.md)
-- [Current Directory](././)
+- [⬆ Parent](./../README.md)
+- [🏠 Root](./../../../README.md)
+- [📂 Current Directory](././)
 
 ## 📌 Overview
 This directory stores various image files, icons, and screenshots that are referenced by documentation within the `os/linux` section. These images help to visually explain concepts, illustrate configurations, or highlight specific tools.

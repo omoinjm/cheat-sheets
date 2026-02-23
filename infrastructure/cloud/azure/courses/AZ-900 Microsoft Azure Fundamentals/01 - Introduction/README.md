@@ -7,9 +7,9 @@ tags: [repo, documentation, cloud, azure, az-900, introduction]
 # AZ-900 Module 01 - Introduction to Azure
 
 ## 🔗 Navigation
-- [Parent](./../README.md)
-- [Root](./../../../../../README.md)
-- [Current Directory](././)
+- [⬆ Parent](./../README.md)
+- [🏠 Root](./../../../../../README.md)
+- [📂 Current Directory](././)
 
 <h2> 📌 Overview</h2>
 This module provides a foundational understanding of Azure, its key management tools, and concepts. It covers various ways to interact with Azure, including the Azure Portal, CLI, PowerShell, and Cloud Shell, along with an introduction to ARM Templates and Azure Mobile Apps.

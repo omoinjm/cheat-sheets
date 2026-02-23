@@ -7,9 +7,9 @@ tags: [repo, documentation, os, linux, automation, git]
 # Git Automation
 
 ## 🔗 Navigation
-- [Parent](./../README.md)
-- [Root](./../../../../README.md)
-- [Current Directory](././)
+- [⬆ Parent](./../README.md)
+- [🏠 Root](./../../../../README.md)
+- [📂 Current Directory](././)
 
 <h2> 📌 Overview</h2>
 This directory contains shell scripts designed to automate various Git workflows and configurations on Linux systems. These scripts aim to streamline repetitive Git tasks, enforce consistent configurations, and improve efficiency for developers.

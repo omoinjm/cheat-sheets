@@ -7,9 +7,9 @@ tags: [repo, documentation, work, projects, rysis, visibill]
 # Rysis - Visibill Component Documentation
 
 ## 🔗 Navigation
-- [Parent](./../README.md)
-- [Root](./../../../README.md)
-- [Current Directory](././)
+- [⬆ Parent](./../README.md)
+- [🏠 Root](./../../../README.md)
+- [📂 Current Directory](././)
 
 <h2> 📌 Overview</h2>
 This directory contains documentation and notes specifically related to the "Visibill" component or sub-project within the broader Rysis project. It focuses on aspects like data balancing and reporting for specific clients, supporting financial accuracy and reporting integrity.

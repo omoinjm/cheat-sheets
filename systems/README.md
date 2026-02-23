@@ -7,9 +7,9 @@ tags: [repo, documentation, systems, architecture]
 # Systems
 
 ## 🔗 Navigation
-- [Parent](./../README.md)
-- [Root](./../README.md)
-- [Current Directory](././)
+- [⬆ Parent](./../README.md)
+- [🏠 Root](./../README.md)
+- [📂 Current Directory](././)
 
 ## 📌 Overview
 This directory contains documentation related to system design, architecture, and version control practices. It provides quick access to commands and best practices for tools like Git.

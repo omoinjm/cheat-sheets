@@ -7,9 +7,9 @@ tags: [repo, documentation, cloud, azure, certification, az-900]
 # AZ-900 Microsoft Azure Fundamentals
 
 ## 🔗 Navigation
-- [Parent](./../README.md)
-- [Root](./../../../../README.md)
-- [Current Directory](././)
+- [⬆ Parent](./../README.md)
+- [🏠 Root](./../../../../README.md)
+- [📂 Current Directory](././)
 
 ## 📌 Overview
 This directory contains comprehensive notes, learning materials, and resources for the AZ-900 Microsoft Azure Fundamentals certification exam. It is structured into modules covering various foundational aspects of Azure, designed as a dedicated study guide.

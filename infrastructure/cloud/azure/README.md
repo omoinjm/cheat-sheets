@@ -7,9 +7,9 @@ tags: [repo, documentation, cloud, azure, infra]
 # Microsoft Azure Cloud Services
 
 ## 🔗 Navigation
-- [Parent](./../README.md)
-- [Root](./../../README.md)
-- [Current Directory](././)
+- [⬆ Parent](./../README.md)
+- [🏠 Root](./../../README.md)
+- [📂 Current Directory](././)
 
 ## 📌 Overview
 This directory contains documentation and resources related to Microsoft Azure cloud services. It covers topics such as Azure Active Directory (AAD), Azure Container services, and learning materials from Azure certification courses, serving as a comprehensive knowledge base for Azure.

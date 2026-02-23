@@ -7,9 +7,9 @@ tags: [repo, documentation, cloud, azure, az-900, architecture, images]
 # AZ-900 Module 03 - Azure Architecture Images
 
 ## 🔗 Navigation
-- [Parent](./../README.md)
-- [Root](./../../../../../../../README.md)
-- [Current Directory](././)
+- [⬆ Parent](./../README.md)
+- [🏠 Root](./../../../../../../../README.md)
+- [📂 Current Directory](././)
 
 <h2> 📌 Overview</h2>
 This directory stores image files that are used to visually illustrate concepts and models discussed in the `03 - Azure Architecture` module. These images enhance understanding of complex topics such as Azure regions, availability zones, and the benefits of Azure Resource Manager.

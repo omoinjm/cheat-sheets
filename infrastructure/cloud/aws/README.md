@@ -7,9 +7,9 @@ tags: [repo, documentation, cloud, aws, infra, deployment]
 # Amazon Web Services (AWS)
 
 ## 🔗 Navigation
-- [Parent](./../README.md)
-- [Root](./../../README.md)
-- [Current Directory](././)
+- [⬆ Parent](./../README.md)
+- [🏠 Root](./../../README.md)
+- [📂 Current Directory](././)
 
 ## 📌 Overview
 This directory contains resources, tips, and guides related to various Amazon Web Services (AWS). It focuses on practical applications such as S3 bucket management and deploying containerized applications with ECS and Fargate, serving as a knowledge base for AWS cloud services.

@@ -7,9 +7,9 @@ tags: [repo, documentation, pen-testing, reverse-engineering, security, debuggin
 # Introduction to Reverse Engineering and Debugging
 
 ## 🔗 Navigation
-- [Parent](./../README.md)
-- [Root](./../../../README.md)
-- [Current Directory](././)
+- [⬆ Parent](./../README.md)
+- [🏠 Root](./../../../README.md)
+- [📂 Current Directory](././)
 
 ## 📌 Overview
 This directory provides an introductory guide to reverse engineering and debugging, with a focus on x86-64 bit architecture. It covers fundamental concepts crucial for vulnerability research, malware analysis, and understanding low-level software interaction.

@@ -7,9 +7,9 @@ tags: [repo, documentation, os, linux, images, icons]
 # Linux Icons
 
 ## 🔗 Navigation
-- [Parent](./../README.md)
-- [Root](./../../../../README.md)
-- [Current Directory](././)
+- [⬆ Parent](./../README.md)
+- [🏠 Root](./../../../../README.md)
+- [📂 Current Directory](././)
 
 ## 📌 Overview
 This directory stores a collection of icon files that can be used for visual representation of different Linux distributions or applications within documentation or system configurations.

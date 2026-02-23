@@ -7,9 +7,9 @@ tags: [repo, documentation, os, linux, images, security]
 # Secure Linux Server Images
 
 ## 🔗 Navigation
-- [Parent](./../README.md)
-- [Root](./../../../../README.md)
-- [Current Directory](././)
+- [⬆ Parent](./../README.md)
+- [🏠 Root](./../../../../README.md)
+- [📂 Current Directory](././)
 
 ## 📌 Overview
 This directory stores screenshots and diagrams that are used to visually illustrate the steps and concepts discussed in the `secure-shell.md` document, which outlines how to harden a Linux server.

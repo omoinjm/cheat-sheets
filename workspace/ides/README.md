@@ -7,9 +7,9 @@ tags: [repo, documentation, ide, tooling]
 # Integrated Development Environments (IDEs)
 
 ## 🔗 Navigation
-- [Parent](./../README.md)
-- [Root](./../README.md)
-- [Current Directory](././)
+- [⬆ Parent](./../README.md)
+- [🏠 Root](./../README.md)
+- [📂 Current Directory](././)
 
 <h2> 📌 Overview</h2>
 This directory contains documentation, configurations, and tips related to various Integrated Development Environments (IDEs) and code editors, aiming to centralize knowledge for optimizing and customizing these critical tools.

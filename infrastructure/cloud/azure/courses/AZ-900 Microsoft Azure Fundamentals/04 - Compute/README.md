@@ -7,9 +7,9 @@ tags: [repo, documentation, cloud, azure, az-900, compute]
 # AZ-900 Module 04 - Compute Services
 
 ## 🔗 Navigation
-- [Parent](./../README.md)
-- [Root](./../../../../../README.md)
-- [Current Directory](././)
+- [⬆ Parent](./../README.md)
+- [🏠 Root](./../../../../../README.md)
+- [📂 Current Directory](././)
 
 <h2> 📌 Overview</h2>
 This module explores Azure's various compute offerings, from virtual machines to serverless functions and container orchestration. It covers the core services used to run applications and workloads in the cloud, helping to choose the right compute service based on application requirements.

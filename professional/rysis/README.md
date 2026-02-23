@@ -7,9 +7,9 @@ tags: [repo, documentation, work, projects, rysis]
 # Project Rysis Documentation
 
 ## 🔗 Navigation
-- [Parent](./../README.md)
-- [Root](./../../README.md)
-- [Current Directory](././)
+- [⬆ Parent](./../README.md)
+- [🏠 Root](./../../README.md)
+- [📂 Current Directory](././)
 
 <h2> 📌 Overview</h2>
 This directory contains documentation, notes, and resources related to the "Rysis" project. It is further organized into sub-projects or distinct areas of focus, serving as a centralized hub for all information pertaining to the Rysis project.

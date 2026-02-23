@@ -7,9 +7,9 @@ tags: [repo, documentation, languages, images]
 # Language-Specific Images
 
 ## 🔗 Navigation
-- [Parent](./../README.md)
-- [Root](./../../../README.md)
-- [Current Directory](././)
+- [⬆ Parent](./../README.md)
+- [🏠 Root](./../../../README.md)
+- [📂 Current Directory](././)
 
 ## 📌 Overview
 This directory stores various image files, diagrams, and screenshots that are referenced by documentation within the `languages` section. These images help to visually explain concepts, illustrate configurations, or highlight specific code-related information.

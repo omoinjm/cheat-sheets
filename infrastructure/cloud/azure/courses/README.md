@@ -7,9 +7,9 @@ tags: [repo, documentation, cloud, azure, certification, courses]
 # Azure Certification Courses
 
 ## 🔗 Navigation
-- [Parent](./../README.md)
-- [Root](./../../../README.md)
-- [Current Directory](././)
+- [⬆ Parent](./../README.md)
+- [🏠 Root](./../../../README.md)
+- [📂 Current Directory](././)
 
 <h2> 📌 Overview</h2>
 This directory contains organized notes and learning materials for various Microsoft Azure certification courses. Each subdirectory corresponds to a specific certification exam or learning path, serving as a structured learning resource.

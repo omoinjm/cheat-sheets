@@ -7,9 +7,9 @@ tags: [repo, documentation, languages, python, backend, api]
 # Python Language Notes and Utilities
 
 ## 🔗 Navigation
-- [Parent](./../README.md)
-- [Root](./../../../README.md)
-- [Current Directory](././)
+- [⬆ Parent](./../README.md)
+- [🏠 Root](./../../../README.md)
+- [📂 Current Directory](././)
 
 ## 📌 Overview
 This directory contains various Python scripts and modules that demonstrate specific functionalities, architectural patterns, or utility functions, particularly focusing on authentication and API control. It serves as a practical collection of Python code examples and utilities.

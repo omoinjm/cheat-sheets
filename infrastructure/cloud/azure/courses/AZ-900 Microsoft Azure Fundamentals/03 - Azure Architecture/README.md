@@ -7,9 +7,9 @@ tags: [repo, documentation, cloud, azure, az-900, architecture]
 # AZ-900 Module 03 - Azure Architecture
 
 ## 🔗 Navigation
-- [Parent](./../README.md)
-- [Root](./../../../../../README.md)
-- [Current Directory](././)
+- [⬆ Parent](./../README.md)
+- [🏠 Root](./../../../../../README.md)
+- [📂 Current Directory](././)
 
 <h2> 📌 Overview</h2>
 This module focuses on the fundamental architectural components of Azure, including its global infrastructure, resource organization, and management principles. It covers Azure regions, availability zones, resource groups, and Azure Resource Manager (ARM), essential for designing resilient cloud solutions.

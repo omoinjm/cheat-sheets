@@ -7,9 +7,9 @@ tags: [repo, documentation, os, linux, automation]
 # Linux Automation
 
 ## 🔗 Navigation
-- [Parent](./../README.md)
-- [Root](./../../../README.md)
-- [Current Directory](././)
+- [⬆ Parent](./../README.md)
+- [🏠 Root](./../../../README.md)
+- [📂 Current Directory](././)
 
 ## 📌 Overview
 This directory contains various scripts and documentation related to automating tasks on Linux systems. This includes automation for Git operations, server creation, and cloud-specific setups.

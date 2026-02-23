@@ -7,9 +7,9 @@ tags: [repo, documentation, work, projects]
 # Work-Related Documentation
 
 ## 🔗 Navigation
-- [Parent](./../README.md)
-- [Root](./../README.md)
-- [Current Directory](././)
+- [⬆ Parent](./../README.md)
+- [🏠 Root](./../README.md)
+- [📂 Current Directory](././)
 
 ## 📌 Overview
 This directory serves as a repository for documentation, notes, and resources specifically related to professional work projects and tasks. It is organized into subdirectories for different clients or internal projects, centralizing all work-related knowledge.
