@@ -2,6 +2,16 @@
 
 Slack's Incoming Webhooks provide a simple way to post messages from apps into Slack. They use standard HTTP POST requests with a JSON payload.
 
+## 0. How to get the Webhook URL
+
+1.  Go to the [Slack API App Dashboard](https://api.slack.com/apps).
+2.  Click **Create New App** (or select an existing one).
+3.  Under **Add features and functionality**, click **Incoming Webhooks**.
+4.  Toggle **Activate Incoming Webhooks** to **On**.
+5.  Click **Add New Webhook to Workspace**.
+6.  Select the channel you want to post to and click **Allow**.
+7.  Copy the **Webhook URL** (it looks like `https://hooks.slack.com/services/T.../B.../XXXX...`).
+
 ## 1. Bash Example (using `curl`)
 
 ```bash

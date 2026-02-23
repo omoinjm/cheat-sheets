@@ -2,6 +2,23 @@
 
 Microsoft Teams uses Incoming Webhooks (or newer Power Automate "Workflows") to send messages to a specific channel. These support Office 365 Connector cards or Adaptive Cards.
 
+## 0. How to get the Webhook URL
+
+Microsoft is transitioning to Power Automate "Workflows," but legacy "Incoming Webhooks" still exist in some environments.
+
+### Option A: Power Automate Workflows (Recommended)
+1.  In **Teams**, click **... (More apps)** and search for **Workflows**.
+2.  Click **Create** -> **Post to a channel when a Webhook request is received**.
+3.  Name the flow and select the **Team** and **Channel**.
+4.  Once created, copy the **HTTP POST URL**.
+
+### Option B: Incoming Webhook (Legacy)
+1.  Go to the **Channel** where you want the webhook.
+2.  Click **... (More options)** -> **Connectors**.
+3.  Search for **Incoming Webhook** and click **Add** (or **Configure**).
+4.  Provide a name and click **Create**.
+5.  Copy the **URL** (it will look like `https://outlook.office.com/webhook/...`).
+
 ## 1. Bash Example (using `curl`)
 
 ```bash

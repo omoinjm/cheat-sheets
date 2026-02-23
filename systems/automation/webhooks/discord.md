@@ -2,6 +2,15 @@
 
 Discord webhooks are easy to set up and allow you to send automated messages and data updates to any text channel in your server.
 
+## 0. How to get the Webhook URL
+
+1.  Open **Discord** and go to your **Server Settings**.
+2.  Navigate to **Integrations** -> **Webhooks**.
+3.  Click **Create Webhook** (or **New Webhook**).
+4.  Give the webhook a name and select the **Channel** it should post to.
+5.  Click **Copy Webhook URL**.
+6.  The URL will look like `https://discord.com/api/webhooks/YOUR_WEBHOOK_ID/YOUR_WEBHOOK_TOKEN`.
+
 ## 1. Bash Example (using `curl`)
 
 ```bash
