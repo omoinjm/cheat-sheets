@@ -17,6 +17,7 @@ This directory contains various scripts and documentation related to automating 
 ## 📁 Contents
 - [git](./git/README.md): Automation scripts and configurations for Git.
 - [server-create](./server-create/README.md): Scripts for automating server provisioning and setup.
+- [webhooks](./webhooks/): Documentation and examples for integrating with Slack, Discord, and Microsoft Teams webhooks.
 - [nebius-ai-cloud-setup.md](./nebius-ai-cloud-setup.md): Documentation or scripts for setting up Nebius AI cloud environments.
 
 ## 🧠 Responsibilities
