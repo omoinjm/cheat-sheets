@@ -1,0 +1,14 @@
+---
+layout: none
+---
+[
+  {% assign documents = site.pages | concat: site.documents | where_exp: "doc", "doc.title != nil" %}
+  {% for doc in documents %}
+    {
+      "title"    : {{ doc.title | jsonify }},
+      "tags"     : {{ doc.tags | join: ', ' | jsonify }},
+      "url"      : {{ doc.url | relative_url | jsonify }},
+      "content"  : {{ doc.content | strip_html | strip_newlines | truncatewords: 50 | jsonify }}
+    } {% unless forloop.last %},{% endunless %}
+  {% endfor %}
+]

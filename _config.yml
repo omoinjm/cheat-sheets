@@ -24,6 +24,8 @@ markdown: kramdown
 
 # Navigation
 nav_links:
+  - text: Search
+    url: /search/
   - text: Home
     url: /
   - text: Cloud
