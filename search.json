@@ -2,20 +2,14 @@
 layout: none
 ---
 [
-  {% assign all_content = site.pages | concat: site.documents %}
-  {% assign filtered_content = "" | split: "" %}
-  {% for item in all_content %}
-    {% if item.title and item.url != "/search.json" and item.url != "/search/" %}
-      {% assign filtered_content = filtered_content | push: item %}
-    {% endif %}
-  {% endfor %}
-
-  {% for item in filtered_content %}
+  {% assign all_docs = site.pages | concat: site.documents %}
+  {% for doc in all_docs %}
+    {% if doc.title and doc.url != "/search.json" and doc.url != "/search/" %}
     {
-      "title"    : {{ item.title | jsonify }},
-      "tags"     : {{ item.tags | join: ', ' | jsonify }},
-      "url"      : {{ item.url | relative_url | jsonify }},
-      "content"  : {{ item.content | strip_html | strip_newlines | truncatewords: 50 | jsonify }}
+      "title": {{ doc.title | jsonify }},
+      "url": {{ doc.url | relative_url | jsonify }},
+      "content": {{ doc.content | strip_html | strip_newlines | downcase | jsonify }}
     } {% unless forloop.last %},{% endunless %}
+    {% endif %}
   {% endfor %}
 ]

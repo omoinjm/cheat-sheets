@@ -4,68 +4,83 @@ title: Search
 permalink: /search/
 ---
 
-<div class="search-page">
-  <h1>Search Wiki</h1>
-  <div id="search-container">
-    <input type="text" id="search-input" placeholder="Type to search..." autofocus style="width: 100%; padding: 12px; font-size: 1.2em; border: 2px solid #444; border-radius: 6px; margin-bottom: 20px; background: #222; color: #fff;">
-    <ul id="results-container" style="list-style: none; padding: 0; margin-top: 10px;"></ul>
-  </div>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<div class="max-w-4xl mx-auto p-6 bg-gray-900 text-white min-h-screen">
+  <h1 class="text-3xl font-bold mb-6 text-blue-400">Knowledge Base Search</h1>
+  
+  <input type="text" id="search-box"
+    class="w-full p-4 border-2 border-gray-700 rounded-lg mb-6 bg-gray-800 text-white focus:outline-none focus:border-blue-500 transition-colors"
+    placeholder="Search the knowledge base...">
+
+  <div id="status" class="text-gray-400 mb-4 italic">Loading index...</div>
+
+  <ul id="search-results" class="space-y-4"></ul>
 </div>
 
-<style>
-  #results-container li {
-    margin-bottom: 12px;
-    border-bottom: 1px solid #333;
-    padding-bottom: 8px;
-  }
-  #results-container a {
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.2em;
-    color: #4183C4;
-  }
-  #results-container a:hover {
-    text-decoration: underline;
-  }
-</style>
-
-
-<!-- Script to handle search -->
-<script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js"></script>
-
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    SimpleJekyllSearch({
-      searchInput: document.getElementById('search-input'),
-      resultsContainer: document.getElementById('results-container'),
-      json: '{{ site.baseurl }}/search.json',
-      searchResultTemplate: '<li><a href="{url}">{title}</a></li>',
-      noResultsText: 'No results found',
-      limit: 20,
-      fuzzy: false
+  const resultsList = document.getElementById("search-results");
+  const searchBox = document.getElementById("search-box");
+  const statusIndicator = document.getElementById("status");
+  let indexedDocs = [];
+
+  // Step 4: Load and Search (Adapted for Jekyll JSON index)
+  async function loadDocs() {
+    try {
+      const res = await fetch('{{ site.baseurl }}/search.json');
+      indexedDocs = await res.json();
+      statusIndicator.textContent = `${indexedDocs.length} pages indexed. Ready to search.`;
+      
+      // Focus search box
+      searchBox.focus();
+    } catch (error) {
+      console.error("Failed to load search index:", error);
+      statusIndicator.textContent = "Error loading search index.";
+    }
+  }
+
+  function searchDocs(term) {
+    resultsList.innerHTML = "";
+    if (!term || term.length < 2) {
+      return;
+    }
+
+    const lowerTerm = term.toLowerCase();
+    
+    // Simple filter logic from the article
+    const results = indexedDocs.filter(doc =>
+      doc.title.toLowerCase().includes(lowerTerm) || 
+      doc.content.includes(lowerTerm)
+    );
+
+    if (results.length === 0) {
+      resultsList.innerHTML = '<li class="text-gray-500">No matching articles found.</li>';
+      return;
+    }
+
+    results.forEach(result => {
+      const li = document.createElement("li");
+      li.className = "transform transition-all duration-200 hover:translate-x-2";
+      li.innerHTML = `
+        <a href="${result.url}" class="block p-4 bg-gray-800 border border-gray-700 rounded-lg hover:bg-gray-700 hover:border-blue-500 group">
+          <div class="text-xl font-semibold text-blue-400 group-hover:text-blue-300">${result.title}</div>
+          <div class="text-sm text-gray-400 mt-1">${result.url}</div>
+        </a>
+      `;
+      resultsList.appendChild(li);
     });
+  }
+
+  searchBox.addEventListener("input", (e) => {
+    searchDocs(e.target.value);
   });
+
+  // Start loading
+  loadDocs();
 </script>
 
 <style>
-  #search-input {
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    background-color: white;
-  }
-  #results-container {
-    list-style: none;
-    padding-left: 0;
-  }
-  #results-container li {
-    margin-bottom: 10px;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 5px;
-  }
-  #results-container a {
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.1em;
-  }
+  /* Ensure Tailwind doesn't conflict too much with Hacker theme basics */
+  #main_content { max-width: none !important; }
 </style>
