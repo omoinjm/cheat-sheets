@@ -20,21 +20,21 @@
   --sidebar-width:  260px;
 
   /* Content */
-  --content-bg:     #ffffff;
-  --content-text:   #24292f;
-  --content-muted:  #57606a;
-  --border-color:   #d0d7de;
+  --content-bg:     #0d1117;
+  --content-text:   #e6edf3;
+  --content-muted:  #8b949e;
+  --border-color:   #30363d;
 
   /* Front matter card */
-  --fm-card-bg:     #f6f8fa;
-  --fm-card-border: #d0d7de;
+  --fm-card-bg:     #161b22;
+  --fm-card-border: #30363d;
 
   /* Code blocks */
-  --code-bg:        #161b22;
+  --code-bg:        #010409;
 
   /* Tags */
-  --tag-bg:         #ddf4ff;
-  --tag-text:       #0550ae;
+  --tag-bg:         #1c2d4a;
+  --tag-text:       #79c0ff;
 
   /* Layout */
   --header-height:  56px;
@@ -73,8 +73,9 @@ body {
   display: flex;
   flex-direction: column;
   height: 100vh;
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
   overflow-y: auto;
   border-right: 1px solid var(--sidebar-border);
   z-index: 100;
@@ -195,6 +196,7 @@ body {
 /* ── Content Area ────────────────────────────────────────────── */
 #content-area {
   flex: 1;
+  margin-left: var(--sidebar-width);
   padding: 32px 40px;
   max-width: calc(var(--content-max) + 80px);
   width: 100%;
@@ -283,7 +285,7 @@ body {
 
 /* Inline code */
 #content code:not(pre code) {
-  background: #f6f8fa;
+  background: var(--fm-card-bg);
   border: 1px solid var(--border-color);
   padding: 0.15em 0.4em;
   border-radius: 4px;
@@ -320,7 +322,7 @@ body {
   text-align: left;
 }
 #content th { background: var(--fm-card-bg); font-weight: 600; }
-#content tr:nth-child(even) td { background: #fafafa; }
+#content tr:nth-child(even) td { background: var(--sidebar-bg); }
 
 /* Images */
 #content img { max-width: 100%; border-radius: 4px; }
@@ -389,23 +391,19 @@ body {
   body { display: block; }
 
   #sidebar {
-    position: fixed;
-    left: 0;
-    top: 0;
-    height: 100vh;
     transform: translateX(-100%);
     transition: transform 0.25s ease;
-    z-index: 100;
   }
   #sidebar.open { transform: translateX(0); }
 
   #hamburger { display: block; }
 
   #content-area {
+    margin-left: 0;
     padding: 20px 16px;
   }
 
-  /* Show hamburger in fixed header on mobile */
+  /* Space for the fixed header bar on mobile */
   body::before {
     content: '';
     display: block;
