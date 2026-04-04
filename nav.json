@@ -1,0 +1,372 @@
+{
+  "home": "README.md",
+  "sections": [
+    {
+      "id": "development",
+      "label": "Development",
+      "icon": "💻",
+      "overview": "development/README.md",
+      "children": [
+        {
+          "id": "dev-languages",
+          "label": "Languages",
+          "icon": "📝",
+          "overview": "development/languages/README.md",
+          "entries": [
+            { "label": "C & C++", "path": "development/languages/c & c++/README.md" },
+            { "label": "C# / .NET", "path": "development/languages/c-sharp.md" },
+            { "label": "C# Docker", "path": "development/languages/c-sharp-docker.md" },
+            { "label": "Markdown", "path": "development/languages/markdown.md" },
+            { "label": "Python", "path": "development/languages/python/README.md" }
+          ]
+        },
+        {
+          "id": "dev-databases",
+          "label": "Databases",
+          "icon": "🗄️",
+          "overview": "development/databases/README.md",
+          "entries": [
+            { "label": "MSSQL (Docker)", "path": "development/databases/mssql-docker.md" },
+            { "label": "MSSQL (Linux)", "path": "development/databases/mssql-linux.md" },
+            { "label": "MySQL (Docker)", "path": "development/databases/mysql-docker.md" },
+            { "label": "PostgreSQL (Linux)", "path": "development/databases/postgres-linux.md" },
+            { "label": "PostgreSQL (Docker)", "path": "development/databases/postgresql-docker.md" },
+            { "label": "SQL Server", "path": "development/databases/sqlserver.md" }
+          ]
+        },
+        {
+          "id": "dev-standards",
+          "label": "Standards",
+          "icon": "📏",
+          "overview": "development/standards/README.md",
+          "entries": [
+            { "label": "JWT", "path": "development/standards/jwt.md" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "infrastructure",
+      "label": "Infrastructure",
+      "icon": "🏗️",
+      "overview": "infrastructure/README.md",
+      "children": [
+        {
+          "id": "infra-cloud",
+          "label": "Cloud",
+          "icon": "☁️",
+          "overview": "infrastructure/cloud/README.md",
+          "children": [
+            {
+              "id": "infra-cloud-aws",
+              "label": "AWS",
+              "icon": "🟠",
+              "overview": "infrastructure/cloud/aws/README.md",
+              "entries": []
+            },
+            {
+              "id": "infra-cloud-azure",
+              "label": "Azure",
+              "icon": "🔵",
+              "overview": "infrastructure/cloud/azure/README.md",
+              "entries": [
+                { "label": "Azure AD", "path": "infrastructure/cloud/azure/azure-ad.md" },
+                { "label": "Azure Container", "path": "infrastructure/cloud/azure/azure-container.md" }
+              ],
+              "children": [
+                {
+                  "id": "infra-cloud-azure-az900",
+                  "label": "AZ-900 Fundamentals",
+                  "icon": "📘",
+                  "overview": "infrastructure/cloud/azure/courses/AZ-900 Microsoft Azure Fundamentals/README.md",
+                  "children": [
+                    {
+                      "id": "az900-intro",
+                      "label": "01 - Introduction",
+                      "icon": "📖",
+                      "overview": "infrastructure/cloud/azure/courses/AZ-900 Microsoft Azure Fundamentals/01 - Introduction/README.md",
+                      "entries": [
+                        { "label": "ARM Templates", "path": "infrastructure/cloud/azure/courses/AZ-900 Microsoft Azure Fundamentals/01 - Introduction/arm-templates.md" },
+                        { "label": "Azure CLI", "path": "infrastructure/cloud/azure/courses/AZ-900 Microsoft Azure Fundamentals/01 - Introduction/azure-cli.md" },
+                        { "label": "Azure Mobile Apps", "path": "infrastructure/cloud/azure/courses/AZ-900 Microsoft Azure Fundamentals/01 - Introduction/azure-mobile-apps.md" },
+                        { "label": "Azure Portal", "path": "infrastructure/cloud/azure/courses/AZ-900 Microsoft Azure Fundamentals/01 - Introduction/azure-portal.md" },
+                        { "label": "Azure PowerShell", "path": "infrastructure/cloud/azure/courses/AZ-900 Microsoft Azure Fundamentals/01 - Introduction/azure-powershell.md" },
+                        { "label": "Cloud Shell", "path": "infrastructure/cloud/azure/courses/AZ-900 Microsoft Azure Fundamentals/01 - Introduction/cloud-shell.md" }
+                      ]
+                    },
+                    {
+                      "id": "az900-cloud-concepts",
+                      "label": "02 - Cloud Concepts",
+                      "icon": "☁️",
+                      "overview": "infrastructure/cloud/azure/courses/AZ-900 Microsoft Azure Fundamentals/02 - Cloud Concepts/README.md",
+                      "entries": [
+                        { "label": "Azure Marketplace", "path": "infrastructure/cloud/azure/courses/AZ-900 Microsoft Azure Fundamentals/02 - Cloud Concepts/azure-marketplace.md" },
+                        { "label": "Cloud Architecture", "path": "infrastructure/cloud/azure/courses/AZ-900 Microsoft Azure Fundamentals/02 - Cloud Concepts/cloud-architecture.md" },
+                        { "label": "Cloud Service Models", "path": "infrastructure/cloud/azure/courses/AZ-900 Microsoft Azure Fundamentals/02 - Cloud Concepts/cloud-service-models.md" },
+                        { "label": "Language of Cloud Computing", "path": "infrastructure/cloud/azure/courses/AZ-900 Microsoft Azure Fundamentals/02 - Cloud Concepts/language-cloud-computing.md" },
+                        { "label": "Language of Cloud Economics", "path": "infrastructure/cloud/azure/courses/AZ-900 Microsoft Azure Fundamentals/02 - Cloud Concepts/language-cloud-economics.md" }
+                      ]
+                    },
+                    {
+                      "id": "az900-architecture",
+                      "label": "03 - Azure Architecture",
+                      "icon": "🏛️",
+                      "overview": "infrastructure/cloud/azure/courses/AZ-900 Microsoft Azure Fundamentals/03 - Azure Architecture/README.md",
+                      "entries": [
+                        { "label": "Regions & Availability Zones", "path": "infrastructure/cloud/azure/courses/AZ-900 Microsoft Azure Fundamentals/03 - Azure Architecture/regions-and-availability-zones.md" },
+                        { "label": "Resource Groups & ARM", "path": "infrastructure/cloud/azure/courses/AZ-900 Microsoft Azure Fundamentals/03 - Azure Architecture/rg-and-arm.md" }
+                      ]
+                    },
+                    {
+                      "id": "az900-compute",
+                      "label": "04 - Compute",
+                      "icon": "⚡",
+                      "overview": "infrastructure/cloud/azure/courses/AZ-900 Microsoft Azure Fundamentals/04 - Compute/README.md",
+                      "entries": [
+                        { "label": "App Services", "path": "infrastructure/cloud/azure/courses/AZ-900 Microsoft Azure Fundamentals/04 - Compute/app-services.md" },
+                        { "label": "Container Instances", "path": "infrastructure/cloud/azure/courses/AZ-900 Microsoft Azure Fundamentals/04 - Compute/azure-container-instances.md" },
+                        { "label": "Kubernetes (AKS)", "path": "infrastructure/cloud/azure/courses/AZ-900 Microsoft Azure Fundamentals/04 - Compute/azure-kubernetes.md" },
+                        { "label": "Virtual Desktop", "path": "infrastructure/cloud/azure/courses/AZ-900 Microsoft Azure Fundamentals/04 - Compute/azure-virtual-desktop.md" },
+                        { "label": "Functions", "path": "infrastructure/cloud/azure/courses/AZ-900 Microsoft Azure Fundamentals/04 - Compute/functions.md" },
+                        { "label": "Scale Sets", "path": "infrastructure/cloud/azure/courses/AZ-900 Microsoft Azure Fundamentals/04 - Compute/scale-sets.md" },
+                        { "label": "Virtual Machines", "path": "infrastructure/cloud/azure/courses/AZ-900 Microsoft Azure Fundamentals/04 - Compute/virtual-machines.md" }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "infra-containers",
+          "label": "Containers",
+          "icon": "🐳",
+          "overview": "infrastructure/containers/README.md",
+          "entries": [
+            { "label": "Docker", "path": "infrastructure/containers/docker/README.md" },
+            { "label": "Linux Docker", "path": "infrastructure/containers/linux-docker.md" },
+            { "label": "Nginx Proxy Manager", "path": "infrastructure/containers/nginx-proxy-manager.md" },
+            { "label": "Portainer", "path": "infrastructure/containers/portainer.md" }
+          ]
+        },
+        {
+          "id": "infra-web-servers",
+          "label": "Web Servers",
+          "icon": "🌐",
+          "overview": "infrastructure/web-servers/README.md",
+          "entries": [
+            { "label": "Nginx", "path": "infrastructure/web-servers/nginx.md" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "systems",
+      "label": "Systems",
+      "icon": "🖥️",
+      "overview": "systems/README.md",
+      "children": [
+        {
+          "id": "sys-linux",
+          "label": "Linux",
+          "icon": "🐧",
+          "overview": "systems/linux/README.md",
+          "entries": [
+            { "label": "Cron Jobs", "path": "systems/linux/cron-jobs.md" },
+            { "label": "Password Store", "path": "systems/linux/password-store.md" },
+            { "label": "Setup", "path": "systems/linux/setup.md" }
+          ]
+        },
+        {
+          "id": "sys-windows",
+          "label": "Windows",
+          "icon": "🪟",
+          "overview": "systems/windows/README.md",
+          "entries": [
+            { "label": "macOS Big Sur Theme", "path": "systems/windows/macOSBigSur-Windows/README.md" }
+          ]
+        },
+        {
+          "id": "sys-automation",
+          "label": "Automation",
+          "icon": "⚙️",
+          "overview": "systems/automation/README.md",
+          "entries": [
+            { "label": "Git", "path": "systems/automation/git/README.md" },
+            { "label": "Nebius AI Cloud Setup", "path": "systems/automation/nebius-ai-cloud-setup.md" },
+            { "label": "Server Create", "path": "systems/automation/server-create/README.md" }
+          ],
+          "children": [
+            {
+              "id": "sys-automation-webhooks",
+              "label": "Webhooks",
+              "icon": "🔗",
+              "overview": "systems/automation/webhooks/README.md",
+              "entries": [
+                { "label": "Discord", "path": "systems/automation/webhooks/discord.md" },
+                { "label": "Slack", "path": "systems/automation/webhooks/slack.md" },
+                { "label": "Teams", "path": "systems/automation/webhooks/teams.md" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "security",
+      "label": "Security",
+      "icon": "🔒",
+      "overview": "security/README.md",
+      "children": [
+        {
+          "id": "sec-pentesting",
+          "label": "Pentesting",
+          "icon": "🎯",
+          "overview": "security/pentesting/README.md",
+          "children": [
+            {
+              "id": "sec-htb",
+              "label": "Hack The Box",
+              "icon": "📦",
+              "overview": "security/pentesting/htb/README.md",
+              "entries": [
+                { "label": "Dancing", "path": "security/pentesting/htb/dancing/README.md" },
+                { "label": "Fawn", "path": "security/pentesting/htb/fawn/README.md" },
+                { "label": "Keys", "path": "security/pentesting/htb/keys/README.md" }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "sec-reversing",
+          "label": "Reverse Engineering",
+          "icon": "🔄",
+          "overview": "security/reversing/README.md",
+          "entries": [
+            { "label": "Intro", "path": "security/reversing/reserve-engineering/Intro.md" }
+          ]
+        },
+        {
+          "id": "sec-osint",
+          "label": "OSINT",
+          "icon": "🔍",
+          "entries": [
+            { "label": "OSINT", "path": "security/osint.md" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "workspace",
+      "label": "Workspace",
+      "icon": "🛠️",
+      "overview": "workspace/README.md",
+      "children": [
+        {
+          "id": "ws-ides",
+          "label": "IDEs",
+          "icon": "⌨️",
+          "overview": "workspace/ides/README.md",
+          "entries": [
+            { "label": "IntelliJ", "path": "workspace/ides/intellij.md" },
+            { "label": "Vim", "path": "workspace/ides/vim.md" },
+            { "label": "Visual Studio 2022", "path": "workspace/ides/vs-2022.md" }
+          ]
+        },
+        {
+          "id": "ws-vcs",
+          "label": "Version Control",
+          "icon": "🔀",
+          "overview": "workspace/vcs/README.md",
+          "entries": [
+            { "label": "Git Tags", "path": "workspace/vcs/git_tags.md" }
+          ]
+        },
+        {
+          "id": "ws-networking",
+          "label": "Networking",
+          "icon": "🌐",
+          "overview": "workspace/networking/README.md",
+          "entries": [
+            { "label": "Secure Shell (SSH)", "path": "workspace/networking/secure-shell.md" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "professional",
+      "label": "Professional",
+      "icon": "💼",
+      "overview": "professional/README.md",
+      "children": [
+        {
+          "id": "prof-rysis",
+          "label": "Rysis",
+          "icon": "🏢",
+          "overview": "professional/rysis/README.md",
+          "children": [
+            {
+              "id": "prof-optix",
+              "label": "Optix",
+              "icon": "📊",
+              "overview": "professional/rysis/optix/README.md",
+              "entries": [
+                { "label": "DA Stats", "path": "professional/rysis/optix/da-stats.md" },
+                { "label": "Data Hub", "path": "professional/rysis/optix/data-hub.md" },
+                { "label": "Storage Account", "path": "professional/rysis/optix/storage-account.md" }
+              ]
+            },
+            {
+              "id": "prof-visibill",
+              "label": "Visibill",
+              "icon": "📋",
+              "overview": "professional/rysis/visibill/README.md",
+              "entries": [
+                { "label": "Unitrans Balancing", "path": "professional/rysis/visibill/Unitrans Balancing.md" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "prompts",
+      "label": "Prompts",
+      "icon": "🤖",
+      "overview": "prompts/README.md",
+      "children": [
+        {
+          "id": "prompts-app-gen",
+          "label": "App Generation",
+          "icon": "🏗️",
+          "overview": "prompts/app-generation/README.md",
+          "entries": [
+            { "label": "E-Commerce Blueprint", "path": "prompts/app-generation/ecommerce-blueprint.md" },
+            { "label": "New App Template", "path": "prompts/app-generation/new-app-template.md" }
+          ]
+        },
+        {
+          "id": "prompts-code-improvement",
+          "label": "Code Improvement",
+          "icon": "✨",
+          "overview": "prompts/code-improvement/README.md",
+          "entries": [
+            { "label": "Refactoring Template", "path": "prompts/code-improvement/refactoring-template.md" }
+          ]
+        },
+        {
+          "id": "prompts-docs",
+          "label": "Documentation",
+          "icon": "📚",
+          "overview": "prompts/documentation/README.md",
+          "entries": [
+            { "label": "Automated Wiki Maintenance", "path": "prompts/documentation/automated-wiki-maintenance.md" },
+            { "label": "Wiki Standardization", "path": "prompts/documentation/wiki-standardization.md" },
+            { "label": "Markdown Viewer Site Prompt", "path": "docs/markdown-viewer-site-prompt.md" }
+          ]
+        }
+      ]
+    }
+  ]
+}
