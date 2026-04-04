@@ -60,7 +60,7 @@ a:hover { text-decoration: underline; }
 
 /* ── Layout ─────────────────────────────────────────────────── */
 body {
-  display: flex;
+  display: block;
   min-height: 100vh;
 }
 
@@ -195,11 +195,10 @@ body {
 
 /* ── Content Area ────────────────────────────────────────────── */
 #content-area {
-  flex: 1;
   margin-left: var(--sidebar-width);
+  min-height: 100vh;
   padding: 32px 40px;
-  max-width: calc(var(--content-max) + 80px);
-  width: 100%;
+  max-width: calc(var(--content-max) + var(--sidebar-width) + 80px);
 }
 
 /* ── Breadcrumb ──────────────────────────────────────────────── */
@@ -388,8 +387,6 @@ body {
 
 /* ── Responsive ──────────────────────────────────────────────── */
 @media (max-width: 768px) {
-  body { display: block; }
-
   #sidebar {
     transform: translateX(-100%);
     transition: transform 0.25s ease;
