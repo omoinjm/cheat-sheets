@@ -42,6 +42,14 @@
           "entries": [
             { "label": "JWT", "path": "development/standards/jwt.md" }
           ]
+        },
+        {
+          "id": "dev-architecture",
+          "label": "Architecture",
+          "icon": "🏗️",
+          "entries": [
+            { "label": "Monorepo Setup", "path": "development/monorepo-setup.md" }
+          ]
         }
       ]
     },

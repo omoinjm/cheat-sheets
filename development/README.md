@@ -17,6 +17,7 @@ This directory serves as the primary hub for software development documentation.
 ## 📁 Contents
 - [databases](./databases/README.md): Documentation for various database systems ([MSSQL](./databases/mssql-linux.md), [MySQL](./databases/mysql-docker.md), [PostgreSQL](./databases/postgres-linux.md)) and their containerized versions.
 - [languages](./languages/README.md): Syntax guides, patterns, and documentation for programming languages like Python, C#, and C++.
+- [monorepo-setup.md](./monorepo-setup.md): Guide to converting single-repo React projects into monorepos using npm workspaces for Web and Mobile targets.
 - [standards](./standards/README.md): Industry standards and protocols, such as [JSON Web Tokens (JWT)](./standards/jwt.md).
 
 ## 🧠 Responsibilities
