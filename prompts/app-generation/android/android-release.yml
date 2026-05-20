@@ -42,7 +42,7 @@ jobs:
         continue-on-error: true
         run: npm run ci
 
-      - name: Install Playwright Chromium (optional script)
+      - name: Install Playwright Chromium (optional)
         continue-on-error: true
         run: npm run test:viewport:install
 
