@@ -38,7 +38,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Validate web app
+      - name: Validate web app (optional)
         continue-on-error: true
         run: npm run ci
 

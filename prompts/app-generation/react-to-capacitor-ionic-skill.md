@@ -54,7 +54,7 @@ Use this skill prompt to transform an existing React codebase into a Capacitor +
 >    - Provide a CI/CD-ready structure for Android/iOS builds and signing.
 >    - Include test strategy recommendations (unit, integration, smoke/E2E) focused on mobile risk areas.
 >    - Define acceptance criteria and a verification checklist for feature parity.
->    - Generate baseline Android CI/CD files (for example `scripts/build-android.sh` and `.github/workflows/android.yml`) and adjust paths to match the project layout.
+>    - Generate baseline Android CI/CD files (for example `scripts/build-android.sh` and `.github/workflows/android-release.yml`) and adjust paths to match the project layout.
 >
 > **Expected Deliverables:**
 > - Target folder structure for the migrated app
@@ -70,7 +70,7 @@ Use this skill prompt to transform an existing React codebase into a Capacitor +
 
 Use these as baseline templates in the generated project.
 Assume these files are created from the application project root; adjust paths if using a monorepo (for example `apps/mobile`).
-Typical monorepo adjustments include Android directory checks, APK output search paths, and script working directories.
+Typical monorepo adjustments include Android directory checks, APK output search paths, script working directories, and the `APK_SEARCH_ROOT` workflow environment variable.
 
 `scripts/build-android.sh`
 
@@ -86,7 +86,7 @@ npm run android:sync
 npm run android:build:debug
 ```
 
-Create this file at `.github/workflows/android.yml`.
+Create this file at `.github/workflows/android-release.yml`.
 
 ```yaml
 name: Android Build & Release
