@@ -70,6 +70,7 @@ Use this skill prompt to transform an existing React codebase into a Capacitor +
 
 Use these as baseline templates in the generated project.
 Assume these files are created from the application project root; adjust paths if using a monorepo (for example `apps/mobile`).
+Typical monorepo adjustments include Android directory checks, APK output search paths, and script working directories.
 
 `scripts/build-android.sh`
 
@@ -85,7 +86,7 @@ npm run android:sync
 npm run android:build:debug
 ```
 
-`.github/workflows/android.yml`
+Create this file at `.github/workflows/android.yml`.
 
 ```yaml
 name: Android Build & Release
