@@ -46,7 +46,7 @@ jobs:
         continue-on-error: true
         run: npm run test:viewport:install
 
-      - name: Run viewport matrix (optional script)
+      - name: Run viewport matrix (optional)
         continue-on-error: true
         run: npm run test:viewport
 
