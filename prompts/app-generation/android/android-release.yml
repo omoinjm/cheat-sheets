@@ -1,45 +1,55 @@
 name: Android Build & Release
 
 on:
-  push:
-    tags:
-      - 'v*'
-    branches:
-      - main
   pull_request:
-    branches:
-      - main
+    branches: [main]
+  push:
+    branches: [main]
+    tags: ["v*"]
+  workflow_dispatch:
 
 jobs:
-  build:
+  build-android:
     runs-on: ubuntu-latest
     permissions:
       contents: write
 
     steps:
-      - name: Checkout Code
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          cache: 'npm'
+          node-version: "22"
+          cache: npm
 
-      - name: Setup Java JDK
+      - name: Setup Java
         uses: actions/setup-java@v4
         with:
-          distribution: 'microsoft'
-          java-version: '21'
+          distribution: temurin
+          java-version: "21"
 
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
 
-      - name: Accept Android Licenses
-        run: yes | sdkmanager --licenses || true
+      - name: Install dependencies
+        run: npm ci
 
-      - name: Install Dependencies
-        run: npm install --legacy-peer-deps
+      - name: Validate web app
+        run: npm run ci
+
+      - name: Install Playwright Chromium
+        run: npm run test:viewport:install
+
+      - name: Run viewport matrix
+        run: npm run test:viewport
+
+      - name: Ensure Android platform exists
+        run: |
+          if [ ! -d "android/app" ]; then
+            npx cap add android
+          fi
 
       - name: Build Android APK
         env:
@@ -49,16 +59,39 @@ jobs:
       - name: Locate APK
         id: locate_apk
         run: |
-          APK_PATH=$(find apps/mobile/android -name "app-debug.apk" | head -n 1)
-          echo "path=$APK_PATH" >> $GITHUB_OUTPUT
-          echo "Found APK at: $APK_PATH"
+          APK_PATH=$(find android/app/build/outputs/apk -name "app-debug.apk" | head -n 1)
+          if [ -z "$APK_PATH" ]; then
+            echo "No APK was produced" >&2
+            exit 1
+          fi
+          echo "path=$APK_PATH" >> "$GITHUB_OUTPUT"
+          echo "Found APK: $APK_PATH"
 
-      - name: Create Release
+      - name: Rename APK for release convention
+        id: rename_apk
+        run: |
+          VERSION_TAG="${GITHUB_REF_NAME}"
+          if [[ "${GITHUB_REF}" == refs/tags/v* ]]; then
+            FINAL_NAME="app-prompt-${VERSION_TAG}.apk"
+          else
+            FINAL_NAME="app-prompt-${GITHUB_SHA::7}.apk"
+          fi
+          cp "${{ steps.locate_apk.outputs.path }}" "./${FINAL_NAME}"
+          echo "path=./${FINAL_NAME}" >> "$GITHUB_OUTPUT"
+          echo "Final APK name: ${FINAL_NAME}"
+
+      - name: Upload APK artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: prompt-repository-debug-apk
+          path: ${{ steps.rename_apk.outputs.path }}
+
+      - name: Create GitHub Release
         if: startsWith(github.ref, 'refs/tags/v')
         uses: softprops/action-gh-release@v2
         with:
-          files: ${{ steps.locate_apk.outputs.path }}
-          name: Release ${{ github.ref_name }}
+          files: ${{ steps.rename_apk.outputs.path }}
+          name: Prompt Repository ${{ github.ref_name }}
           draft: false
           prerelease: false
         env:

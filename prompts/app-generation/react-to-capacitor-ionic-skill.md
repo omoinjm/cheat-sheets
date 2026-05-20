@@ -53,6 +53,7 @@ Use this skill prompt to transform an existing React codebase into a Capacitor +
 >    - Provide a CI/CD-ready structure for Android/iOS builds and signing.
 >    - Include test strategy recommendations (unit, integration, smoke/E2E) focused on mobile risk areas.
 >    - Define acceptance criteria and a verification checklist for feature parity.
+>    - Generate `scripts/build-android.sh` and `.github/workflows/android.yml` using the provided baseline templates.
 >
 > **Expected Deliverables:**
 > - Target folder structure for the migrated app
@@ -61,6 +62,129 @@ Use this skill prompt to transform an existing React codebase into a Capacitor +
 > - Key configuration files to create or modify
 > - Performance and security hardening checklist
 > - Post-migration validation checklist for Android and iOS
+
+---
+
+## 🚀 CI/CD Pipeline Templates
+
+Use these as baseline templates in the generated project.
+
+`scripts/build-android.sh`
+
+```bash
+#!/usr/bin/env bash
+set -euo pipefail
+npm run build
+if [[ ! -f "android/gradlew" ]]; then
+  rm -rf android
+  npx cap add android
+fi
+npm run android:sync
+npm run android:build:debug
+```
+
+`.github/workflows/android.yml`
+
+```yaml
+name: Android Build & Release
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+    tags: ["v*"]
+  workflow_dispatch:
+
+jobs:
+  build-android:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Validate web app
+        run: npm run ci
+
+      - name: Install Playwright Chromium
+        run: npm run test:viewport:install
+
+      - name: Run viewport matrix
+        run: npm run test:viewport
+
+      - name: Ensure Android platform exists
+        run: |
+          if [ ! -d "android/app" ]; then
+            npx cap add android
+          fi
+
+      - name: Build Android APK
+        env:
+          BUILD_TYPE: debug
+        run: ./scripts/build-android.sh
+
+      - name: Locate APK
+        id: locate_apk
+        run: |
+          APK_PATH=$(find android/app/build/outputs/apk -name "app-debug.apk" | head -n 1)
+          if [ -z "$APK_PATH" ]; then
+            echo "No APK was produced" >&2
+            exit 1
+          fi
+          echo "path=$APK_PATH" >> "$GITHUB_OUTPUT"
+          echo "Found APK: $APK_PATH"
+
+      - name: Rename APK for release convention
+        id: rename_apk
+        run: |
+          VERSION_TAG="${GITHUB_REF_NAME}"
+          if [[ "${GITHUB_REF}" == refs/tags/v* ]]; then
+            FINAL_NAME="app-prompt-${VERSION_TAG}.apk"
+          else
+            FINAL_NAME="app-prompt-${GITHUB_SHA::7}.apk"
+          fi
+          cp "${{ steps.locate_apk.outputs.path }}" "./${FINAL_NAME}"
+          echo "path=./${FINAL_NAME}" >> "$GITHUB_OUTPUT"
+          echo "Final APK name: ${FINAL_NAME}"
+
+      - name: Upload APK artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: prompt-repository-debug-apk
+          path: ${{ steps.rename_apk.outputs.path }}
+
+      - name: Create GitHub Release
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: ${{ steps.rename_apk.outputs.path }}
+          name: Prompt Repository ${{ github.ref_name }}
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+```
 
 ---
 
