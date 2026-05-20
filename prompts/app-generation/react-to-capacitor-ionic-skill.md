@@ -68,6 +68,7 @@ Use this skill prompt to transform an existing React codebase into a Capacitor +
 ## 🚀 CI/CD Pipeline Templates
 
 Use these as baseline templates in the generated project.
+Assume these files are created from the application project root; adjust paths if using a monorepo (for example `apps/mobile`).
 
 `scripts/build-android.sh`
 
@@ -185,6 +186,26 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
+
+---
+
+## ✅ Required npm Scripts
+
+These templates assume the target project defines the following npm scripts.
+
+```json
+{
+  "scripts": {
+    "android:sync": "npx cap sync android",
+    "android:build:debug": "cd android && ./gradlew assembleDebug",
+    "ci": "npm run build && npm test",
+    "test:viewport:install": "npx playwright install chromium",
+    "test:viewport": "playwright test"
+  }
+}
+```
+
+Adjust script commands to match your project tooling and test strategy.
 
 ---
 
