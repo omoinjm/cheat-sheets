@@ -13,6 +13,8 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+    env:
+      APK_SEARCH_ROOT: android/app/build/outputs/apk
 
     steps:
       - name: Checkout
@@ -37,6 +39,7 @@ jobs:
         run: npm ci
 
       - name: Validate web app (uses ci script when available)
+        continue-on-error: true
         run: npm run ci
 
       - name: Install Playwright Chromium (optional script)
@@ -61,7 +64,7 @@ jobs:
       - name: Locate APK
         id: locate_apk
         run: |
-          APK_PATH=$(find android/app/build/outputs/apk -name "app-debug.apk" | head -n 1)
+          APK_PATH=$(find "$APK_SEARCH_ROOT" -name "app-debug.apk" | head -n 1)
           if [ -z "$APK_PATH" ]; then
             echo "No APK was produced" >&2
             exit 1

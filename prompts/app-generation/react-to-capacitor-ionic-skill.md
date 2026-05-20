@@ -27,6 +27,7 @@ Use this skill prompt to transform an existing React codebase into a Capacitor +
 > - Existing routing/state management setup
 > - Current API/auth integrations
 > - Any web-only dependencies that may need mobile alternatives
+> - Repository layout context (single-project root or monorepo path such as `apps/mobile`)
 >
 > **Migration Requirements:**
 > 1. **Architecture First**
@@ -53,7 +54,7 @@ Use this skill prompt to transform an existing React codebase into a Capacitor +
 >    - Provide a CI/CD-ready structure for Android/iOS builds and signing.
 >    - Include test strategy recommendations (unit, integration, smoke/E2E) focused on mobile risk areas.
 >    - Define acceptance criteria and a verification checklist for feature parity.
->    - Generate `scripts/build-android.sh` and `.github/workflows/android.yml` using the provided baseline templates.
+>    - Generate baseline Android CI/CD files (for example `scripts/build-android.sh` and `.github/workflows/android.yml`) and adjust paths to match the project layout.
 >
 > **Expected Deliverables:**
 > - Target folder structure for the migrated app
