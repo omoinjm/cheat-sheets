@@ -17,6 +17,7 @@ This directory contains generic, high-level prompts for building and scaffolding
 ## 📁 Contents
 - [new-app-template.md](./new-app-template.md): A generic, high-signal prompt for scaffolding a modern, functional application.
 - [ecommerce-blueprint.md](./ecommerce-blueprint.md): A master prompt for building high-performance e-commerce apps with Next.js, Sanity, and Stripe.
+- [react-to-capacitor-ionic-skill.md](./react-to-capacitor-ionic-skill.md): A migration skill prompt for transforming React apps into production-ready Capacitor + Ionic mobile applications.
 
 ## 🧠 Responsibilities
 This section holds the foundational "golden prompts" that you can use to generate new, well-structured application prototypes in minutes.

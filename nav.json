@@ -351,7 +351,8 @@
           "overview": "prompts/app-generation/README.md",
           "entries": [
             { "label": "E-Commerce Blueprint", "path": "prompts/app-generation/ecommerce-blueprint.md" },
-            { "label": "New App Template", "path": "prompts/app-generation/new-app-template.md" }
+            { "label": "New App Template", "path": "prompts/app-generation/new-app-template.md" },
+            { "label": "React to Capacitor + Ionic Skill", "path": "prompts/app-generation/react-to-capacitor-ionic-skill.md" }
           ]
         },
         {
