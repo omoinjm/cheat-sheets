@@ -61,7 +61,7 @@ jobs:
           BUILD_TYPE: debug
         run: ./scripts/build-android.sh
 
-      - name: Locate APK
+      - name: Locate APK (adjust APK_SEARCH_ROOT for monorepos)
         id: locate_apk
         run: |
           APK_PATH=$(find "$APK_SEARCH_ROOT" -name "app-debug.apk" | head -n 1)

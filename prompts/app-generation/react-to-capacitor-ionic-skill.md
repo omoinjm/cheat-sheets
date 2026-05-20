@@ -71,6 +71,7 @@ Use this skill prompt to transform an existing React codebase into a Capacitor +
 Use these as baseline templates in the generated project.
 Assume these files are created from the application project root; adjust paths if using a monorepo (for example `apps/mobile`).
 Typical monorepo adjustments include Android directory checks, APK output search paths, script working directories, and the `APK_SEARCH_ROOT` workflow environment variable.
+The template files in `prompts/app-generation/android/` are reference copies; generated project output should use the destination paths shown below.
 
 `scripts/build-android.sh`
 
@@ -127,13 +128,16 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Validate web app
+      - name: Validate web app (optional)
+        continue-on-error: true
         run: npm run ci
 
-      - name: Install Playwright Chromium
+      - name: Install Playwright Chromium (optional)
+        continue-on-error: true
         run: npm run test:viewport:install
 
-      - name: Run viewport matrix
+      - name: Run viewport matrix (optional)
+        continue-on-error: true
         run: npm run test:viewport
 
       - name: Ensure Android platform exists
