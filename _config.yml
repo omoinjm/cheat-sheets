@@ -1,12 +1,14 @@
-# GitHub Pages Jekyll Configuration
-
-title: Useful Stuff
+title: Cheat Sheets
 description: A collection of notes, guides, and miscellaneous technical information.
-author: Omoinm
+author: Nhlanhla Malaza
+tags: [repo, documentation, moc]
+type: directory
+path: .
+parent: null
 
-url: https://omoinjm.github.io/useful-stuff
+url: https://omoinjm.github.io/cheat-sheets
+baseurl: /cheat-sheets
 
-# Keep favicons in build
 include:
   - assets/favicons/
 
@@ -23,6 +25,8 @@ markdown: kramdown
 
 # Navigation
 nav_links:
+  - text: Search
+    url: /search/
   - text: Home
     url: /
   - text: Cloud
