@@ -3,7 +3,7 @@ title: React to Capacitor Ionic Skill v4
 description: Complete skill for transforming a React app into a signed Android release APK via GitHub Actions, with CI/CD fixes, responsive app guidelines, and automated versioned releases.
 type: content
 path: prompts/app-generation/react-to-capacitor-ionic-skill-v4.md
-tags: [react, capacitor, ionic, android, github-actions, tailwind, ci-cd, mobile]
+tags: [react, capacitor, ionic, android, github-actions, tailwind, ci-cd, mobile, solid, shadcn-ui, framer-motion, redux]
 ---
 
 # GitHub Actions + Vite + Tailwind + Capacitor Build Skill (v4)
@@ -21,6 +21,22 @@ Use `find-skills` to discover the best skills for building **responsive apps** t
 - Adaptive layouts (phone, tablet, desktop)
 - Touch target sizing (min 44×44px)
 - Platform-specific navigation patterns (iOS vs Android)
+
+---
+
+## Modern Mobile Engineering Standards
+
+### 1. SOLID Principles
+The application architecture must strictly adhere to **SOLID principles** to ensure long-term maintainability and testability:
+- **Single Responsibility (SRP):** Separate UI logic from business logic using custom hooks.
+- **Open/Closed (OCP):** Use component composition to extend functionality without modifying core components.
+- **Dependency Inversion (DIP):** Depend on abstractions (interfaces/types) rather than concrete implementations, especially for API services and storage.
+
+### 2. Modern Tech Stack & UI
+- **Styling:** Use **Tailwind CSS (v3)** for utility-first, responsive design.
+- **UI Components:** Integrate **shadcn/ui** for accessible, customizable primitives.
+- **Animations:** Use **Framer Motion** for mobile-first, high-signal transitions (e.g., `AnimatePresence` for route changes, `layout` for fluid UI shifts).
+- **State Management:** Use **Redux Toolkit (RTK)** for complex global state, ensuring predictable data flow across mobile views.
 
 ---
 
@@ -303,6 +319,10 @@ jobs:
 
 ## Checklist for New Projects
 
+- [ ] Apply **SOLID principles** to component and service architecture
+- [ ] Install and configure **shadcn/ui** for accessible UI components
+- [ ] Integrate **Framer Motion** for mobile-optimized animations
+- [ ] Set up **Redux Toolkit** for robust state management
 - [ ] Install skill: `npx skills add https://github.com/vercel-labs/skills --skill find-skills`
 - [ ] Run `find-skills` to identify responsive layout and mobile UI skills
 - [ ] Use Tailwind v3, NOT v4 (v4 requires native modules)
