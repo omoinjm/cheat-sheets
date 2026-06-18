@@ -1,11 +1,10 @@
 ---
-
 title: Full-Stack E-Commerce Blueprint (Next.js + Shopify)
 description: A master prompt and architectural guide for building production-ready, high-performance e-commerce applications using Shopify as the commerce backend.
 type: content
 path: prompts/app-generation/ecommerce-blueprint-shopify.md
 tags: [prompts, app-generation, ecommerce, nextjs, shopify, headless-commerce, full-stack]
-------------------------------------------------------------------------------------------
+---
 
 # Full-Stack E-Commerce Blueprint: Next.js + Shopify
 
