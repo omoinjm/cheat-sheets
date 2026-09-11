@@ -350,6 +350,7 @@
           "icon": "🏗️",
           "overview": "prompts/app-generation/README.md",
           "entries": [
+            { "label": "Book/Author Website Blueprint", "path": "prompts/app-generation/book-author-website-blueprint.md" },
             { "label": "E-Commerce Blueprint", "path": "prompts/app-generation/ecommerce-blueprint.md" },
             { "label": "New App Template", "path": "prompts/app-generation/new-app-template.md" }
           ]
