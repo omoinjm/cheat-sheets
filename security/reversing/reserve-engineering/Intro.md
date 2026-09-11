@@ -5,9 +5,11 @@ type: content
 path: security/reversing/reserve-engineering/Intro.md
 tags: [security, reversing, x86, assembly, gdb, linux, debugging]
 ---
+
 # Introduction to Reverse Engineering and Debugging
 
 ## 🔗 Navigation
+
 - [⬆ Parent](./README.md)
 - [🏠 Root](../../../README.md)
 
@@ -22,7 +24,7 @@ x86 64 bit reversing
 There 16 general purpose registers on a 64 bit x86 intel AMD processor
 
 There are 8 registers on x86:
-    
+
 - RSI RAX RDI (`R` there is 64 bit).
 - EDI ESI ESP EAX (`Extended` that's 32 bit).
 - RAX or EAX is the acumiltator register.
@@ -47,13 +49,12 @@ gcc -no-pie -o hello hello.c
 
 file hello
 # returns
-# hello: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked, interpreter 
-# /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=4b6cda87ba3f08320f80b8ce670ffaaddadf91ae, 
+# hello: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked, interpreter
+# /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=4b6cda87ba3f08320f80b8ce670ffaaddadf91ae,
 # for GNU/Linux 3.2.0, not stripped
 ```
 
 `not stripped` is useful to us doing reverse engineering because that means all the internal symbols (names of the functions) are not going to be removed.
-
 
 **What does strip mean?**
 
@@ -173,7 +174,7 @@ This will make it difficult for us to reverse as we don't have any symbol names
 # Re-complie without it being stripped
 gcc -no-pie -o hello hello.c
 
-# back into 
+# back into
 gdb --nx hello
 ```
 
@@ -263,15 +264,14 @@ Base pointer:
 - `rbp` register used as a frame pointer in 32 bit (for the duration of a function call the base pointer points in a static position within a `stack frame`).
 
 - Use case:
-    1. It is static because it enables you to tear down (`Procedure Epilog`) that stack (when done with the function call it'll tear down the `stack frame`). Allows us to tell the `stack pointer` where to be.
-    2. Used for local variables and arguments that are passed. The `base pointer` is used to reference the location of argument for the function call. On 64 bit we pass arguments via `registers` and not via the `stack` (safer to pass argument via registers). It is safer because if we push things in a writeable region of memory and there's an `overflow` opportunity then an attacker can potentially override those arguments and modify them. However, in a register you cannot overwrite (`eip` or `rip`). You can use instructions that are modified in registers.
+  1. It is static because it enables you to tear down (`Procedure Epilog`) that stack (when done with the function call it'll tear down the `stack frame`). Allows us to tell the `stack pointer` where to be.
+  2. Used for local variables and arguments that are passed. The `base pointer` is used to reference the location of argument for the function call. On 64 bit we pass arguments via `registers` and not via the `stack` (safer to pass argument via registers). It is safer because if we push things in a writeable region of memory and there's an `overflow` opportunity then an attacker can potentially override those arguments and modify them. However, in a register you cannot overwrite (`eip` or `rip`). You can use instructions that are modified in registers.
 
 2. Load Effective Address (LEA)
 
 Load Effective Address into `rdi` then go to the address stored in the instruction pointer.
 
 This will go out of the bounds of the code segment likely to a segment adjacent to the segment (Data segment)
-
 
 ```bash
 0x000000000040113e <+8>:     lea    rdi,[rip+0xebf]        # 0x402004 this is the location
@@ -289,7 +289,7 @@ Need to keep the heap and the stack **far from each other but growing towards ea
 Initailased variables will be stored
 
 - Block Started by Symbol segment (BSS)
-- Heap 
+- Heap
 
 Grow from low to high memory
 
