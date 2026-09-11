@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ✏️ Customize: site title shown in browser tab -->
+  <title>📋 Cheat Sheets</title>
+
+  <!-- Markdown rendering -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+  <!-- Syntax highlighting -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+  <!-- YAML front matter parsing -->
+  <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+
+  <!-- ===== SIDEBAR ===== -->
+  <aside id="sidebar">
+    <div id="sidebar-header">
+      <!-- ✏️ Customize: site icon and name in sidebar -->
+      <span id="site-icon">📋</span>
+      <span id="site-name">Cheat Sheets</span>
+      <button id="hamburger" aria-label="Toggle sidebar">☰</button>
+    </div>
+
+    <nav id="nav-tree">
+      <!-- Populated by app.js from nav.json -->
+      <div class="nav-loading">Loading navigation…</div>
+    </nav>
+  </aside>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main id="content-area">
+    <!-- Breadcrumb trail -->
+    <nav id="breadcrumb" aria-label="Breadcrumb"></nav>
+
+    <!-- Front matter meta card (hidden when empty) -->
+    <div id="front-matter-card" class="hidden">
+      <h1 id="fm-title"></h1>
+      <p id="fm-description"></p>
+      <div id="fm-tags"></div>
+    </div>
+
+    <!-- Rendered markdown content -->
+    <article id="content"></article>
+  </main>
+
+  <!-- ===== MODAL (for popup docs / PDFs) ===== -->
+  <div id="modal-overlay" class="hidden" role="dialog" aria-modal="true">
+    <div id="modal-box">
+      <button id="modal-close" aria-label="Close modal">✕</button>
+      <div id="modal-content"></div>
+    </div>
+  </div>
+
+  <!-- Sidebar overlay for mobile -->
+  <div id="sidebar-overlay" class="hidden"></div>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>

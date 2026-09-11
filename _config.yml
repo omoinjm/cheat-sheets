@@ -7,6 +7,7 @@ path: .
 parent: null
 
 url: https://omoinjm.github.io/cheat-sheets
+baseurl: /cheat-sheets
 
 include:
   - assets/favicons/
@@ -24,6 +25,8 @@ markdown: kramdown
 
 # Navigation
 nav_links:
+  - text: Search
+    url: /search/
   - text: Home
     url: /
   - text: Cloud
