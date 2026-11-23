@@ -31,6 +31,29 @@ wails build -platform windows/amd64 -nsis -skipbindings
 
 Stamp a version: add `-ldflags "-X main.version=v0.1.0"`.
 
+## Releasing
+
+Releases are built and published automatically by
+[`.github/workflows/release-app.yml`](../.github/workflows/release-app.yml).
+Push a version tag and the workflow builds Windows + Linux and attaches the
+binaries to a GitHub Release:
+
+```bash
+git tag app-v0.1.0        # or plain v0.1.0
+git push origin app-v0.1.0
+```
+
+Assets produced:
+
+| File                                      | Platform              |
+|-------------------------------------------|-----------------------|
+| `sheets-desk-windows-amd64.exe`           | Windows, portable     |
+| `sheets-desk-windows-amd64-installer.exe` | Windows, NSIS setup   |
+| `sheets-desk-linux-amd64.tar.gz`          | Linux (webkit2gtk-4.1)|
+
+You can also trigger it manually from the **Actions** tab ("Run workflow"),
+which publishes a prerelease named by the version input.
+
 ## Set up the keyboard shortcut
 
 The app itself registers no global hotkey — you bind the shortcut in the OS to
