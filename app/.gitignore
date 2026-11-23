@@ -1,0 +1,11 @@
+# Build output
+/build/bin/
+*.exe
+sheets-desk
+sheets-desk-*
+
+# Wails
+/frontend/wailsjs/
+
+# OS
+.DS_Store

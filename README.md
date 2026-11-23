@@ -1,38 +1,39 @@
-# Project Knowledge Map
+# Cheat Sheets
 
-This repository serves as a comprehensive, Obsidian-ready knowledge base. It contains a collection of curated code snippets, technical documentation, command references, and architectural notes across various technology domains. This root document acts as the primary Map of Content (MOC) for navigating the entire vault.
+A personal knowledge base of notes, guides, and technical references — published
+as a static site and viewable as a tray-resident desktop app.
 
-## 🔗 Navigation
+## Layout
 
-- [📂 Current Directory](././)
+```
+.
+├── docs/   → the content + hosted site (GitHub Pages web root)
+└── app/    → sheets-desk: a desktop window that shows the site, in the tray
+```
 
-## 📌 Overview
+### `docs/` — content & site
+A client-side SPA (`index.html` + `assets/app.js`) that renders the markdown
+notes organized under category folders (`development/`, `infrastructure/`,
+`security/`, `systems/`, `workspace/`, …). Navigation is driven by `nav.json`;
+`.nojekyll` means GitHub Pages serves the files as-is.
 
-This repository serves as my personal knowledge base and collection of cheatsheets, encompassing everything I know about technology. It contains curated code snippets, technical documentation, and command references for a wide variety of tools and technologies. The content is structured for easy exploration on both GitHub and within an Obsidian vault, with a focus on clear, linked, and discoverable information.
+> **Hosting:** this folder is the published web root. Set GitHub Pages to
+> **Settings → Pages → Build and deployment → Deploy from a branch → `main` / `/docs`**.
+> The custom domain (`docs/CNAME` → sheets.njmtech.co.za) is served from here.
+> Because every path in the SPA is web-root-relative, serving `/docs` keeps all
+> links working with no edits.
 
-## 📁 Contents
+Add a page: drop a markdown file in the right category folder (front matter like
+the existing pages), then register it in `docs/nav.json`.
 
-- [development](./development/README.md): Languages, [databases](./development/databases/README.md), and [standards](./development/standards/README.md).
-- [infrastructure](./infrastructure/README.md): [Cloud](./infrastructure/cloud/README.md) platforms, [containers](./infrastructure/containers/README.md), and [web servers](./infrastructure/web-servers/README.md).
-- [systems](./systems/README.md): Operating systems ([Linux](./systems/linux/README.md), [Windows](./systems/windows/README.md)) and [automation](./systems/automation/README.md).
-- [security](./security/README.md): [Pentesting](./security/pentesting/README.md), [reverse engineering](./security/reversing/README.md), and general security.
-- [workspace](./workspace/README.md): [IDEs](./workspace/ides/README.md), [version control](./workspace/vcs/README.md), and [networking tools](./workspace/networking/README.md).
-- [professional](./professional/README.md): Work-specific documentation.
-- [prompts](./prompts/README.md): Golden prompts for building apps and improving code.
+### `app/` — sheets-desk desktop app
+A thin [Wails v2](https://wails.io) window that loads the hosted site, lives in
+the system tray, and uses a single-instance lock so an OS keyboard shortcut pops
+the window forward. See [`app/README.md`](app/README.md) for build steps and
+hotkey setup.
 
-## 🤖 AI Integration & Automation
-
-This repository is optimized for AI-assisted maintenance. Any LLM (Gemini, Claude, GPT) can autonomously add, categorize, and link new content by following the **Wiki-fication Protocol**.
-
-### How to Add New Content
-To ensure new notes, tools, or prompts match the repository's structure, provide the following instruction to your AI assistant:
-
-> "Add the following content to this Wiki-fied repository by following the **Automated Wiki Maintenance Protocol** located in `prompts/documentation/automated-wiki-maintenance.md`. Perform the categorization, frontmatter generation, MOC updates, and cross-linking autonomously."
-
-## 🧠 Responsibilities
-
-The root of the repository is responsible for providing the primary entry point and high-level structure for the entire knowledge base. It establishes the organizational principles and serves as the main navigational hub.
-
-## 🔄 Relationships
-
-This root directory is the top-level container for all other content. It is the parent of all the main category directories and does not have any sibling directories. All navigation flows downwards from this point into the more specialized subdirectories.
+```bash
+cd app
+wails build -platform windows/amd64 -nsis -skipbindings   # Windows .exe
+wails build -skipbindings -tags webkit2_41                 # Linux (needs webkit2gtk)
+```

@@ -288,7 +288,8 @@
           "icon": "🔀",
           "overview": "workspace/vcs/README.md",
           "entries": [
-            { "label": "Git Tags", "path": "workspace/vcs/git_tags.md" }
+            { "label": "Git Tags", "path": "workspace/vcs/git_tags.md" },
+            { "label": "Git Merge Conflicts", "path": "workspace/vcs/git_conflicts.md" }
           ]
         },
         {
@@ -374,7 +375,7 @@
           "entries": [
             { "label": "Automated Wiki Maintenance", "path": "prompts/documentation/automated-wiki-maintenance.md" },
             { "label": "Wiki Standardization", "path": "prompts/documentation/wiki-standardization.md" },
-            { "label": "Markdown Viewer Site Prompt", "path": "docs/markdown-viewer-site-prompt.md" }
+            { "label": "Markdown Viewer Site Prompt", "path": "meta/markdown-viewer-site-prompt.md" }
           ]
         }
       ]

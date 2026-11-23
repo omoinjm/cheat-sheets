@@ -16,6 +16,7 @@ This directory focuses on version control systems (VCS), primarily Git. It inclu
 
 ## 📁 Contents
 - [git_tags.md](./git_tags.md): A guide on how to use Git tags to mark specific points in a repository's history, such as releases.
+- [git_conflicts.md](./git_conflicts.md): Step-by-step reference for resolving Git merge conflicts, with the exact Neovim keymaps (git-conflict.nvim + diffview.nvim).
 
 ## 🧠 Responsibilities
 This section provides technical references for code versioning and collaborative development. It ensures that developers follow consistent and effective version control practices.

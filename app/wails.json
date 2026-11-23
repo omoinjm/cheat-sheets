@@ -1,0 +1,20 @@
+{
+  "$schema": "https://wails.io/schemas/config.v2.json",
+  "name": "sheets-desk",
+  "outputfilename": "sheets-desk",
+  "frontend:dir": "frontend",
+  "frontend:install": "",
+  "frontend:build": "",
+  "wailsjsdir": "",
+  "author": {
+    "name": "sheets-desk"
+  },
+  "info": {
+    "companyName": "njmtech",
+    "productName": "Cheat Sheets",
+    "productVersion": "0.1.0",
+    "copyright": "",
+    "comments": "Cheat sheets in a tray window (sheets.njmtech.co.za)"
+  },
+  "nsisType": "multiple"
+}
