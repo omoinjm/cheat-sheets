@@ -1,29 +1,206 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Cheat Sheets</title>
-  <style>
-    html, body { margin: 0; height: 100%; background: #0f1115; color: #cbd5e1;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
-    .wrap { height: 100%; display: flex; align-items: center; justify-content: center;
-      flex-direction: column; gap: 1rem; }
-    .spin { width: 28px; height: 28px; border: 3px solid #334155; border-top-color: #38bdf8;
-      border-radius: 50%; animation: s 0.8s linear infinite; }
-    @keyframes s { to { transform: rotate(360deg); } }
-    a { color: #38bdf8; }
-  </style>
-  <!-- Load the hosted cheat-sheets site in this native window. -->
-  <script>
-    window.location.replace("https://sheets.njmtech.co.za");
-  </script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Cheat Sheets</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+<style>
+  :root {
+    --bg: #0f1115; --panel: #161a22; --line: #232a36; --txt: #e2e8f0;
+    --muted: #8b97a8; --accent: #38bdf8; --green: #22c55e; --chip: #1e2733;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; }
+  body {
+    background: var(--bg); color: var(--txt); overflow: hidden;
+    font: 13px/1.5 system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    display: flex; flex-direction: column;
+    border: 1px solid var(--line); border-radius: 10px;
+  }
+  header {
+    --wails-draggable: drag;
+    display: flex; align-items: center; gap: 8px;
+    padding: 8px 10px; background: var(--panel);
+    border-bottom: 1px solid var(--line); border-radius: 10px 10px 0 0;
+    user-select: none;
+  }
+  .brand { display: flex; align-items: center; gap: 7px; font-weight: 600; }
+  .brand .dot { width: 16px; height: 16px; border-radius: 4px;
+    background: var(--accent); display: inline-grid; place-items: center;
+    font-size: 10px; color: #06202e; }
+  .chip {
+    margin-left: auto; max-width: 150px; overflow: hidden; text-overflow: ellipsis;
+    white-space: nowrap; font-size: 11px; color: var(--muted);
+    background: var(--chip); padding: 2px 8px; border-radius: 999px;
+  }
+  .btns { display: flex; gap: 4px; --wails-draggable: no-drag; }
+  .btn {
+    width: 24px; height: 24px; border: 0; border-radius: 6px; cursor: pointer;
+    background: transparent; color: var(--muted); font-size: 13px;
+  }
+  .btn:hover { background: var(--line); color: var(--txt); }
+  .btn.on { color: var(--accent); }
+  main { flex: 1; overflow: auto; }
+  .hint { padding: 22px 16px; text-align: center; color: var(--muted); }
+  .hint kbd { background: var(--chip); border: 1px solid var(--line);
+    border-radius: 5px; padding: 1px 6px; font-family: ui-monospace, monospace; }
+  ul { list-style: none; margin: 0; padding: 6px; }
+  li.row { display: flex; gap: 10px; align-items: flex-start; padding: 8px 10px;
+    border-radius: 8px; cursor: pointer; }
+  li.row:hover { background: var(--panel); }
+  .ic { font-size: 16px; line-height: 1.3; width: 20px; text-align: center; }
+  .meta { min-width: 0; }
+  .lbl { font-weight: 600; }
+  .crumb { font-size: 11px; color: var(--muted); overflow: hidden;
+    text-overflow: ellipsis; white-space: nowrap; }
+  .detail { padding: 10px 14px 20px; }
+  .back { --wails-draggable: no-drag; display: inline-flex; align-items: center;
+    gap: 6px; cursor: pointer; color: var(--accent); font-size: 12px; margin-bottom: 8px; }
+  .md h1 { font-size: 17px; margin: .4em 0 .3em; }
+  .md h2 { font-size: 14px; margin: 1em 0 .3em; color: var(--accent); }
+  .md h3 { font-size: 13px; margin: .8em 0 .2em; }
+  .md p, .md li { font-size: 12.5px; }
+  .md code { background: var(--chip); padding: 1px 5px; border-radius: 4px;
+    font-family: ui-monospace, SFMono-Regular, monospace; font-size: 12px; }
+  .md pre { background: #0b0e13; border: 1px solid var(--line); border-radius: 8px;
+    padding: 10px; overflow: auto; }
+  .md pre code { background: none; padding: 0; }
+  .md table { border-collapse: collapse; width: 100%; font-size: 12px; }
+  .md th, .md td { border: 1px solid var(--line); padding: 4px 7px; text-align: left; }
+  .md a { color: var(--accent); }
+  .openrow { margin: 4px 0 12px; }
+  .link { --wails-draggable: no-drag; color: var(--accent); cursor: pointer; font-size: 12px; }
+  #full { position: absolute; inset: 0; display: none; flex-direction: column; background: var(--bg); }
+  #full iframe { flex: 1; border: 0; width: 100%; }
+  main::-webkit-scrollbar { width: 8px; }
+  main::-webkit-scrollbar-thumb { background: var(--line); border-radius: 8px; }
+</style>
 </head>
 <body>
-  <div class="wrap">
-    <div class="spin"></div>
-    <div>Loading cheat sheets…</div>
-    <noscript><a href="https://sheets.njmtech.co.za">Open sheets.njmtech.co.za</a></noscript>
+  <header>
+    <span class="brand"><span class="dot">✓</span>Cheat Sheets</span>
+    <span class="chip" id="chip">listening…</span>
+    <span class="btns">
+      <button class="btn on" id="pin" title="Always on top">📌</button>
+      <button class="btn" id="expand" title="Expand to full browser">⤢</button>
+      <button class="btn" id="hide" title="Hide to tray">✕</button>
+    </span>
+  </header>
+
+  <main>
+    <div id="hint" class="hint">
+      Start typing a command in your terminal.<br />
+      Matching cheat sheets appear here — e.g. <kbd>git merge</kbd>, <kbd>docker run</kbd>, <kbd>nvim</kbd>.
+    </div>
+    <ul id="list" style="display:none"></ul>
+    <div id="detail" class="detail" style="display:none"></div>
+  </main>
+
+  <div id="full">
+    <header>
+      <span class="brand"><span class="dot">✓</span>Cheat Sheets</span>
+      <span class="btns" style="margin-left:auto">
+        <button class="btn" id="collapse" title="Back to overlay">⤡</button>
+      </span>
+    </header>
+    <iframe id="frame" title="Cheat Sheets"></iframe>
   </div>
+
+<script>
+  const SITE = "https://sheets.njmtech.co.za";
+  const $ = (id) => document.getElementById(id);
+  const rt = () => window.runtime || {};
+  const api = () => (window.go && window.go.main && window.go.main.App) || {};
+  let pinned = true;
+
+  function show(which) {
+    $("hint").style.display   = which === "hint"   ? "" : "none";
+    $("list").style.display   = which === "list"   ? "" : "none";
+    $("detail").style.display = which === "detail" ? "" : "none";
+  }
+
+  function render(payload) {
+    const q = ((payload && payload.query) || "").trim();
+    const matches = (payload && payload.matches) || [];
+    $("chip").textContent = q ? q.slice(0, 40) : "listening…";
+    if (!matches.length) {
+      $("hint").innerHTML = q
+        ? `No cheat sheets match <kbd>${escapeHtml(q)}</kbd>.`
+        : "Start typing a command in your terminal.<br/>Matching cheat sheets appear here.";
+      show("hint");
+      return;
+    }
+    const ul = $("list");
+    ul.innerHTML = "";
+    for (const m of matches) {
+      const li = document.createElement("li");
+      li.className = "row";
+      li.innerHTML =
+        `<span class="ic">${m.icon || "📄"}</span>` +
+        `<span class="meta"><div class="lbl">${escapeHtml(m.label)}</div>` +
+        `<div class="crumb">${escapeHtml(m.breadcrumb || "")}</div></span>`;
+      li.onclick = () => openDetail(m);
+      ul.appendChild(li);
+    }
+    show("list");
+  }
+
+  async function openDetail(m) {
+    $("detail").innerHTML =
+      `<div class="back" id="back">‹ back</div>` +
+      `<div class="openrow"><span class="link" id="ob">↗ open in browser</span></div>` +
+      `<div class="md" id="md">Loading…</div>`;
+    show("detail");
+    $("back").onclick = () => render(window.__last || {});
+    $("ob").onclick = () => rt().BrowserOpenURL && rt().BrowserOpenURL(m.url);
+    try {
+      const raw = await api().FetchSheet(m.raw);
+      $("md").innerHTML = window.marked
+        ? window.marked.parse(stripFrontMatter(raw))
+        : escapeHtml(stripFrontMatter(raw));
+    } catch (e) {
+      $("md").innerHTML = `Couldn't load it here. <span class="link" id="ob2">open in browser ↗</span>`;
+      const b = $("ob2"); if (b) b.onclick = () => rt().BrowserOpenURL && rt().BrowserOpenURL(m.url);
+    }
+  }
+
+  function stripFrontMatter(s) {
+    if (s.startsWith("---")) {
+      const end = s.indexOf("\n---", 3);
+      if (end !== -1) return s.slice(s.indexOf("\n", end + 1) + 1);
+    }
+    return s;
+  }
+  function escapeHtml(s) {
+    return String(s).replace(/[&<>"']/g, (c) =>
+      ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  }
+
+  $("pin").onclick = () => {
+    pinned = !pinned;
+    $("pin").classList.toggle("on", pinned);
+    rt().WindowSetAlwaysOnTop && rt().WindowSetAlwaysOnTop(pinned);
+  };
+  $("hide").onclick = () => rt().WindowHide && rt().WindowHide();
+  $("expand").onclick = () => {
+    rt().WindowSetSize && rt().WindowSetSize(980, 820);
+    rt().WindowCenter && rt().WindowCenter();
+    $("frame").src = SITE;
+    $("full").style.display = "flex";
+  };
+  $("collapse").onclick = () => {
+    $("full").style.display = "none";
+    rt().WindowSetSize && rt().WindowSetSize(380, 500);
+    rt().WindowSetPosition && rt().WindowSetPosition(12, 12);
+  };
+
+  function boot() {
+    if (!window.runtime || !window.runtime.EventsOn) { setTimeout(boot, 60); return; }
+    window.runtime.EventsOn("suggest", (p) => { window.__last = p; render(p); });
+    if (api().Current) api().Current().then((p) => { window.__last = p; render(p); }).catch(() => {});
+  }
+  boot();
+</script>
 </body>
 </html>

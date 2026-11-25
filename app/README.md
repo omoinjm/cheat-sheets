@@ -1,19 +1,43 @@
 # sheets-desk
 
-A tiny tray-resident desktop window that shows the hosted cheat-sheets site
-(**sheets.njmtech.co.za**) in a native web view. Built with
-[Wails v2](https://wails.io) + [fyne.io/systray](https://github.com/fyne-io/systray),
-mirroring the `rmt-desk` pattern.
+An always-on-top corner overlay that watches your terminal and suggests
+matching cheat sheets from **sheets.njmtech.co.za** as you type. Built with
+[Wails v2](https://wails.io) + [fyne.io/systray](https://github.com/fyne-io/systray).
 
-- **Lives in the system tray.** Closing the window hides it; the tray icon (or a
-  second launch) brings it back. "Quit" exits.
-- **Hotkey → window.** The app takes a single-instance lock. Bind an OS keyboard
-  shortcut to run the binary again; the second launch is caught by
-  `OnSecondInstanceLaunch`, which pops the existing window forward instead of
-  starting a new copy. So the shortcut toggles the cheat sheets into view from
-  anywhere.
-- **Always current.** The window loads the live hosted site, so new cheatsheets
-  appear with no rebuild.
+- **Terminal-aware.** A shell hook streams your current command line to the
+  overlay; it ranks the 74 cheat-sheet pages by keyword and shows the best few.
+  Type `git merge` → *Git Merge Conflicts*; `nvim` → *Vim*; `psql` → *PostgreSQL*.
+- **Always on top, top-left corner.** Frameless, docked to the corner, floats
+  above every other window. Drag the header to move it; the 📌 toggles on-top.
+- **Click to read.** A suggestion opens the full sheet inside the panel (fetched
+  live, so content is always current); ⤢ expands to the full cheat-sheet browser,
+  ✕ hides to the tray.
+- **System tray + hotkey.** Single-instance lock, so an OS shortcut that relaunches
+  the binary pops the overlay back to the corner.
+
+## Use it
+
+1. Run `sheets-desk` (add it to `shell:startup` on Windows so it's always up).
+2. Install the shell hook so it can see what you type. **fish** (recommended —
+   true live-as-you-type):
+
+   ```fish
+   # ~/.config/fish/config.fish
+   source /path/to/app/shell/sheets.fish
+   ```
+
+   **bash** (fallback — updates on each command you run):
+
+   ```bash
+   # ~/.bashrc
+   source /path/to/app/shell/sheets.bash
+   ```
+
+The hook writes your command line to `%USERPROFILE%\.sheets-desk\ctx.txt`
+(resolved via `cmd.exe` + `wslpath` on WSL; `~/.sheets-desk/ctx.txt` otherwise),
+and the overlay polls that file ~8×/sec. No ports, no network between WSL and
+Windows — it works in any WSL networking mode. The command line never leaves your
+machine.
 
 ## Build
 
@@ -89,15 +113,22 @@ normally instead of hiding.
 
 ## How it works
 
-- `main.go` — Wails app: embedded `frontend/dist/index.html` immediately
-  redirects the web view to `https://sheets.njmtech.co.za`. Sets
-  `HideWindowOnClose` + `SingleInstanceLock`.
-- `app.go` — window lifecycle + `onSecondInstance` (show window on relaunch).
-- `tray.go` — systray icon + menu (Open / Quit), Linux & Windows.
-- `tray_linux.go` / `tray_windows.go` / `tray_other.go` — per-OS tray
-  availability and taskbar-button handling.
+- `main.go` — Wails app: frameless, always-on-top, small window docked top-left;
+  serves the embedded overlay UI. Tray + `SingleInstanceLock`.
+- `app.go` — lifecycle; on startup positions the corner, floats on top, starts
+  the watcher, loads the index.
+- `watcher.go` — polls `~/.sheets-desk/ctx.txt`, matches the command line, emits
+  a `suggest` event to the UI.
+- `matcher.go` — loads `nav.json` (live, with an embedded `navdata/nav.json`
+  fallback), flattens it to sheets, and keyword-ranks them (`matcher_test.go`
+  covers the ranking).
+- `sheet.go` — `FetchSheet` pulls a page's markdown server-side (no CORS) for the
+  in-panel view.
+- `frontend/dist/index.html` — the overlay UI (list → detail → expand).
+- `shell/sheets.fish`, `shell/sheets.bash` — the terminal hooks.
+- `tray*.go` — per-OS systray + taskbar handling.
 
 ## Icons
 
-`build/tray.png`, `build/appicon.png`, and `build/windows/icon.ico` are
-placeholders copied from rmt-desk — replace them with your own branding.
+`build/tray.png`, `build/appicon.png`, and `build/windows/icon.ico` are the
+sheets-desk clipboard mark.

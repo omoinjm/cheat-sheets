@@ -1,11 +1,11 @@
-// sheets-desk is a tiny tray-resident desktop window that shows the hosted
-// cheat-sheets site (sheets.njmtech.co.za) in a native web view.
+// sheets-desk is an always-on-top corner overlay that watches your terminal
+// and suggests matching cheat sheets from sheets.njmtech.co.za.
 //
-// It lives in the system tray: closing the window hides it; the tray icon (or
-// a second launch) brings it back. Bind an OS keyboard shortcut to run the
-// binary again — SingleInstanceLock catches the second launch and pops the
-// existing window forward (OnSecondInstanceLaunch), so the shortcut toggles
-// the window into view without ever starting a second copy.
+// A shell hook writes your current command line to a file; the overlay polls
+// it and shows the best-matching cheat sheets. The window is frameless, floats
+// above every other app, and docks to the top-left corner. It also lives in
+// the system tray (close hides it; the tray icon or a second launch — e.g. an
+// OS hotkey — brings it back via the single-instance lock).
 package main
 
 import (
@@ -36,10 +36,15 @@ func main() {
 	app := newApp()
 	opts := &options.App{
 		Title:            "Cheat Sheets",
-		Width:            1200,
-		Height:           820,
-		MinWidth:         480,
-		MinHeight:        400,
+		Width:            380,
+		Height:           500,
+		MinWidth:         300,
+		MinHeight:        160,
+		MaxWidth:         1400,
+		MaxHeight:        1200,
+		Frameless:        true,
+		AlwaysOnTop:      true,
+		DisableResize:    false,
 		AssetServer:      &assetserver.Options{Assets: dist},
 		BackgroundColour: &options.RGBA{R: 15, G: 17, B: 21, A: 255},
 		OnStartup:        app.startup,
@@ -54,8 +59,6 @@ func main() {
 	}
 
 	if trayAvailable() {
-		// Live in the tray: closing the window hides it; the tray icon or a
-		// second launch brings it back, "Quit" exits.
 		opts.HideWindowOnClose = true
 		app.tray = true
 	}
