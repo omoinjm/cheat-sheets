@@ -90,6 +90,11 @@ FunctionEnd
 Section
     !insertmacro wails.setShellContext
 
+    # Close any running instance so its executable isn't locked during upgrade.
+    nsExec::Exec 'taskkill /F /IM "${PRODUCT_EXECUTABLE}"'
+    Pop $0
+    Sleep 1000
+
     !insertmacro wails.webview2runtime
 
     SetOutPath $INSTDIR
@@ -107,6 +112,11 @@ SectionEnd
 
 Section "uninstall"
     !insertmacro wails.setShellContext
+
+    # Close any running instance so it can be removed.
+    nsExec::Exec 'taskkill /F /IM "${PRODUCT_EXECUTABLE}"'
+    Pop $0
+    Sleep 1000
 
     RMDir /r "$AppData\${PRODUCT_EXECUTABLE}" # Remove the WebView2 DataPath
 
