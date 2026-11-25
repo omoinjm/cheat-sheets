@@ -30,6 +30,14 @@ function __sheets_delete
     __sheets_write
 end
 
+# Reliable fallback: always fire when a command is run, regardless of whether
+# the per-keystroke bindings took. Auto-registers when this function is defined.
+function __sheets_preexec --on-event fish_preexec
+    set -q __sheets_ctx[1]; or return
+    printf '%s' $argv[1] >$__sheets_ctx 2>/dev/null &
+    disown 2>/dev/null
+end
+
 function __sheets_install_bindings --description 'bind printable keys to notify the overlay'
     # Printable ASCII (space..~), excluding backslash (0x5c) which bind parses specially.
     for n in (seq 32 126)
