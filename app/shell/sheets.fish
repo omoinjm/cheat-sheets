@@ -42,8 +42,11 @@ function __sheets_install_bindings --description 'bind printable keys to notify 
     # Printable ASCII (space..~), excluding backslash (0x5c) which bind parses specially.
     for n in (seq 32 126)
         test $n -eq 92; and continue
-        set -l ch (printf "%b" (printf '\\x%02x' $n))
-        bind -- $ch __sheets_self_insert
+        # Build the character: compute the hex first so the \x escape has its
+        # digits (a bare "\x%02x" format makes printf error before substitution).
+        set -l hex (printf '%02x' $n)
+        set -l ch (printf "\\x$hex")
+        bind -- $ch __sheets_self_insert 2>/dev/null
     end
     # Deletions
     bind \x7f __sheets_backspace
