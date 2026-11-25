@@ -19,7 +19,7 @@ matching cheat sheets from **sheets.njmtech.co.za** as you type. Built with
 
 1. Run `sheets-desk` (add it to `shell:startup` on Windows so it's always up).
 2. Install the shell hook so it can see what you type. **fish** (recommended —
-   true live-as-you-type):
+   updates per word as you type, and on Enter):
 
    ```fish
    # ~/.config/fish/config.fish

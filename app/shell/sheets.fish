@@ -20,16 +20,6 @@ function __sheets_self_insert
     __sheets_write
 end
 
-function __sheets_backspace
-    commandline -f backward-delete-char
-    __sheets_write
-end
-
-function __sheets_delete
-    commandline -f delete-char
-    __sheets_write
-end
-
 # Reliable fallback: always fire when a command is run, regardless of whether
 # the per-keystroke bindings took. Auto-registers when this function is defined.
 function __sheets_preexec --on-event fish_preexec
@@ -38,22 +28,13 @@ function __sheets_preexec --on-event fish_preexec
     disown 2>/dev/null
 end
 
-function __sheets_install_bindings --description 'bind printable keys to notify the overlay'
-    # Printable ASCII (space..~), excluding backslash (0x5c) which bind parses specially.
-    for n in (seq 32 126)
-        test $n -eq 92; and continue
-        # Build the character: compute the hex first so the \x escape has its
-        # digits (a bare "\x%02x" format makes printf error before substitution).
-        set -l hex (printf '%02x' $n)
-        set -l ch (printf "\\x$hex")
-        bind -- $ch __sheets_self_insert 2>/dev/null
-    end
-    # Deletions
-    bind \x7f __sheets_backspace
-    bind \b __sheets_backspace
-    bind -k backspace __sheets_backspace 2>/dev/null
-    bind -k dc __sheets_delete 2>/dev/null
-    bind \e\[3~ __sheets_delete 2>/dev/null
+function __sheets_install_bindings --description 'notify the overlay on word boundaries'
+    # Rebinding every printable key made typing lag badly: each keystroke forked
+    # a background job and wrote across the WSL->Windows boundary (drvfs), which
+    # backs up fish's input loop. Instead fire only on space — i.e. once per
+    # word/subcommand, which is when a match becomes meaningful — and on Enter
+    # (via fish_preexec). Normal letters keep fish's fast native self-insert.
+    bind ' ' __sheets_self_insert 2>/dev/null
 end
 
 if status is-interactive
